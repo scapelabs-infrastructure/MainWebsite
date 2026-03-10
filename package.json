@@ -1,15 +1,11 @@
 {
   "name": "leap-app",
   "version": "1.0.0",
-  "type": "module",
-  "packageManager": "bun",
+  "type": "commonjs",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node server/index.cjs"
   },
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "dependencies": {
     "express": "^5.2.1",
     "nodemailer": "^8.0.1"

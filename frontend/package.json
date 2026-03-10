@@ -7,11 +7,9 @@
     "preview": "vite preview"
   },
   "type": "module",
-  "packageManager": "bun",
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
     "@tailwindcss/vite": "^4.1.11",
-    "encore.dev": "^1.53.2",
     "framer-motion": "^12.6.1",
     "lucide-react": "^0.484.0",
     "react": "^19.1.0",
