@@ -1,0 +1,315 @@
+
+```
+You are rewriting the ScapeLabs website copy to be professional, Gen Z-friendly, and free of metaphors, bombastic language, and fragmented speech.
+
+Apply these specific text replacements:
+```
+
+---
+
+### **REPLACEMENT 1: Hero Section**
+
+**ORIGINAL:**
+```
+RESCRIEM CODUL SURSĂ
+AL ORAȘULUI.
+Nu suntem doar un ONG. Suntem laboratorul de R&D al României pentru interacțiunea dintre oameni, tehnologie și spațiul public.
+```
+
+**REPLACE WITH:**
+```
+TRANSFORMĂM ORAȘELE
+ÎN INTERFEȚE INTERACTIVE.
+Nu suntem doar un ONG. Suntem laboratorul de R&D care dezvoltă aplicații educaționale, jocuri urbane și tehnologii imersive pentru spații publice.
+```
+
+---
+
+### **REPLACEMENT 2: Manifest Quote**
+
+**ORIGINAL:**
+```
+Tehnologia nu trebuie să ne izoleze. O folosim pentru a transforma orașul, parcurile și școlile în interfețe vii. Mutăm sala de clasă în parc și patrimoniul în AR.
+
+Nu suntem doar un ONG. Suntem laboratorul care dezvoltă standardul industriei de mâine, atât pe plan non-profit cât și comercial.
+— Laris Marcu, Fondator & Președinte ScapeLabs
+```
+
+**REPLACE WITH:**
+```
+Tehnologia nu trebuie să ne izoleze. O folosim pentru a transforma orașul, parcurile și școlile în experiențe interactive. Aducem educația în spații publice prin (Realitate Virtuală / Augmentată) și gamificare urbană.
+
+Nu suntem doar un ONG. Suntem laboratorul care construiește aplicații și instalații tech pentru educație și spațiul public, atât non-profit cât și comercial.
+— Laris Marcu, Fondator & Președinte ScapeLabs
+```
+
+---
+
+### **REPLACEMENT 3: Section Title**
+
+**ORIGINAL:**
+```
+IMAGINEAZĂ-ȚIORAȘECAREINTERACȚIONEAZĂCUTINE
+Concepte pe care le visăm și le vom construi. Viitorul nu se prezice – se prototipează.
+```
+
+**REPLACE WITH:**
+```
+IMAGINEAZĂ-ȚI UN ORAȘ CARE INTERACȚIONEAZĂ CU TINE
+Concepte pe care le visăm și le vom construi. De la idee la implementare funcțională.
+```
+
+---
+
+### **REPLACEMENT 4: Projects Intro**
+
+**ORIGINAL:**
+```
+PROIECTE PILOT PENTRU Q1 2026
+Acestea nu sunt doar idei. Sunt primele noastre misiuni. Trei prototipuri funcționale care vor demonstra puterea ecosistemului nostru și vor seta standardul pentru viitor.
+```
+
+**REPLACE WITH:**
+```
+PROIECTE PILOT PENTRU Q1 2026
+Acestea nu sunt doar idei. Sunt primele noastre livrabile. Patru prototipuri funcționale care demonstrează cum tech-ul interactiv transformă educația și spațiul public.
+```
+
+---
+
+### **REPLACEMENT 5: Caravana ScapeLabs Description**
+
+**ORIGINAL:**
+```
+CARAVANA SCAPELABS
+Ducem viitorul în licee. Workshop-uri interactive despre cum să creezi cu AI, nu să trișezi. Un show tech care deschide minți.
+```
+
+**REPLACE WITH:**
+```
+CARAVANA SCAPELABS
+Workshop-uri de AI în licee. Învățăm elevii să învețe și organizeze folosind AI, să creeze conținut și să înțeleagă tehnologia. Educație tech aplicată, nu teorie.
+```
+
+---
+
+### **REPLACEMENT 6: Vânătorii Culturali Description**
+
+**ORIGINAL:**
+```
+VÂNĂTORII CULTURALI
+Transformăm orașul în cel mai mare escape room. O aplicație mobilă care folosește AR pentru a debloca poveștile ascunse ale monumentelor.
+```
+
+**REPLACE WITH:**
+```
+VÂNĂTORII CULTURALI
+Joc urban cu realitate augmentată și gamificare. O aplicație mobilă care transformă Bucureștiul într-un escape room interactiv. Explorezi monumentele, rezolvi quest-uri, înveți istorie.
+```
+
+---
+
+### **REPLACEMENT 7: Pawsitive App Description**
+
+**ORIGINAL:**
+```
+PAWSITIVE APP
+Reinventăm adopțiile. 'Tinder for Dogs' cu jocuri AR pentru stăpâni responsabili. Construim empatie prin tech.
+```
+
+**REPLACE WITH:**
+```
+PAWSITIVE APP
+Platformă de adopții cu educație integrată. Match cu căței + jocuri AR care învață îngrijirea responsabilă. Tehnologie pentru adopții sustenabile.
+```
+
+---
+
+### **REPLACEMENT 8: PlayBooks Muzicale Description**
+
+**ORIGINAL:**
+```
+PLAYBOOKS MUZICALE
+Educație muzicală augmentată cu AI și jocuri. Notele devin interactive, studiul devine performance.
+```
+
+**REPLACE WITH:**
+```
+PLAYBOOKS MUZICALE
+Manuale de muzică cu jocuri si lecții video. Scanezi pagina, vezi lecții interactive în aplicație. Teoria muzicală devine practică vizuală și joc.
+```
+
+---
+
+### **REPLACEMENT 9: Vibe Section**
+
+**ORIGINAL:**
+```
+VIBE-UL SCAPELABS
+Mai mult decât un ONG. Un Playground Tehnic.
+Sincer? Ne-am săturat de voluntariate unde 'faci bine' stând în ședințe interminabile. La ScapeLabs, atmosfera e directă: zero birocrație, mult haos creativ și execuție 10x.
+
+Avem grupul de 'ScapeLaughs' unde ne dăm roast, dar ne vom și ajuta să terminăm proiecte de mii de euro. E locul unde vii dacă vrei să pui mâna pe tool-uri AI de ultimă oră, să înveți tech for real și să faci networking cu oameni care chiar mișcă lucrurile în oraș.
+
+Nu e doar despre 'practică', e despre a fi unul dintre arhitecții viitorului!
+```
+
+**REPLACE WITH:**
+```
+VIBE-UL SCAPELABS
+Mai mult decât un ONG. Un Playground Tehnic.
+Nu ținem ședințe lungi. Facem proiecte concrete. La ScapeLabs, lucrezi direct cu tech de ultimă oră, construiești aplicații reale și colaborezi cu oameni care livrează proiecte de impact internațional.
+
+Comunitatea noastră e activă, prietenoasă și axată pe execuție. Ai acces la tool-uri AI premium, mentorat tehnic și un network de profesioniști din industrie.
+
+Nu e doar despre experiență – e despre a construi portofoliul tău cu proiecte de impact real.
+```
+
+
+---
+
+### **REPLACEMENT 11: Recruitment Section Title**
+
+**ORIGINAL:**
+```
+NU CĂUTĂM VOLUNTARI.
+CĂUTĂM CO-CREATORI.
+Alege-ți Echipa și intră în laborator.
+```
+
+**REPLACE WITH:**
+```
+NU CĂUTĂM VOLUNTARI.
+CĂUTĂM CO-CREATORI.
+Alege-ți echipa și construiește proiecte reale.
+```
+
+---
+
+### **REPLACEMENT 12: Arhitecții Guild Description**
+
+**ORIGINAL:**
+```
+ARHITECȚII
+Creativity & Design
+
+Ești persoana cu ideile 'Holy Sh**!'. Gândești concepte de aplicații, scrii copy-ul care oprește scroll-ul și definești cum 'arată' viitorul (UX / UI Design)
+```
+
+**REPLACE WITH:**
+```
+ARHITECȚII
+Creativity & Design
+
+Rolul tău: Concept art, UI/UX design, copywriting, game design. Gândești experiențe de utilizator, definești identitatea vizuală a aplicațiilor și creezi conținut care comunică clar.
+```
+
+---
+
+### **REPLACEMENT 13: Inginerii Guild Description**
+
+**ORIGINAL:**
+```
+INGINERII
+Tech & Code
+
+AI, Unity3D, AR, VR, Wordpress, Robotică sau Vibe Coding. Dacă îți place să spargi codul și să faci hardware-ul să reacționeze, aici e locul tău.
+```
+
+**REPLACE WITH:**
+```
+INGINERII
+Tech & Code
+
+Rolul tău: AI, Unity3D, AR/VR, web development, robotică. Construiești aplicații mobile, backend, instalații hardware și integrări tehnologice pentru proiectele noastre.
+```
+
+---
+
+### **REPLACEMENT 14: Vânătorii Guild Description**
+
+**ORIGINAL:**
+```
+VÂNĂTORII
+Growth & Sales
+
+'Hustlers' care aduc combustibilul. Identifici oportunități, redactezi cereri de finanțare și pitch decks, negociezi deal-uri de zeci de mii de euro și înveți cum se vinde inovația către corporații.
+```
+
+**REPLACE WITH:**
+```
+VÂNĂTORII
+Growth & Sales
+
+Rolul tău: Fundraising, partnerships, grant writing. Identifici sponsori, redactezi cereri de finanțare, negociezi colaborări cu corporații și primării. Înveți business development aplicat pe proiecte de zeci de mii de euro.
+```
+
+---
+
+### **REPLACEMENT 15: Vocea Guild Description**
+
+**ORIGINAL:**
+```
+VOCEA
+Content & PR
+
+Carismă pură pe sticlă. Poți fi fața ScapeLabs pe TikTok, să filmezi Vox Populi prin oraș și să inspiri mii de elevi în licee — sau poți contribui din spatele camerei ca video editor ori cameraman și să dai viață conținutului nostru.
+```
+
+**REPLACE WITH:**
+```
+VOCEA
+Content & PR
+
+Rolul tău: Video production, social media, public speaking, actor în TikTok-uri. Creezi conținut pentru TikTok/Instagram, filmezi behind-the-scenes, editezi video sau vorbești în fața publicului în licee și evenimente.
+```
+
+---
+
+### **REPLACEMENT 16: Partnership Section - Pentru Școli**
+
+**ORIGINAL:**
+```
+Pentru Școli & Universități
+Vreți să aduceți tehnologia viitorului în sălile de clasă? Haideți să implementăm împreună un proiect pilot. Oferim tehnologia, conceptele și mentoratul pentru a crea laboratoare de inovație și a transforma modul de predare.
+```
+
+**REPLACE WITH:**
+```
+Pentru Școli & Universități
+Implementăm proiecte pilot de educație tech în instituția dvs. Oferim aplicații educaționale, tehnologii imersive (Realitate Virtuală / Augmentată), workshop-uri și instalații interactive. Transformăm predarea prin tehnologie aplicată.
+```
+
+---
+
+### **REPLACEMENT 17: Partnership Section - Pentru Primării**
+
+**ORIGINAL:**
+```
+Pentru Primării & Instituții
+Vreți să revitalizați un spațiu public? Suntem partenerul tehnic și creativ de care aveți nevoie. Transformăm piețe, parcuri și muzee în experiențe memorabile, crescând atractivitatea orașului, implicarea civică, și procesul de învățare.
+```
+
+**REPLACE WITH:**
+```
+Pentru Primării & Instituții
+Revitalizăm spații publice prin tehnologie interactivă. Transformăm piețe, parcuri și muzee în instalații imersive (Realitate Virtuală / Augmentată), jocuri urbane și experiențe educaționale. Creștem engagement-ul civic prin tech.
+```
+
+---
+
+### **REPLACEMENT 18: Partnership Section - Pentru Sponsori**
+
+**ORIGINAL:**
+```
+Pentru Sponsori & Companii
+Asociați-vă brandul cu inovația pură. Finanțând un proiect ScapeLabs, nu faceți doar CSR, ci investiți vizibil în viitorul comunității și al tehnologiei. Oferim vizibilitate și o poveste autentică.
+```
+
+**REPLACE WITH:**
+```
+Pentru Sponsori & Companii
+Asociați-vă brandul cu proiecte tech de impact real. Finanțând ScapeLabs, investiți în educație, spații publice interactive și tehnologie aplicată. Oferim vizibilitate măsurabilă și raportare transparentă.
+```
+
+---

@@ -1,0 +1,35 @@
+import { defineConfig } from 'vite'
+import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '~backend/client': path.resolve(__dirname, 'src/client'),
+      '~backend': path.resolve(__dirname, '../backend'),
+    },
+  },
+  plugins: [tailwindcss(), react()],
+  server: {
+    host: '0.0.0.0',
+    port: 5000,
+    allowedHosts: true,
+    proxy: {
+      '/forms': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+      '/health': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    },
+  },
+  build: {
+    minify: false,
+    outDir: 'dist',
+    emptyOutDir: true,
+  }
+})
