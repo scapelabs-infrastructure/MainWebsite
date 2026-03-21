@@ -17,7 +17,7 @@ const guilds = [
     name: 'INGINERII',
     subtitle: 'Tech & Code',
     icon: Code,
-    description: 'Rolul tău: AI, Unity3D, AR/VR, web development, robotică. Construiești aplicații mobile, backend, instalații hardware și integrări tehnologice pentru proiectele noastre.',
+    description: 'Rolul tău: AI, Unity3D, AR/VR, web development, robotică. Construiești aplicații mobile, backend, instalații hardware și integrări tech pentru proiectele noastre.',
     color: '#00F0FF',
     modalIntro: 'E timpul să spargi bariera dintre ecran și realitate. De la AR la robotică și Vibe Coding, aici e laboratorul unde hardware-ul învață să danseze sub codul tău. Căutăm devs care vor să construiască produse reale, nu doar tutoriale.',
   },
