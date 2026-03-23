@@ -50,10 +50,12 @@ A fully bilingual (RO/EN) React + Vite + Tailwind CSS website for Asociația Sca
 - Animations: Framer Motion throughout
 
 ## Recent Changes
-- **2026-03-23**: Full i18n system implemented
+- **2026-03-23**: Full i18n system implemented + all original RO texts restored
   - Created `translations.ts` with complete RO/EN strings for all components
   - Created `LanguageContext.tsx` with browser language auto-detection + localStorage persistence
-  - Updated all components: DynamicIslandHeader (with toggle), Hero, Manifesto, WowVision, LabVisions, PilotProjects, Blueprint, VibeStory, BlackProjects, FinalCTA, Recruitment (modal + form), Partners (modal + form), Footer
+  - Updated all components: DynamicIslandHeader (with toggle), Hero, Manifesto, WowVision, LabVisions, PilotProjects, Blueprint, VibeStory, BlackProjects, FinalCTA, Recruitment (modal + form), Partners (modal + form), Footer, Team
   - Updated pages: Onboarding, PrivacyPolicy, TermsOfService
   - Updated `client.ts` to include `language` field in form requests
   - Updated `server/index.cjs` with bilingual email label system (RO/EN)
+  - **Fixed**: All original Romanian content restored in `translations.ts` (hero, manifesto, wowVision, labVisions, pilotProjects, blueprint, vibeStory, blackProjects, finalCta, recruitment guilds, partners, footer)
+  - **Fixed**: `Team.tsx` updated to use `useLanguage()` — roles now translate (e.g. "Fondator & Președinte" → "Founder & President")

@@ -1,25 +1,24 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const teamMembers = [
-  { name: 'Laris Marcu', role: 'Fondator & Președinte', image: 'https://scapelabs.io/media/association/team/1.jpg' },
-  { name: 'Alexandru Cinezan', role: 'Vicepreședinte & Lead Playbooks', image: 'https://scapelabs.io/media/association/team/2.jpg' },
-  { name: 'Thomas Schubert', role: 'Strategy & Brand Leader', image: 'https://scapelabs.io/media/association/team/3.jpg' },
-  { name: 'Ștefan Baciu', role: 'Secretar General & Content Creator', image: 'https://scapelabs.io/media/association/team/4.jpg' },
-  { name: 'Armina Dinu', role: 'Social Media Manager & Visuals', image: 'https://scapelabs.io/media/association/team/5.jpg' },
-  { name: 'Alex Moisei', role: 'Visual Lead & AI Curriculum', image: 'https://scapelabs.io/media/association/team/6.jpg' },
-  { name: 'Andrei Barbu', role: 'Educational Lead & Speaker', image: 'https://scapelabs.io/media/association/team/7.jpg' },
-  { name: 'Bogdan Iancu', role: 'Video Editor', image: 'https://scapelabs.io/media/association/team/8.jpg' },
+const memberImages = [
+  'https://scapelabs.io/media/association/team/1.jpg',
+  'https://scapelabs.io/media/association/team/2.jpg',
+  'https://scapelabs.io/media/association/team/3.jpg',
+  'https://scapelabs.io/media/association/team/4.jpg',
+  'https://scapelabs.io/media/association/team/5.jpg',
+  'https://scapelabs.io/media/association/team/6.jpg',
+  'https://scapelabs.io/media/association/team/7.jpg',
+  'https://scapelabs.io/media/association/team/8.jpg',
 ];
 
-const getInitials = (name: string) => {
-  return name
-    .split(' ')
-    .map(n => n[0])
-    .join('')
-    .toUpperCase();
-};
-
 export function Team() {
+  const { t } = useLanguage();
+  const teamMembers = t.team.members.map((m, i) => ({
+    ...m,
+    image: memberImages[i],
+  }));
+
   return (
     <section id="team-section" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
@@ -31,10 +30,10 @@ export function Team() {
           className="text-center mb-20"
         >
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-2 uppercase">
-            THE GEN Z
+            {t.team.sectionTitle}
           </h2>
           <h3 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 text-[#00F0FF] uppercase">
-            ARCHITECTS
+            {t.team.sectionHighlight}
           </h3>
         </motion.div>
 
