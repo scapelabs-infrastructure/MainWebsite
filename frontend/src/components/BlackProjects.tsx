@@ -1,28 +1,20 @@
 import { motion } from 'framer-motion';
 import { Terminal } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const projects = [
-  {
-    number: '01',
-    name: 'PROJECT BIOSPHERE',
-    status: 'IN DEVELOPMENT',
-    desc: 'Transformăm orice sală de clasă într-o pădure tropicală folosind Realitate Augmentată și senzori IoT.',
-  },
-  {
-    number: '02',
-    name: 'URBAN ROVER',
-    status: 'PROTOTYPE',
-    desc: 'Unități mobile autonome care interacționează social cu trecătorii în parcuri. Primul robot cetățean.',
-  },
-  {
-    number: '03',
-    name: 'NEON HISTORY',
-    status: 'DEPLOYED',
-    desc: 'Reconstrucția digitală a clădirilor de patrimoniu dispărute, direct pe locul unde au existat.',
-  },
+const projectMeta = [
+  { number: '01', name: 'PROJECT BIOSPHERE', status: 'IN DEVELOPMENT' },
+  { number: '02', name: 'URBAN ROVER', status: 'PROTOTYPE' },
+  { number: '03', name: 'NEON HISTORY', status: 'DEPLOYED' },
 ];
 
 export function BlackProjects() {
+  const { t } = useLanguage();
+  const projects = projectMeta.map((meta, i) => ({
+    ...meta,
+    desc: t.blackProjects.projects[i].desc,
+  }));
+
   return (
     <section className="py-24 md:py-32 px-4 md:px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +32,7 @@ export function BlackProjects() {
             </h2>
           </div>
           <p className="text-[#888888] font-mono text-sm uppercase tracking-wider">
-            [CLASSIFIED R&D INITIATIVES]
+            {t.blackProjects.classified}
           </p>
         </motion.div>
 

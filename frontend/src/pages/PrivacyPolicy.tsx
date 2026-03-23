@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function PrivacyPolicy() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-[#030303] text-white">
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -13,7 +16,7 @@ export function PrivacyPolicy() {
           className="inline-flex items-center gap-2 text-[#00F0FF] hover:text-white transition-colors mb-8"
         >
           <ArrowLeft size={20} />
-          <span>Înapoi la pagina principală</span>
+          <span>{t.privacyPolicy.back}</span>
         </motion.a>
 
         <motion.div
@@ -25,7 +28,7 @@ export function PrivacyPolicy() {
             Privacy <span className="text-[#00F0FF]">Policy</span>
           </h1>
           <p className="text-[#888888] mb-12">
-            Ultima actualizare: Ianuarie 2026
+            {t.privacyPolicy.lastUpdated}
           </p>
 
           <div className="space-y-8 text-[#CCCCCC]">

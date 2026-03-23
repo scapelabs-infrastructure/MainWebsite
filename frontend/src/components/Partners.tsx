@@ -2,33 +2,10 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Building, Sparkles, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import backend from '~backend/client';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const partnerTypes = [
-  {
-    icon: GraduationCap,
-    title: 'Pentru Școli & Universități',
-    description: 'Implementăm proiecte pilot de educație tech în instituția dvs. Oferim aplicații educaționale, tehnologii imersive (Realitate Virtuală / Augmentată), workshop-uri și instalații interactive. Transformăm predarea prin tehnologie aplicată.',
-    cta: 'Deveniți Partener Educațional',
-    color: '#00F0FF',
-    type: 'educational'
-  },
-  {
-    icon: Building,
-    title: 'Pentru Primării & Instituții',
-    description: 'Revitalizăm spații publice prin tehnologie interactivă. Transformăm piețe, parcuri și muzee în instalații imersive (Realitate Virtuală / Augmentată), jocuri urbane și experiențe educaționale. Creștem engagement-ul civic prin tech.',
-    cta: 'Colaborați Cu Noi',
-    color: '#FF003C',
-    type: 'institutional'
-  },
-  {
-    icon: Sparkles,
-    title: 'Pentru Sponsori & Companii',
-    description: 'Asociați-vă brandul cu proiecte tech de impact real. Finanțând ScapeLabs, investiți în educație, spații publice interactive și tehnologie aplicată. Oferim vizibilitate măsurabilă și raportare transparentă.',
-    cta: 'Investiți în Viitor',
-    color: '#00F0FF',
-    type: 'sponsor'
-  },
-];
+const partnerIcons = [GraduationCap, Building, Sparkles];
+const partnerColors = ['#00F0FF', '#FF003C', '#00F0FF'];
 
 interface PartnerModalProps {
   isOpen: boolean;
@@ -37,6 +14,8 @@ interface PartnerModalProps {
 }
 
 function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
+  const { t, lang } = useLanguage();
+  const m = t.partners.modal;
   const [formData, setFormData] = useState({
     organizationName: '',
     contactName: '',
@@ -48,20 +27,6 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
   const [error, setError] = useState('');
 
   if (!isOpen) return null;
-
-  const titles: Record<string, string> = {
-    educational: 'PARTENERIAT STRATEGIC CU ȘCOLI & UNIVERSITĂȚI',
-    institutional: 'PARTENERIAT STRATEGIC CU PRIMĂRII & INSTITUȚII',
-    sponsor: 'PARTENERIAT STRATEGIC CU SPONSORI & COMPANII',
-    generic: 'CONTACT DIRECT'
-  };
-
-  const descriptions: Record<string, string> = {
-    educational: 'Suntem încântați să explorăm o colaborare. Fie că doriți un workshop de robotică pentru elevi sau implementarea unei soluții AR în laboratorul de biologie, suntem aici să construim împreună. Haideți să stabilim o discuție pentru a vedea cum putem aduce viitorul în instituția dumneavoastră.',
-    institutional: 'Suntem încântați să explorăm o colaborare. Transformăm spații publice în experiențe interactive care cresc implicarea cetățenilor și atractivitatea orașului. Haideți să discutăm cum putem colabora pentru a aduce inovația în comunitatea dumneavoastră.',
-    sponsor: 'Suntem încântați să explorăm o colaborare. Asociindu-vă brandul cu ScapeLabs, investiți în viitorul comunității și tehnologiei, obținând vizibilitate autentică și impact real. Haideți să discutăm despre oportunitățile de parteneriat.',
-    generic: 'Suntem încântați să explorăm o colaborare. Haideți să discutăm despre cum putem lucra împreună pentru a aduce inovația în comunitatea dumneavoastră.'
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,17 +44,18 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
         contactName: formData.contactName,
         email: formData.email,
         phone: formData.phone,
+        language: lang,
       });
 
       if (response.success) {
         setSubmitted(true);
         setFormData({ organizationName: '', contactName: '', email: '', phone: '' });
       } else {
-        setError('A apărut o eroare. Te rugăm să încerci din nou.');
+        setError(m.errorGeneric);
       }
     } catch (err) {
       console.error('Partner form error:', err);
-      const errorMessage = err instanceof Error ? err.message : 'A apărut o eroare la trimiterea formularului. Te rugăm să încerci din nou.';
+      const errorMessage = err instanceof Error ? err.message : m.errorGeneric;
       setError(errorMessage);
     } finally {
       setIsSubmitting(false);
@@ -113,16 +79,16 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
             <CheckCircle size={40} className="text-[#030303]" />
           </div>
           <h3 className="text-3xl font-bold mb-4 text-[#00F0FF]">
-            Solicitare Trimisă!
+            {m.successTitle}
           </h3>
           <p className="text-[#888888] mb-8">
-            Mulțumim pentru interes. Vom reveni cu un răspuns în cel mai scurt timp.
+            {m.successMsg}
           </p>
           <button
             onClick={onClose}
             className="px-8 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all"
           >
-            Închide
+            {m.close}
           </button>
         </motion.div>
       </div>
@@ -151,23 +117,23 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
         </button>
 
         <h3 className="text-2xl font-bold mb-2">
-          <span className="text-[#00F0FF]">{titles[type] || titles.generic}</span>
+          <span className="text-[#00F0FF]">{m.titles[type as keyof typeof m.titles] || m.titles.generic}</span>
         </h3>
         
         <p className="text-[#888888] mb-6">
-          {descriptions[type] || descriptions.generic}
+          {m.descriptions[type as keyof typeof m.descriptions] || m.descriptions.generic}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {type !== 'generic' && (
             <div>
-              <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Nume Instituție / Companie</label>
+              <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.orgName}</label>
               <input
                 type="text"
                 value={formData.organizationName}
                 onChange={(e) => setFormData({ ...formData, organizationName: e.target.value })}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
-                placeholder="Numele organizației"
+                placeholder={m.orgPlaceholder}
                 required
                 disabled={isSubmitting}
               />
@@ -175,20 +141,20 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Nume Contact</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.contactName}</label>
             <input
               type="text"
               value={formData.contactName}
               onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
               className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
-              placeholder="Numele dumneavoastră"
+              placeholder={m.contactPlaceholder}
               required
               disabled={isSubmitting}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Email</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.email}</label>
             <input
               type="email"
               value={formData.email}
@@ -201,7 +167,7 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Telefon</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.phone}</label>
             <input
               type="tel"
               value={formData.phone}
@@ -229,13 +195,13 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
             disabled={!canSubmit || isSubmitting}
             className="w-full px-6 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'SE TRIMITE...' : 'TRIMITE SOLICITAREA'}
+            {isSubmitting ? m.submitting : m.submit}
           </button>
         </form>
 
         <div className="mt-6 pt-6 border-t border-white/10 text-center">
           <p className="text-sm text-[#888888]">
-            Sau sunați direct la:{' '}
+            {m.callDirect}{' '}
             <a href="tel:+40750480100" className="text-[#00F0FF] hover:underline font-semibold">
               0750480100
             </a>
@@ -247,7 +213,14 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
 }
 
 export function Partners() {
+  const { t } = useLanguage();
   const [modalType, setModalType] = useState<string | null>(null);
+
+  const partnerTypes = t.partners.partnerTypes.map((pt, i) => ({
+    ...pt,
+    icon: partnerIcons[i],
+    color: partnerColors[i],
+  }));
 
   return (
     <section id="partners" className="py-24 md:py-32 px-6 relative overflow-hidden">
@@ -279,10 +252,10 @@ export function Partners() {
         >
           <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#00F0FF] to-transparent mx-auto mb-6" />
           <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
-            UN ECOSISTEM DESCHIS <span className="text-[#00F0FF]">COLABORĂRII</span>
+            {t.partners.title} <span className="text-[#00F0FF]">{t.partners.titleHighlight}</span>
           </h2>
           <p className="text-base md:text-xl text-[#888888] max-w-3xl mx-auto">
-            ScapeLabs nu poate funcționa în vid. Căutăm parteneri care împărtășesc viziunea unui viitor mai interactiv, mai educat și mai conectat.
+            {t.partners.subtitle}
           </p>
         </motion.div>
 
@@ -360,13 +333,13 @@ export function Partners() {
           className="mt-16 text-center"
         >
           <p className="text-[#888888] text-base md:text-lg mb-6">
-            Sunteți interesat de o colaborare personalizată?
+            {t.partners.customCollab}
           </p>
           <button
             onClick={() => setModalType('generic')}
             className="inline-block px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-[#00F0FF] to-[#FF003C] text-white font-bold text-base md:text-lg rounded-sm uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/30 transition-all"
           >
-            Contactați-ne Direct
+            {t.partners.contactDirect}
           </button>
         </motion.div>
       </div>

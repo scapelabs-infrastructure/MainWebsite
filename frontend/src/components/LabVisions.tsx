@@ -1,44 +1,24 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const visions = [
-  {
-    title: 'Video Mapping Interactiv',
-    subtitle: 'Spectatorul controlează clădirea',
-    image: 'https://scapelabs.io/media/association/8.jpeg',
-    color: 'from-[#FF003C]/20 to-[#00F0FF]/20',
-  },
-  {
-    title: 'Manuale Muzicale AR',
-    subtitle: 'Cărți cu lecții interactive, prin aplicație',
-    image: 'https://scapelabs.io/media/association/9.jpeg',
-    color: 'from-purple-500/20 to-pink-500/20',
-  },
-  {
-    title: 'Roboți Umanoizi în Școli',
-    subtitle: 'Predau tehnologie elevilor',
-    image: 'https://scapelabs.io/media/association/10.jpeg',
-    color: 'from-blue-500/20 to-cyan-500/20',
-  },
-  {
-    title: 'Expoziții AR în Aer Liber',
-    subtitle: 'Artă invizibilă ochiului liber',
-    image: 'https://scapelabs.io/media/association/11.jpeg',
-    color: 'from-emerald-500/20 to-teal-500/20',
-  },
-  {
-    title: 'Parcuri cu Lumini Reactive',
-    subtitle: 'Pășești și lumina te urmează',
-    image: 'https://scapelabs.io/media/association/12.jpeg',
-    color: 'from-violet-500/20 to-fuchsia-500/20',
-  },
-  {
-    title: 'Biologie Holografică',
-    subtitle: 'Vezi inima bătând în 3D',
-    image: 'https://scapelabs.io/media/association/13.jpeg',
-    color: 'from-red-500/20 to-orange-500/20',
-  },
+const visionImages = [
+  'https://scapelabs.io/media/association/8.jpeg',
+  'https://scapelabs.io/media/association/9.jpeg',
+  'https://scapelabs.io/media/association/10.jpeg',
+  'https://scapelabs.io/media/association/11.jpeg',
+  'https://scapelabs.io/media/association/12.jpeg',
+  'https://scapelabs.io/media/association/13.jpeg',
+];
+
+const visionColors = [
+  'from-[#FF003C]/20 to-[#00F0FF]/20',
+  'from-purple-500/20 to-pink-500/20',
+  'from-blue-500/20 to-cyan-500/20',
+  'from-emerald-500/20 to-teal-500/20',
+  'from-violet-500/20 to-fuchsia-500/20',
+  'from-red-500/20 to-orange-500/20',
 ];
 
 export function LabVisions() {
@@ -46,6 +26,13 @@ export function LabVisions() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const { t } = useLanguage();
+  const visions = t.labVisions.visions.map((v, i) => ({
+    ...v,
+    image: visionImages[i],
+    color: visionColors[i],
+  }));
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -59,7 +46,7 @@ export function LabVisions() {
     }, 750);
 
     return () => clearInterval(interval);
-  }, [isUserInteracting]);
+  }, [isUserInteracting, visions.length]);
 
   useEffect(() => {
     if (!scrollContainerRef.current) return;
@@ -70,7 +57,7 @@ export function LabVisions() {
       left: currentIndex * cardWidth,
       behavior: 'smooth',
     });
-  }, [currentIndex]);
+  }, [currentIndex, visions.length]);
 
   const handleUserInteraction = () => {
     setIsUserInteracting(true);
@@ -106,7 +93,7 @@ export function LabVisions() {
           className="text-center mb-16"
         >
           <p className="text-[#888888] text-base md:text-xl max-w-3xl mx-auto">
-            Concepte pe care le visăm și le vom construi. Viitorul nu se prezice – se prototipează.
+            {t.labVisions.subtitle}
           </p>
         </motion.div>
 

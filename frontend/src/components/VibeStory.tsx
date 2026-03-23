@@ -1,7 +1,18 @@
 import { motion } from 'framer-motion';
 import { Zap, Users, Rocket, Trophy } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const statIcons = [Zap, Users, Rocket, Trophy];
+const statColors = ['#10B981', '#EC4899', '#F59E0B', '#00F0FF'];
 
 export function VibeStory() {
+  const { t } = useLanguage();
+  const stats = t.vibeStory.stats.map((label, i) => ({
+    icon: statIcons[i],
+    label,
+    color: statColors[i],
+  }));
+
   return (
     <section id="vibe-section" className="py-24 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00F0FF]/5 to-transparent pointer-events-none" />
@@ -15,7 +26,7 @@ export function VibeStory() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            VIBE-UL <span className="text-[#00F0FF]">SCAPELABS</span>
+            {t.vibeStory.title} <span className="text-[#00F0FF]">{t.vibeStory.highlight}</span>
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-[#00F0FF] to-[#FF003C] mx-auto mb-8" />
         </motion.div>
@@ -28,8 +39,8 @@ export function VibeStory() {
           className="mb-12"
         >
           <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 text-center leading-tight">
-            Mai mult decât un ONG.{' '}
-            <span className="text-[#00F0FF]">Un Playground Tehnic.</span>
+            {t.vibeStory.subtitle}{' '}
+            <span className="text-[#00F0FF]">{t.vibeStory.subtitleHighlight}</span>
           </h3>
         </motion.div>
 
@@ -41,26 +52,21 @@ export function VibeStory() {
           className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-lg p-8 md:p-12 mb-12"
         >
           <p className="text-lg md:text-xl text-[#CCCCCC] leading-relaxed mb-6">
-            Nu ținem ședințe lungi. Facem proiecte concrete. La ScapeLabs, lucrezi direct cu tech de ultimă oră, construiești aplicații reale și colaborezi cu oameni care livrează proiecte de impact internațional.
+            {t.vibeStory.p1}
           </p>
           
           <p className="text-lg md:text-xl text-[#CCCCCC] leading-relaxed mb-6">
-            Comunitatea noastră e activă, prietenoasă și axată pe execuție. Ai acces la tool-uri AI premium, mentorat tehnic și un network de profesioniști din industrie.
+            {t.vibeStory.p2}
           </p>
           
           <p className="text-lg md:text-xl text-[#CCCCCC] leading-relaxed">
-            Nu e doar despre experiență – e despre{' '}
-            <span className="text-white font-bold">a construi portofoliul tău cu proiecte de impact real.</span>
+            {t.vibeStory.p3}{' '}
+            <span className="text-white font-bold">{t.vibeStory.p3Bold}</span>
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {[
-            { icon: Zap, label: 'Zero Birocrație', color: '#10B981' },
-            { icon: Users, label: 'Comunitate Activă', color: '#EC4899' },
-            { icon: Rocket, label: 'Execuție 10x', color: '#F59E0B' },
-            { icon: Trophy, label: 'Proiecte de Impact', color: '#00F0FF' },
-          ].map((item, index) => (
+          {stats.map((item, index) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, scale: 0.8 }}

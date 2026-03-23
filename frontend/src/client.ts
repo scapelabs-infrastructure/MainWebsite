@@ -7,6 +7,7 @@ export interface SubmitFormRequest {
   email: string;
   phone: string;
   message?: string;
+  language?: "ro" | "en";
 }
 
 export interface SubmitFormResponse {

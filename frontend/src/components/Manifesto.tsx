@@ -1,9 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Manifesto() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const { t } = useLanguage();
 
   return (
     <section id="manifesto" ref={ref} className="relative min-h-screen flex items-center justify-center py-4 px-6">
@@ -34,7 +36,7 @@ export function Manifesto() {
         >
           <div className="w-16 h-0.5 bg-[#00F0FF] mx-auto mb-6" />
           <h2 className="text-[#00F0FF] text-2xl md:text-4xl font-bold tracking-tight">
-            MANIFESTUL
+            {t.manifesto.label}
           </h2>
         </motion.div>
 
@@ -45,13 +47,13 @@ export function Manifesto() {
           className="text-xl md:text-2xl text-[#EDEDED] leading-relaxed max-w-3xl mx-auto"
         >
           <p className="mb-6">
-            Tehnologia nu trebuie să ne izoleze. O folosim pentru a transforma orașul, parcurile și școlile în experiențe interactive. Aducem educația în spații publice prin (Realitate Virtuală / Augmentată) și gamificare urbană.
+            {t.manifesto.body}
           </p>
           <p className="font-bold text-white relative inline-block">
             <span className="animate-pulse-glow">
-              Nu suntem doar un ONG.
+              {t.manifesto.highlight}
             </span>{' '}
-            Suntem laboratorul care construiește aplicații și instalații tech pentru educație și spațiul public, atât non-profit cât și comercial.
+            {t.manifesto.rest}
           </p>
         </motion.div>
 
@@ -62,7 +64,7 @@ export function Manifesto() {
           className="mt-16 text-center"
         >
           <p className="text-2xl md:text-3xl text-[#00F0FF]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, textShadow: "0 0 20px rgba(0, 240, 255, 0.5)" }}>
-            — Laris Marcu, Fondator & Președinte ScapeLabs
+            {t.manifesto.founder}
           </p>
         </motion.div>
       </div>

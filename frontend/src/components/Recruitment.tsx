@@ -3,41 +3,10 @@ import { Lightbulb, Code, TrendingUp, Radio } from 'lucide-react';
 import { useState } from 'react';
 import backend from '~backend/client';
 import { CheckCircle, AlertCircle } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const guilds = [
-  {
-    name: 'ARHITECȚII',
-    subtitle: 'Creativity & Design',
-    icon: Lightbulb,
-    description: 'Rolul tău: Concept art, UI/UX design, copywriting, game design. Gândești experiențe de utilizator, definești identitatea vizuală a aplicațiilor și creezi conținut care comunică clar.',
-    color: '#10B981',
-    modalIntro: 'Bun venit în nucleul creativ. Aici gândești factorul "WOW" din spatele proiectelor noastre. Căutăm minți care refuză banalul și vor să redefinească estetica viitorului prin design, copy sau concepte de produs. Ești gata să schimbi regulile?',
-  },
-  {
-    name: 'INGINERII',
-    subtitle: 'Tech & Code',
-    icon: Code,
-    description: 'Rolul tău: AI, Unity3D, AR/VR, web development, robotică. Construiești aplicații mobile, backend, instalații hardware și integrări tech pentru proiectele noastre.',
-    color: '#00F0FF',
-    modalIntro: 'E timpul să spargi bariera dintre ecran și realitate. De la AR la robotică și Vibe Coding, aici e laboratorul unde hardware-ul învață să danseze sub codul tău. Căutăm devs care vor să construiască produse reale, nu doar tutoriale.',
-  },
-  {
-    name: 'VÂNĂTORII',
-    subtitle: 'Growth & Sales',
-    icon: TrendingUp,
-    description: 'Rolul tău: Fundraising, partnerships, grant writing. Identifici sponsori, redactezi cereri de finanțare, negociezi colaborări cu corporații și primării. Înveți business development aplicat pe proiecte de zeci de mii de euro.',
-    color: '#F59E0B',
-    modalIntro: 'Căutăm \'hustlers\' care înțeleg că inovația are nevoie de combustibil. Învață cum se închid deal-uri de zeci de mii de euro, cum se scriu granturi de succes și cum se negociază cu coloșii din corporații.',
-  },
-  {
-    name: 'VOCEA',
-    subtitle: 'Content & PR',
-    icon: Radio,
-    description: 'Rolul tău: Video production, social media, public speaking, actor în TikTok-uri. Creezi conținut pentru TikTok/Instagram, filmezi behind-the-scenes, editezi video sau vorbești în fața publicului în licee și evenimente.',
-    color: '#EC4899',
-    modalIntro: 'Ești gata să devii fața revoluției? Căutăm carismă pură pe sticlă și maeștri ai editării care să facă ScapeLabs viral. Vei filma Vox Populi, vei prezenta în licee SAU vei fi vocea care inspiră o întreagă generație.',
-  },
-];
+const guildIcons = [Lightbulb, Code, TrendingUp, Radio];
+const guildColors = ['#10B981', '#00F0FF', '#F59E0B', '#EC4899'];
 
 interface ModalProps {
   isOpen: boolean;
@@ -47,6 +16,8 @@ interface ModalProps {
 }
 
 function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProps) {
+  const { t, lang } = useLanguage();
+  const m = t.recruitment.modal;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,17 +47,18 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
         email: formData.email,
         phone: formData.phone,
         message: `Leadership: ${formData.leadership}\n\nPrezentare: ${formData.message}`,
+        language: lang,
       });
 
       if (response.success) {
         setSubmitted(true);
         setFormData({ name: '', email: '', phone: '', leadership: '', message: '' });
       } else {
-        setError('A apărut o eroare. Te rugăm să încerci din nou.');
+        setError(m.errorGeneric);
       }
     } catch (err) {
       console.error('Team application error:', err);
-      const errorMessage = err instanceof Error ? err.message : 'A apărut o eroare la trimiterea aplicației. Te rugăm să încerci din nou.';
+      const errorMessage = err instanceof Error ? err.message : m.errorGeneric;
       setError(errorMessage);
     } finally {
       setIsSubmitting(false);
@@ -110,16 +82,16 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
             <CheckCircle size={40} className="text-[#030303]" />
           </div>
           <h3 className="text-3xl font-bold mb-4 text-[#00F0FF]">
-            Aplicație Trimisă!
+            {m.successTitle}
           </h3>
           <p className="text-[#888888] mb-8">
-            Mulțumim pentru aplicație! Vom reveni cu un răspuns în cel mai scurt timp.
+            {m.successMsg}
           </p>
           <button
             onClick={onClose}
             className="px-8 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all"
           >
-            Închide
+            {m.close}
           </button>
         </motion.div>
       </div>
@@ -148,7 +120,7 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
         </button>
 
         <h3 className="text-2xl font-bold mb-2">
-          Aplică pentru <span className="text-[#00F0FF]">{department}</span>
+          {m.applyFor} <span className="text-[#00F0FF]">{department}</span>
         </h3>
         
         <p className="text-[#CCCCCC] mb-6 leading-relaxed">
@@ -157,20 +129,20 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Nume</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.name}</label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-4 py-3 bg-white/5 backdrop-blur-lg border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
-              placeholder="Numele tău complet"
+              placeholder={m.namePlaceholder}
               required
               disabled={isSubmitting}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Email</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.email}</label>
             <input
               type="email"
               value={formData.email}
@@ -183,7 +155,7 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Telefon</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.phone}</label>
             <input
               type="tel"
               value={formData.phone}
@@ -196,25 +168,25 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">Ai experiență cu leadership-ul? Povestește-ne scurt.</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.leadership}</label>
             <textarea
               rows={3}
               value={formData.leadership}
               onChange={(e) => setFormData({ ...formData, leadership: e.target.value })}
               className="w-full px-4 py-3 bg-white/5 backdrop-blur-lg border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors resize-none"
-              placeholder="Împărtășește experiențele tale de leadership..."
+              placeholder={m.leadershipPlaceholder}
               disabled={isSubmitting}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">O scurtă prezentare</label>
+            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.bio}</label>
             <textarea
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full px-4 py-3 bg-white/5 backdrop-blur-lg border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors resize-none"
-              placeholder="Cine ești și de ce vrei să te alături?"
+              placeholder={m.bioPlaceholder}
               disabled={isSubmitting}
             />
           </div>
@@ -235,13 +207,13 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
             disabled={!canSubmit || isSubmitting}
             className="w-full px-6 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'SE TRIMITE...' : 'TRIMITE APLICAȚIA'}
+            {isSubmitting ? m.submitting : m.submit}
           </button>
         </form>
 
         <div className="mt-6 pt-6 border-t border-white/10 text-center">
           <p className="text-sm text-[#888888]">
-            Pentru întrebări, scrie-ne pe WhatsApp:{' '}
+            {m.whatsapp}{' '}
             <a href="https://wa.me/40750480100" className="text-[#00F0FF] hover:underline font-semibold">
               0750480100
             </a>
@@ -253,8 +225,15 @@ function ApplicationModal({ isOpen, onClose, department, modalIntro }: ModalProp
 }
 
 export function Recruitment() {
+  const { t } = useLanguage();
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
   const [selectedModalIntro, setSelectedModalIntro] = useState<string>('');
+
+  const guilds = t.recruitment.guilds.map((guild, i) => ({
+    ...guild,
+    icon: guildIcons[i],
+    color: guildColors[i],
+  }));
 
   const handleJoinClick = (guildName: string, modalIntro: string) => {
     setSelectedDepartment(guildName);
@@ -272,13 +251,13 @@ export function Recruitment() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-4">
-            NU CĂUTĂM VOLUNTARI.
+            {t.recruitment.title}
           </h2>
           <h3 className="text-3xl md:text-6xl font-bold tracking-tight mb-6 text-[#00F0FF]">
-            CĂUTĂM CO-CREATORI.
+            {t.recruitment.titleHighlight}
           </h3>
           <p className="text-base md:text-xl text-[#888888] max-w-3xl mx-auto mt-8">
-            Alege-ți echipa și construiește proiecte reale.
+            {t.recruitment.subtitle}
           </p>
         </motion.div>
 
@@ -334,7 +313,7 @@ export function Recruitment() {
                     onClick={() => handleJoinClick(guild.name, guild.modalIntro)}
                     className="w-full py-3 border border-[#00F0FF] text-[#00F0FF] font-mono text-sm uppercase tracking-wider hover:bg-[#00F0FF] hover:text-[#030303] transition-all duration-300"
                   >
-                    [ JOIN ]
+                    {t.recruitment.joinBtn}
                   </button>
                 </div>
               </div>

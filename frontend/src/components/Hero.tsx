@@ -2,9 +2,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { useRef } from 'react';
 import { NeuralNetwork3D } from './NeuralNetwork3D';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start']
@@ -22,6 +24,8 @@ export function Hero() {
   };
 
   const contentScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.85]);
+
+  const titleLines = t.hero.title.split('\n');
 
   return (
     <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden pb-0">
@@ -58,9 +62,9 @@ export function Hero() {
           className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.1] mb-8"
           style={{ letterSpacing: '-0.02em' }}
         >
-          TRANSFORMĂM ORAȘELE
+          {titleLines[0]}
           <br />
-          ÎN INTERFEȚE INTERACTIVE.
+          {titleLines[1]}
         </motion.h1>
 
         <motion.p
@@ -69,7 +73,7 @@ export function Hero() {
           transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
           className="text-[#888888] text-base md:text-lg max-w-[600px] mx-auto mb-12 leading-relaxed mt-6"
         >
-          Nu suntem doar un ONG. Suntem laboratorul de R&D care dezvoltă aplicații educaționale, jocuri urbane și tehnologii imersive pentru spații publice.
+          {t.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -84,7 +88,7 @@ export function Hero() {
           >
             <div className="absolute inset-0 bg-[#00F0FF] blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
             <span className="relative flex items-center gap-2">
-              Intră în Echipă
+              {t.hero.cta}
               <ChevronRight size={20} />
             </span>
           </button>
@@ -94,7 +98,7 @@ export function Hero() {
             className="px-8 py-4 border border-white/10 bg-white/5 backdrop-blur-lg font-semibold rounded-sm uppercase tracking-wide hover:border-[#00F0FF] transition-all hover:scale-105 relative z-10"
             style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
           >
-            Descoperă Proiectele
+            {t.hero.ctaSecondary}
           </button>
         </motion.div>
       </motion.div>

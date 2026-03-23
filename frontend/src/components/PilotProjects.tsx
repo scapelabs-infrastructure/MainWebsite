@@ -1,34 +1,23 @@
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const projects = [
-  {
-    number: '01',
-    name: 'CARAVANA SCAPELABS',
-    image: 'https://scapelabs.io/media/association/5.jpeg',
-    desc: 'Workshop-uri de AI în licee. Învățăm elevii să învețe și organizeze folosind AI, să creeze conținut și să înțeleagă tehnologia. Educație tech aplicată, nu teorie.',
-  },
-  {
-    number: '02',
-    name: 'VÂNĂTORII CULTURALI',
-    image: '/3.jpeg',
-    desc: 'Joc urban cu realitate augmentată și gamificare. O aplicație mobilă care transformă Bucureștiul într-un escape room interactiv. Explorezi monumentele, rezolvi quest-uri, înveți istorie.',
-  },
-  {
-    number: '03',
-    name: 'PAWSITIVE APP',
-    image: 'https://scapelabs.io/media/association/6.jpeg',
-    desc: 'Platformă de adopții cu educație integrată. Match cu căței + jocuri AR care învață îngrijirea responsabilă. Tehnologie pentru adopții sustenabile.',
-  },
-  {
-    number: '04',
-    name: 'PLAYBOOKS MUZICALE',
-    image: 'https://scapelabs.io/media/association/7.jpeg',
-    desc: 'Manuale de muzică cu jocuri si lecții video. Scanezi pagina, vezi lecții interactive în aplicație. Teoria muzicală devine practică vizuală și joc.',
-  },
+const projectImages = [
+  'https://scapelabs.io/media/association/5.jpeg',
+  '/3.jpeg',
+  'https://scapelabs.io/media/association/6.jpeg',
+  'https://scapelabs.io/media/association/7.jpeg',
 ];
 
+const projectNumbers = ['01', '02', '03', '04'];
+
 export function PilotProjects() {
+  const { t } = useLanguage();
+  const projects = t.pilotProjects.projects.map((p, i) => ({
+    ...p,
+    number: projectNumbers[i],
+    image: projectImages[i],
+  }));
 
   return (
     <section id="pilot-projects" className="py-24 md:py-32 px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
@@ -45,10 +34,10 @@ export function PilotProjects() {
             <div className="w-16 h-0.5 bg-[#FF003C]" />
           </div>
           <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-4">
-            PROIECTE PILOT PENTRU <span className="text-[#FF003C]">Q1 2026</span>
+            {t.pilotProjects.title} <span className="text-[#FF003C]">Q1 2026</span>
           </h2>
           <p className="text-[#888888] text-base md:text-xl max-w-3xl mx-auto mt-6">
-            Concepte pe care le visăm și le vom construi. De la idee la implementare funcțională.
+            {t.pilotProjects.subtitle}
           </p>
         </motion.div>
 

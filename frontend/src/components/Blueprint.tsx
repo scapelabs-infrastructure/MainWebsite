@@ -1,38 +1,20 @@
 import { motion } from 'framer-motion';
 import { Brain, Gamepad2, Blocks, Zap } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const cards = [
-  {
-    icon: Brain,
-    title: 'EDUCAȚIE IMERSIVĂ',
-    body: 'AR/VR în școli. Elevii explorează anatomia umană în 3D, istoria prin time-travel virtual, și fizica prin experimente interactive.',
-    image: '/1.jpeg',
-    span: 'md:col-span-1',
-  },
-  {
-    icon: Gamepad2,
-    title: 'GAMIFICARE URBANĂ',
-    body: 'Orașul devine teren de joacă. Treasure hunts culturale, parkour digital, instalații interactive în spații publice.',
-    image: '/2.jpeg',
-    span: 'md:col-span-1',
-  },
-  {
-    icon: Blocks,
-    title: 'CULTURĂ NEW MEDIA',
-    body: 'Digital Twins ale patrimoniului, Projection Mapping artistic, muzee augmentate și ghidaje AI pentru accesibilitate totală.',
-    image: '/3.jpeg',
-    span: 'md:col-span-1',
-  },
-  {
-    icon: Zap,
-    title: 'INNOVATION LABS',
-    body: 'Workshops creative, hackathoane tech și evenimente educaționale unde tinerii învață direct de la experți din industrie.',
-    image: '/4.jpeg',
-    span: 'md:col-span-1',
-  },
-];
+const cardIcons = [Brain, Gamepad2, Blocks, Zap];
+const cardImages = ['/1.jpeg', '/2.jpeg', '/3.jpeg', '/4.jpeg'];
+const cardSpans = ['md:col-span-1', 'md:col-span-1', 'md:col-span-1', 'md:col-span-1'];
 
 export function Blueprint() {
+  const { t } = useLanguage();
+  const cards = t.blueprint.cards.map((card, i) => ({
+    ...card,
+    icon: cardIcons[i],
+    image: cardImages[i],
+    span: cardSpans[i],
+  }));
+
   return (
     <section className="py-24 md:py-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
@@ -45,7 +27,7 @@ export function Blueprint() {
         >
           <div className="w-16 h-0.5 bg-[#00F0FF] mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            DIRECȚII <span className="text-[#00F0FF]">STRATEGICE</span>
+            {t.blueprint.title} <span className="text-[#00F0FF]">{t.blueprint.highlight}</span>
           </h2>
         </motion.div>
 

@@ -1,8 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function WowVision() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start']
@@ -38,7 +40,7 @@ export function WowVision() {
           style={{ y }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center leading-tight max-w-6xl"
         >
-          {['IMAGINEAZĂ-ȚI ', 'UN ', 'ORAȘ ', 'CARE ', 'INTERACȚIONEAZĂ ', 'CU ', 'TINE'].map((word, i) => (
+          {t.wowVision.words.map((word, i) => (
             <motion.span
               key={i}
               className="inline-block relative mr-3"

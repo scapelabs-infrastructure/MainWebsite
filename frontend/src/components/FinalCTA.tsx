@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface FinalCTAProps {
   onRecruitmentClick: () => void;
@@ -6,6 +7,8 @@ interface FinalCTAProps {
 }
 
 export function FinalCTA({ onRecruitmentClick, onPartnerClick }: FinalCTAProps) {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#FF003C]/10 to-[#030303] opacity-50" />
@@ -35,7 +38,7 @@ export function FinalCTA({ onRecruitmentClick, onPartnerClick }: FinalCTAProps) 
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             style={{ textShadow: '0 0 40px rgba(255,0,60,0.6), 0 0 80px rgba(0,240,255,0.4)' }}
           >
-            EȘTI GATA SĂ CONSTRUIEȘTI?
+            {t.finalCta.title}
           </motion.h2>
 
           <motion.div
@@ -53,7 +56,7 @@ export function FinalCTA({ onRecruitmentClick, onPartnerClick }: FinalCTAProps) 
             >
               <div className="absolute inset-0 bg-[#00F0FF] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity" />
               <span className="relative flex items-center gap-2">
-                DA, CA VOLUNTAR
+                {t.finalCta.volunteer}
               </span>
             </motion.button>
 
@@ -63,7 +66,7 @@ export function FinalCTA({ onRecruitmentClick, onPartnerClick }: FinalCTAProps) 
               whileTap={{ scale: 0.95 }}
               className="px-12 py-6 border-2 border-[#FF003C] text-[#FF003C] bg-[#FF003C]/10 backdrop-blur-lg font-black text-xl rounded-sm uppercase tracking-wide hover:bg-[#FF003C]/20 transition-all"
             >
-              DA, CA PARTENER
+              {t.finalCta.partner}
             </motion.button>
           </motion.div>
         </motion.div>

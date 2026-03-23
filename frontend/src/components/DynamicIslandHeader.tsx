@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function DynamicIslandHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, lang, setLang } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -38,41 +40,56 @@ export function DynamicIslandHeader() {
               onClick={() => scrollToSection('manifesto')}
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Manifest
+              {t.header.manifest}
             </button>
             <button
               onClick={() => scrollToSection('concepts')}
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Proiecte
+              {t.header.projects}
             </button>
             <button
               onClick={() => scrollToSection('team-section')}
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Echipă
+              {t.header.team}
             </button>
             <button
               onClick={() => scrollToSection('vibe-section')}
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Voluntariat
+              {t.header.volunteer}
             </button>
           </div>
 
-          <button
-            onClick={() => scrollToSection('voluntariat')}
-            className="hidden md:block px-5 py-2 bg-[#00F0FF] text-[#030303] text-sm font-bold rounded-full hover:scale-105 transition-transform"
-          >
-            Intră în Echipă
-          </button>
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
+              className="px-3 py-1.5 border border-white/20 text-white/60 hover:text-white hover:border-[#00F0FF] text-xs font-mono rounded-full transition-all"
+              title="Switch language"
+            >
+              {lang === 'ro' ? 'EN' : 'RO'}
+            </button>
+            <button
+              onClick={() => scrollToSection('voluntariat')}
+              className="px-5 py-2 bg-[#00F0FF] text-[#030303] text-sm font-bold rounded-full hover:scale-105 transition-transform"
+            >
+              {t.header.joinTeam}
+            </button>
+          </div>
 
           <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
+              className="px-2 py-1 border border-white/20 text-white/60 hover:text-white text-xs font-mono rounded-full transition-all"
+            >
+              {lang === 'ro' ? 'EN' : 'RO'}
+            </button>
             <button
               onClick={() => scrollToSection('voluntariat')}
               className="px-3 py-1.5 bg-[#00F0FF] text-[#030303] text-xs font-bold rounded-full hover:scale-105 transition-transform whitespace-nowrap"
             >
-              Intră în Echipă
+              {t.header.joinTeam}
             </button>
 
             <button
@@ -97,31 +114,31 @@ export function DynamicIslandHeader() {
             onClick={() => scrollToSection('manifesto')}
             className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
           >
-            Manifest
+            {t.header.manifest}
           </button>
           <button
             onClick={() => scrollToSection('concepts')}
             className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
           >
-            Proiecte
+            {t.header.projects}
           </button>
           <button
             onClick={() => scrollToSection('team-section')}
             className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
           >
-            Echipă
+            {t.header.team}
           </button>
           <button
             onClick={() => scrollToSection('vibe-section')}
             className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
           >
-            Voluntariat
+            {t.header.volunteer}
           </button>
           <button
             onClick={() => scrollToSection('voluntariat')}
             className="px-10 py-5 bg-[#00F0FF] text-[#030303] text-xl font-bold rounded-full hover:scale-105 transition-transform"
           >
-            Intră în Echipă
+            {t.header.joinTeam}
           </button>
         </motion.div>
       )}
