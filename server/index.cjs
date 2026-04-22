@@ -157,11 +157,14 @@ app.get('/health', (req, res) => {
 });
 
 const path = require('path');
+const fs = require('fs');
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const PORT = IS_PRODUCTION ? 5000 : 3001;
 
-if (IS_PRODUCTION) {
-  const distPath = path.join(__dirname, '..', 'frontend', 'dist');
+const distPath = path.join(__dirname, '..', 'frontend', 'dist');
+const distExists = fs.existsSync(path.join(distPath, 'index.html'));
+
+if (IS_PRODUCTION || distExists) {
   app.use(express.static(distPath));
   app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
@@ -169,5 +172,5 @@ if (IS_PRODUCTION) {
 }
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend server running on port ${PORT}`);
+  console.log(`Backend server running on port ${PORT} (${IS_PRODUCTION ? 'production' : 'development'})`);
 });
