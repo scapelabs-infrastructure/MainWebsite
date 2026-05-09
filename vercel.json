@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/forms/(.*)", "destination": "server/index.cjs" },
+    { "source": "/health", "destination": "server/index.cjs" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
+  ]
+}
