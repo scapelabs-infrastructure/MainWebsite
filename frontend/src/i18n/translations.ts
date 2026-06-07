@@ -156,7 +156,7 @@ export const translations = {
       cta: '→ Alătură-te Comunității',
     },
     teamBoard: {
-      title: 'Oamenii din spatele proiectelor',
+      title: 'Oamenii din spatele scenei',
       introLeft: 'ScapeLabs a pornit cu un avantaj nedrept: un inginer senior de Spatial Computing ca fondator, scriind cod Unity3D de producție de la vârsta de 11 ani, cu experiență în arhitecturarea experiențelor imersive pentru muzee, Senat și publisheri de jocuri. Echipa de bază este formată din specialiști cu portofolii internaționale în experiențe imersive, archviz, game design, educație și marketing.',
       members: [
         { name: 'Laris Marcu', role: 'Fondator & Director Tehnic', advantage: 'Cod Unity3D de producție de la 11 ani. A livrat pentru Senatul României.' },
@@ -724,7 +724,7 @@ export const translations = {
       cta: '→ Join the Community',
     },
     teamBoard: {
-      title: 'The people behind the builds',
+      title: 'The people behind the scenes',
       introLeft: 'ScapeLabs started with an unfair advantage: a senior Spatial Computing engineer as founder, writing production Unity3D code since age 11, with experience architecting immersive experiences for museums, the Senate, and game publishers. The core team is made of specialists with international portfolios in immersive experiences, archviz, game design, education and marketing.',
       members: [
         { name: 'Laris Marcu', role: 'Founder & Technical Director', advantage: 'Production Unity3D code since age 11. Delivered for the Romanian Senate.' },
