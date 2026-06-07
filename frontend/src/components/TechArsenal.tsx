@@ -141,7 +141,7 @@ export function TechArsenal() {
                     src={partner.logo}
                     alt={partner.name}
                     loading="lazy"
-                    className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain opacity-70 transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
+                    className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain transition-all duration-300 hover:scale-[1.04]"
                   />
                 </a>
               </motion.div>

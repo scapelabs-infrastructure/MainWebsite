@@ -12,6 +12,14 @@ export function DynamicIslandHeader() {
     setMobileMenuOpen(false);
   };
 
+  const navigateToSection = (id: string) => {
+    if (window.location.pathname === '/') {
+      scrollToSection(id);
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <>
       <motion.header
@@ -28,23 +36,23 @@ export function DynamicIslandHeader() {
             border: '1px solid rgba(232,232,240,0.08)',
           }}
         >
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          <a
+            href="/"
             className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
           >
             <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-10 md:h-12 w-auto" />
-          </button>
+          </a>
 
           <div className="hidden md:flex items-center gap-6">
             {[
               { label: t.header.manifest, id: 'manifesto' },
-              { label: t.header.projects, id: 'community' },
+              { label: t.header.tools, id: 'tech-arsenal' },
               { label: t.header.team, id: 'team-section' },
               { label: t.header.academy, id: 'community' },
             ].map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => navigateToSection(item.id)}
                 className="text-sm font-medium transition-colors"
                 style={{ color: 'rgba(232,232,240,0.6)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#E8E8F0')}
@@ -133,13 +141,13 @@ export function DynamicIslandHeader() {
         >
           {[
             { label: t.header.manifest, id: 'manifesto' },
-            { label: t.header.projects, id: 'community' },
+            { label: t.header.tools, id: 'tech-arsenal' },
             { label: t.header.team, id: 'team-section' },
             { label: t.header.academy, id: 'community' },
           ].map((item) => (
             <button
               key={item.label}
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => navigateToSection(item.id)}
               className="text-2xl font-medium text-[#E8E8F0]/70 hover:text-[#E8E8F0] transition-colors"
             >
               {item.label}

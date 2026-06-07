@@ -143,14 +143,14 @@ export function ProjectsCommunity() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/onboarding"
+                  href="/join"
                   className="flex-1 text-center py-3 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
                 >
                   {pc.cta1}
                 </a>
                 <a
-                  href="/onboarding"
+                  href="/join"
                   className="flex-1 text-center py-3 rounded-lg text-sm font-medium transition-colors"
                   style={{
                     color: '#E8E8F0',

@@ -5,6 +5,7 @@ export const translations = {
     header: {
       manifest: 'Manifest',
       projects: 'Proiecte',
+      tools: 'Tools',
       team: 'Echipă',
       academy: 'Academy',
       joinTeam: 'Alătură-te',
@@ -125,7 +126,7 @@ export const translations = {
       ],
       academyNote: 'Toate proiectele active sunt arhitecturate de specialiști seniori din industrie. Academy servește ca incubator exclusiv de talente.',
       cta1: '→ Aplică la Academy',
-      cta2: '→ Vezi roluri disponibile',
+      cta2: '→ Explorează Academia',
     },
     community: {
       title: 'Comunitatea ScapeLabs',
@@ -171,7 +172,7 @@ export const translations = {
     finalCtaNew: {
       leftTitle: 'Ai bugetul. Noi avem tehnologia.',
       leftBody: 'Construiește o campanie CSR care ajunge cu adevărat la oameni — prin AR, AI și impact documentat la scară europeană.',
-      leftCta: '→ Deschide Deck-ul B2B',
+      leftCta: '→ Lucrează cu noi',
       rightTitle: 'Ai ambiția. Noi avem proiectele.',
       rightBody: 'Alătură-te Academy sau echipei. Livrează produse reale. Construiește un portofoliu care sare peste anii de junior.',
       rightCta: '→ Alătură-te Laboratorului',
@@ -572,6 +573,7 @@ export const translations = {
     header: {
       manifest: 'Manifesto',
       projects: 'Projects',
+      tools: 'Tools',
       team: 'Team',
       academy: 'Academy',
       joinTeam: 'Join Us',
@@ -692,7 +694,7 @@ export const translations = {
       ],
       academyNote: 'All active client builds are architected and deployed by senior industry specialists. The Academy serves as our exclusive talent incubator.',
       cta1: '→ Apply to the Academy',
-      cta2: '→ See open roles',
+      cta2: '→ Explore the Academy',
     },
     community: {
       title: 'The ScapeLabs Community',
@@ -738,7 +740,7 @@ export const translations = {
     finalCtaNew: {
       leftTitle: 'You have the budget. We have the technology.',
       leftBody: 'Build a CSR campaign that actually reaches people — through AR, AI and documented EU-scale impact.',
-      leftCta: '→ Open B2B Deck',
+      leftCta: '→ Work With Us',
       rightTitle: 'You have the drive. We have the projects.',
       rightBody: 'Join the Academy or the team. Ship real products. Build a portfolio that skips the junior years.',
       rightCta: '→ Join the Lab',
