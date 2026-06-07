@@ -19,7 +19,7 @@ export const translations = {
       cta2: '→ Alătură-te Laboratorului',
     },
     manifest: {
-      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Ingineriăm straturi AR peste orașe, implementăm ghizi AI în muzee și construim aplicațiile care transformă un manual într-o experiență 3D. Laboratorul nostru operează la intersecția calculului spațial, AI aplicat și designului urban.',
+      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Dezvoltăm straturi AR peste orașe, implementăm ghizi AI în muzee și construim aplicațiile care transformă un manual într-o experiență 3D. Laboratorul nostru operează la intersecția spatial computing-ului, AI aplicat și designului urban.',
       bodyBold: 'Fondat la București. Construit pentru Europa.',
       founderNote: '— Laris Marcu, Fondator & Director Tehnic',
     },
@@ -33,8 +33,8 @@ export const translations = {
         {
           title: 'Realitate Augmentată',
           body: 'Telefonul știe unde ești și ce privești. Punem un strat digital precis peste lumea reală — o pagină de manual devine o inimă care bate în 3D, o statuie capătă voce, un parc devine nivel de joc.',
-          impact: 'Învățare care rămâne — cunoștințe păstrate ani de zile.',
-          tagline: 'Reach maxim. Zero friction. Funcționează cu telefonul din buzunar.',
+          impact: 'Cunoștințe ancorate în experiență — nu în memorie mecanică.',
+          tagline: 'Acoperire maximă. Zero fricțiune. Merge cu telefonul din buzunar.',
         },
         {
           title: 'Video Mapping Interactiv',
@@ -43,10 +43,10 @@ export const translations = {
           tagline: 'Generează conținut viral organic. Oamenii filmează și distribuie singuri.',
         },
         {
-          title: 'Agentic AI',
+          title: 'Conversational Agentic AI',
           body: 'Sisteme care iau decizii și execută sarcini în lanț, fără intervenție umană. Ghid de muzeu vocal, concierge de eveniment, generator de campanii în timp real.',
           impact: 'Ghidare de expert, disponibilă oricui, oricând.',
-          tagline: 'Reducem timpul de producție cu 10x.',
+          tagline: 'Ghid vocal pentru muzee și spații culturale, activ 24/7 fără personal suplimentar.',
         },
         {
           title: 'Geofencing & GPS',
@@ -120,11 +120,11 @@ export const translations = {
       academyTitle: 'ScapeLabs Academy',
       academyBody: 'Acoperim golul dintre teoria academică și execuția tech de nivel înalt. Academy este incubatorul nostru educațional care pregătește studenții în tehnologiile și strategiile de marketing pe care universitățile nu le predau.',
       academyFeatures: [
-        { title: 'Curriculum Aplicat', desc: 'Cursuri intensive acoperind Unity3D, Spatial Computing, Agentic AI și Strategie de Marketing.' },
+        { title: 'Curriculum Aplicat', desc: 'Cursuri intensive acoperind Unity3D, Spatial Computing, Conversational Agentic AI și Strategie de Marketing.' },
         { title: 'Practică Universitară Oficială', desc: 'Studenții pot echivala orele de practică obligatorie prin sarcini ghidate și învățare activă.' },
         { title: 'Pipeline Elite', desc: 'Absolvenții de top din fiecare cohortă colaborează direct la implementările noastre active B2B și culturale.' },
       ],
-      academyNote: 'Toate proiectele active sunt arhitecturate de specialiști seniori din industrie. Academy servește ca incubator exclusiv de talente.',
+      academyNote: 'Toate proiectele active sunt dezvoltate de specialiști seniori din industrie. Academy servește ca incubator exclusiv de talente.',
       cta1: '→ Aplică la Academy',
       cta2: '→ Explorează Academia',
     },
@@ -611,10 +611,10 @@ export const translations = {
           tagline: 'Generates organic viral content. People film and share on their own.',
         },
         {
-          title: 'Agentic AI',
+          title: 'Conversational Agentic AI',
           body: 'Systems that make decisions and execute chained tasks without human intervention. A vocal museum guide, an event concierge, a real-time campaign generator.',
           impact: 'Expert guidance available to anyone, anytime.',
-          tagline: 'We cut production time by 10x.',
+          tagline: 'Vocal guide for museums and cultural spaces — active 24/7, no extra staff needed.',
         },
         {
           title: 'Geofencing & GPS',
@@ -688,7 +688,7 @@ export const translations = {
       academyTitle: 'The ScapeLabs Academy',
       academyBody: 'We bridge the gap between academic theory and high-end tech execution. The Academy is our educational incubator designed to train students in the technologies and marketing frameworks that universities do not teach.',
       academyFeatures: [
-        { title: 'Applied Curriculum', desc: 'Intensive tracks covering Unity3D, Spatial Computing, Agentic AI Integration, and Marketing Strategy.' },
+        { title: 'Applied Curriculum', desc: 'Intensive tracks covering Unity3D, Spatial Computing, Conversational Agentic AI Integration, and Marketing Strategy.' },
         { title: 'Official University Internships', desc: 'Structured pathways allowing students to fully equate their mandatory practice hours through active learning and guided tasks.' },
         { title: 'The Elite Pipeline', desc: 'Top-performing talents from each cohort collaborate directly on modules of our active B2B and cultural deployments.' },
       ],

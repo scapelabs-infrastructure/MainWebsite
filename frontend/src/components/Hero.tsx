@@ -58,13 +58,13 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-10 right-8 md:right-12 z-20 flex flex-col gap-3 items-end">
-        <button
-          onClick={() => scrollToSection('partners')}
+        <a
+          href="/work-with-us"
           className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#2D6EFF] transition-colors tracking-wide"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {t.hero.cta1}
-        </button>
+        </a>
         <button
           onClick={() => scrollToSection('community')}
           className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#7B3FE4] transition-colors tracking-wide"
