@@ -6,6 +6,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 export function DynamicIslandHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, lang, setLang } = useLanguage();
+  const isHome = window.location.pathname === '/';
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -38,14 +39,16 @@ export function DynamicIslandHeader() {
         >
           <a
             href="/"
-            className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
+            className="flex items-center flex-shrink-0 transition-opacity"
+            style={{ opacity: isHome ? 1 : 0.55 }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = isHome ? '1' : '0.55')}
           >
             <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-10 md:h-12 w-auto" />
           </a>
 
           <div className="hidden md:flex items-center gap-6">
             {[
-              { label: t.header.manifest, id: 'manifesto' },
               { label: t.header.tools, id: 'tech-arsenal' },
               { label: t.header.team, id: 'team-section' },
             ].map((item) => (
@@ -142,7 +145,6 @@ export function DynamicIslandHeader() {
           onClick={() => setMobileMenuOpen(false)}
         >
           {[
-            { label: t.header.manifest, id: 'manifesto' },
             { label: t.header.tools, id: 'tech-arsenal' },
             { label: t.header.team, id: 'team-section' },
           ].map((item) => (

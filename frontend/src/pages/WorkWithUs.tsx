@@ -124,7 +124,7 @@ export function WorkWithUs() {
                 textShadow: '0 2px 24px rgba(0,0,0,0.95)',
               }}
             >
-              <span className="block italic" style={{ color: 'rgba(232,232,240,0.7)', fontWeight: 400, fontSize: '0.9em' }}>
+              <span className="block whitespace-nowrap italic" style={{ color: 'rgba(232,232,240,0.7)', fontWeight: 400, fontSize: '0.9em' }}>
                 {w.hero.headlineLine1}
               </span>
               <span className="block whitespace-nowrap">{w.hero.headlineLine2}</span>

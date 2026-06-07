@@ -531,7 +531,7 @@ export const translations = {
         card4Desc: 'Reconstituiri 3D de precizie pentru arhitectură, patrimoniu și real estate.',
       },
       events: {
-        title: 'Evenimentul dvs., cu tech adevărat.',
+        title: 'Evenimentul dvs., cu tech interactiv.',
         body: 'Aducem tech-ul în evenimentul dvs. — video mapping pe fațadă, instalații interactive în sală, AI concierge pentru participanți, urban game activat în perimetrul locației. De la conferințe corporate la festivaluri publice.',
         card1Title: 'Activation',
         card1Desc: 'O instalație sau experiență AR punctuală la evenimentul dvs.',
