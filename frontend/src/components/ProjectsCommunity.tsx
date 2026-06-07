@@ -10,8 +10,8 @@ const statusColors: Record<string, string> = {
   'În Dezvoltare': '#E8E8F0',
   'Seeking Partners': '#2D6EFF',
   'Căutăm Parteneri': '#2D6EFF',
-  'Seeking Sponsors': '#7B3FE4',
-  'Căutăm Sponsori': '#7B3FE4',
+  'Seeking Sponsors': '#0EA5E9',
+  'Căutăm Sponsori': '#0EA5E9',
 };
 
 export function ProjectsCommunity() {

@@ -93,14 +93,14 @@ export const translations = {
         {
           num: '02',
           title: 'Caravana ScapeLabs',
-          desc: 'Academy adus la tine: mergem în licee la nivel național cu workshop-uri (nu doar AI) — așa ne descoperă studenții și ajung la Academy (online la început, căutăm un spațiu printr-un parteneriat).',
-          status: 'Scriere Document UX',
+          desc: 'Academy adus la tine: mergem în licee la nivel național cu workshop-uri — așa ne descoperă studenții și ajung la Academy (online la început, căutăm un spațiu printr-un parteneriat).',
+          status: 'Căutăm Sponsori',
         },
         {
           num: '03',
           title: 'PlayBooks',
           desc: 'Manuale de teoria muzicii cu lecții interactive gamificate și conținut video însoțitor.',
-          status: 'În Dezvoltare',
+          status: 'Căutăm Sponsori',
         },
         {
           num: '04',
@@ -126,16 +126,32 @@ export const translations = {
       cta1: '→ Aplică la Academy',
       cta2: '→ Vezi roluri disponibile',
     },
-    ecosystem: {
-      title: 'Cum Funcționează Sistemul',
-      nodes: [
-        { id: 'lab', label: 'ScapeLabs Lab', tooltip: 'Nucleul R&D — de unde pornesc toate proiectele.' },
-        { id: 'eu', label: 'Finanțare EU / Erasmus', tooltip: 'Multiplicatori de finanțare. Fiecare 1 EUR partener poate debloca 3-5x prin co-finanțare europeană.' },
-        { id: 'partners', label: 'Parteneri', tooltip: 'Școli, primării, corporații și instituții culturale — fiecare tip deblochează un flux de finanțare diferit.' },
-        { id: 'ai', label: 'Agenți AI', tooltip: 'Pipeline-urile noastre agentice reduc timpul de producție cu 10x — campania ta intră live mai rapid și mai ieftin.' },
-        { id: 'city', label: 'Oraș / Impact', tooltip: 'Rezultatul final: comunități mai inteligente, mai implicate și mai bine conectate.' },
+    community: {
+      title: 'Comunitatea ScapeLabs',
+      intro: 'Deschisă tuturor celor pasionați de tehnologie, inovație sau educație — indiferent dacă ești student, profesionist sau pur și simplu curios. ScapeLabs este și o rețea vie de oameni care vor să se conecteze, să colaboreze și să fie expuși la oportunități reale.',
+      pillars: [
+        {
+          title: 'Spațiu Deschis',
+          desc: 'Nu trebuie să fii developer. Dacă ești curios despre tehnologie, urban computing sau educație, locul tău e aici. Participi la workshop-uri și spații online unde ideile devin proiecte reale.',
+        },
+        {
+          title: 'Acces Exclusiv & Beta',
+          desc: 'Membrii comunității primesc acces timpuriu la proiectele, toolurile și experiențele ScapeLabs înainte de lansarea publică. Fii primul care testează și modelează ce construim.',
+        },
+        {
+          title: 'Rețeaua Din Interior',
+          desc: 'Participanții din Academy, voluntarii activi și echipele de proiect fac parte din aceeași rețea. Accesul la oamenii din interior este unul dintre privilegiile reale ale comunității.',
+        },
+        {
+          title: 'Strategie Erasmus+ & Mobilitate EU',
+          desc: 'Valorificăm activ programele Erasmus+ pentru a trimite cei mai activi membri în Europa — cu travel gratuit, formare profesională și networking internațional. Construim un pipeline care transformă talentul local în contribuitori europeni.',
+        },
+        {
+          title: 'Corpul European de Solidaritate',
+          desc: 'Prin ESC putem găzdui voluntari internaționali din toată Europa sau finanța munca contribuitorilor noștri prin fonduri europene — o altă cale prin care implicarea se transformă în valoare reală.',
+        },
       ],
-      bottomLine: 'Nu operăm în vid. Arhitectăm rețeaua.',
+      cta: '→ Alătură-te Comunității',
     },
     teamBoard: {
       title: 'Oamenii din spatele proiectelor',
@@ -475,14 +491,14 @@ export const translations = {
         {
           num: '02',
           title: 'ScapeLabs Caravan',
-          desc: 'The Academy brought to you: we go into high schools nationally with workshops (not just AI) — it\'s how students discover us and join the Academy (online at first, while we seek a space through a partnership).',
-          status: 'Writing UX Document',
+          desc: 'The Academy brought to you: we go into high schools nationally with workshops — it\'s how students discover us and join the Academy (online at first, while we seek a space through a partnership).',
+          status: 'Seeking Sponsors',
         },
         {
           num: '03',
           title: 'PlayBooks',
           desc: 'Music theory textbooks with interactive gamified lessons and companion video content.',
-          status: 'In Development',
+          status: 'Seeking Sponsors',
         },
         {
           num: '04',
@@ -508,16 +524,32 @@ export const translations = {
       cta1: '→ Apply to the Academy',
       cta2: '→ See open roles',
     },
-    ecosystem: {
-      title: 'How the System Works',
-      nodes: [
-        { id: 'lab', label: 'ScapeLabs Lab', tooltip: 'The R&D core — where all projects originate.' },
-        { id: 'eu', label: 'EU / Erasmus Funding', tooltip: 'Funding multipliers. Every 1 EUR of partner money can unlock 3–5x through EU co-financing.' },
-        { id: 'partners', label: 'Partners', tooltip: 'Schools, municipalities, corporations and cultural institutions — each type unlocks a different funding stream.' },
-        { id: 'ai', label: 'AI Agents', tooltip: 'Our agentic pipelines cut production time by 10x — your campaign goes live faster and cheaper.' },
-        { id: 'city', label: 'City / Impact', tooltip: 'The end result: smarter, more engaged, better-connected communities.' },
+    community: {
+      title: 'The ScapeLabs Community',
+      intro: 'Open to everyone passionate about technology, innovation or education — whether you are a student, a professional, or just curious. ScapeLabs is also a living network of people who want to connect, collaborate, and be exposed to real opportunities.',
+      pillars: [
+        {
+          title: 'Open to All',
+          desc: 'You don\'t need to be a developer. If you\'re curious about technology, urban computing or education, you belong here. Join workshops and online spaces where ideas turn into real projects.',
+        },
+        {
+          title: 'Exclusive & Beta Access',
+          desc: 'Community members get early access to ScapeLabs projects, tools and experiences before public launch. Be the first to test, give feedback, and shape what we build.',
+        },
+        {
+          title: 'The Insider Network',
+          desc: 'Academy participants, active volunteers, and project teams are all part of the same network. Access to the people on the inside is one of the real privileges of being in the community.',
+        },
+        {
+          title: 'Erasmus+ & EU Mobility Strategy',
+          desc: 'We actively leverage Erasmus+ programmes to send our most active members across Europe — with free travel, professional training and international networking. We are building a pipeline that turns local talent into European contributors.',
+        },
+        {
+          title: 'European Solidarity Corps',
+          desc: 'Through the ESC programme we can host international volunteers from across Europe or fund the work of our own contributors through European grants — another way engagement converts into real value.',
+        },
       ],
-      bottomLine: "We don't operate in a vacuum. We architect the network.",
+      cta: '→ Join the Community',
     },
     teamBoard: {
       title: 'The people behind the builds',

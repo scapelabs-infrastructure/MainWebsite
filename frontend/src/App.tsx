@@ -4,7 +4,7 @@ import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { TechArsenal } from './components/TechArsenal';
 import { ProjectsCommunity } from './components/ProjectsCommunity';
-import { Ecosystem } from './components/Ecosystem';
+import { Community } from './components/Community';
 import { Team } from './components/Team';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
@@ -69,7 +69,7 @@ export default function App() {
       <Manifesto />
       <TechArsenal />
       <ProjectsCommunity />
-      <Ecosystem />
+      <Community />
       <Team />
       <FinalCTA />
       <Footer />

@@ -4,8 +4,8 @@ import { useLanguage } from '../i18n/LanguageContext';
 const memberImages = [
   'https://scapelabs.io/media/association/team/1.jpg',
   'https://scapelabs.io/media/association/team/2.jpg',
-  'https://scapelabs.io/media/association/team/3.jpg',
   'https://scapelabs.io/media/association/team/4.jpg',
+  'https://scapelabs.io/media/association/team/3.jpg',
   'https://scapelabs.io/media/association/team/5.jpg',
   'https://scapelabs.io/media/association/team/6.jpg',
   'https://scapelabs.io/media/association/team/7.jpg',
@@ -105,40 +105,6 @@ export function Team() {
               ))}
             </div>
           </motion.div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {members.slice(4).map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.06, ease: 'easeOut' }}
-              whileHover={{ y: -4 }}
-              className="group relative rounded-xl overflow-hidden"
-              style={{ border: '1px solid rgba(232,232,240,0.07)' }}
-            >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(8,8,16,0.95) 100%)' }}
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-[#E8E8F0] font-semibold text-xs">{member.name}</p>
-                <p className="text-[#E8E8F0]/40 text-xs mt-0.5" style={{ fontSize: '10px' }}>{member.role}</p>
-                <p className="text-[#2D6EFF] mt-1 leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontSize: '9px' }}>
-                  {member.advantage}
-                </p>
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
