@@ -14,12 +14,14 @@ export function Hero() {
         <NeonScene3D />
       </div>
 
-      {/* dark radial scrim to lift text off the neon scene */}
+      {/* darkening scrim + soft blur panel to lift text off the neon scene */}
       <div
-        className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 z-[5] w-[min(90vw,900px)] h-[70vh] pointer-events-none"
+        className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-[5] w-[min(94vw,1000px)] h-[78vh] pointer-events-none rounded-[40%]"
         style={{
           background:
-            'radial-gradient(closest-side, rgba(6,6,15,0.72) 0%, rgba(6,6,15,0.45) 45%, transparent 78%)',
+            'radial-gradient(closest-side, rgba(6,6,15,0.9) 0%, rgba(6,6,15,0.78) 38%, rgba(6,6,15,0.4) 66%, transparent 82%)',
+          backdropFilter: 'blur(3px)',
+          WebkitBackdropFilter: 'blur(3px)',
         }}
       />
 
@@ -33,12 +35,12 @@ export function Hero() {
         </div>
 
         <h1
-          className="mb-7 uppercase font-extrabold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto"
+          className="mb-6 uppercase font-extrabold text-white text-3xl md:text-5xl lg:text-6xl max-w-3xl mx-auto"
           style={{
             fontFamily: "'Inter', sans-serif",
             letterSpacing: '-0.02em',
-            lineHeight: 1.05,
-            textShadow: '0 4px 40px rgba(0,0,0,0.7)',
+            lineHeight: 1.08,
+            textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
           }}
         >
           {t.hero.headline}
