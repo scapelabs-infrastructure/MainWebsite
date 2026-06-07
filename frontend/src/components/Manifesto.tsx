@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
-  'https://scapelabs.io/media/association/team/1.jpg',
-  'https://scapelabs.io/media/association/team/2.jpg',
-  'https://scapelabs.io/media/association/team/3.jpg',
-  'https://scapelabs.io/media/association/team/4.jpg',
+  '/project-mapping.png',
+  '/project-hunt.png',
+  '/project-robot.png',
+  '/vision-bucharest.png',
 ];
 
 export function Manifesto() {
@@ -55,8 +55,11 @@ export function Manifesto() {
               </p>
 
               <p
-                className="text-[#E8E8F0]/40 text-sm italic"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-[#E8E8F0] text-lg md:text-xl italic"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  textShadow: '0 1px 12px rgba(45,110,255,0.2)',
+                }}
               >
                 {m.founderNote}
               </p>

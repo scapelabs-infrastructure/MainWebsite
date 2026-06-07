@@ -3,12 +3,12 @@ name: Font convention
 description: Which fonts go where on the ScapeLabs site — recurring source of confusion.
 ---
 
-**Rule:** Inter is the default for everything. Playfair Display Italic is used only for 3 specific accent elements.
+**Rule:** Inter is the default for everything. Playfair Display Italic is now used in ONLY ONE place.
 
-**Playfair Display Italic — approved locations:**
-1. `Hero.tsx` — the italic subtitle above the main title ("The R&D Lab")
-2. `Hero.tsx` — the italic colored accent line below the main title ("as a Platform.")
-3. `Manifesto.tsx` — founder signature quote ("— Laris Marcu, Founder & President...")
+**Playfair Display Italic — approved location:**
+1. `Manifesto.tsx` — founder signature quote ("— Laris Marcu, ...")
+
+**Hero is now ALL Inter (no Playfair):** the headline is bold uppercase Inter, rendered as two `<span className="block">` lines (line2 `whitespace-nowrap` with a `clamp()` font-size so the long line never wraps and still fits ~320px phones). The user explicitly overrode the earlier "Playfair for hero subtitle/accent" rule — do NOT re-introduce Playfair or italic/gradient into the hero.
 
 **Inter — everything else:**
 - All section h2/h3 titles

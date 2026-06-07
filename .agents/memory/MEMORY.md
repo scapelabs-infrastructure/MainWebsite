@@ -1,2 +1,2 @@
-- [Font convention](font-convention.md) — Inter everywhere except 3 specific Playfair Display Italic accent elements; all section titles/headers must be Inter.
-- [Hero 3D concept](hero-3d-concept.md) — hero must be a LITERAL park (alley, robots, kiosks, projection mapping, treasure hunt, cultural corner); user rejects abstract grids/HUD.
+- [Font convention](font-convention.md) — Inter everywhere; Playfair Italic now ONLY for Manifesto founder signature; hero is all-Inter bold uppercase (no Playfair).
+- [Hero 3D concept](hero-3d-concept.md) — hero uses an ABSTRACT neon 3D scene (NeonScene3D.tsx); supersedes the older literal-park concept.

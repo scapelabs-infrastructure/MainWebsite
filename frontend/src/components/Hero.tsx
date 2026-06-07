@@ -33,15 +33,17 @@ export function Hero() {
         </div>
 
         <h1
-          className="mb-6 uppercase font-extrabold text-white text-3xl md:text-5xl lg:text-6xl max-w-3xl mx-auto"
+          className="mb-6 uppercase font-extrabold text-white max-w-5xl mx-auto"
           style={{
             fontFamily: "'Inter', sans-serif",
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.03em',
             lineHeight: 1.08,
+            fontSize: 'clamp(0.85rem, 5vw, 3.5rem)',
             textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
           }}
         >
-          {t.hero.headline}
+          <span className="block">{t.hero.headlineLine1}</span>
+          <span className="block whitespace-nowrap">{t.hero.headlineLine2}</span>
         </h1>
 
         <p
