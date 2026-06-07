@@ -7,10 +7,10 @@ import { PartnerModal } from './Partners';
 const cardIcons = [Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2];
 
 const partners = [
-  { name: 'Asociația Escape Project', logo: '/partner-escape.png' },
-  { name: 'ASER', logo: '/partner-aser.png' },
-  { name: 'Străzi pentru Oameni', logo: '/partner-strazi.png' },
-  { name: 'ASPA', logo: '/partner-aspa.png' },
+  { name: 'Asociația Escape Project', logo: '/partner-escape.png', url: 'https://www.instagram.com/_escape_project_/' },
+  { name: 'ASER', logo: '/partner-aser.png', url: 'https://www.instagram.com/aserbucuresti/' },
+  { name: 'Străzi pentru Oameni', logo: '/partner-strazi.png', url: 'https://strazipentruoameni.net/' },
+  { name: 'ASPA', logo: '/partner-aspa.png', url: 'https://aspa.ro/' },
 ];
 
 export function TechArsenal() {
@@ -130,12 +130,20 @@ export function TechArsenal() {
                 transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
                 className="flex items-center justify-center h-16 md:h-20"
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  loading="lazy"
-                  className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain opacity-70 transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
-                />
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={partner.name}
+                  className="flex items-center justify-center h-full"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    loading="lazy"
+                    className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain opacity-70 transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
+                  />
+                </a>
               </motion.div>
             ))}
           </div>
