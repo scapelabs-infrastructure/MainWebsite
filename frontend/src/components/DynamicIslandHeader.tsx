@@ -8,11 +8,8 @@ export function DynamicIslandHeader() {
   const { t, lang, setLang } = useLanguage();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -20,81 +17,91 @@ export function DynamicIslandHeader() {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:right-auto z-50 md:w-auto max-w-5xl"
       >
-        <nav className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-full px-4 md:px-6 py-3 md:py-3 flex items-center justify-between md:justify-start gap-3 md:gap-8">
-          <button 
+        <nav
+          className="flex items-center justify-between md:justify-start gap-3 md:gap-8 px-4 md:px-6 py-3 rounded-full"
+          style={{
+            background: 'rgba(8,8,16,0.75)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(232,232,240,0.08)',
+          }}
+        >
+          <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0"
+            className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
           >
-            <img 
-              src="/ScapeLabs-Logo.png" 
-              alt="ScapeLabs"
-              className="h-12 md:h-14 w-auto"
-            />
+            <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-10 md:h-12 w-auto" />
           </button>
 
           <div className="hidden md:flex items-center gap-6">
-            <button
-              onClick={() => scrollToSection('manifesto')}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {t.header.manifest}
-            </button>
-            <button
-              onClick={() => scrollToSection('concepts')}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {t.header.projects}
-            </button>
-            <button
-              onClick={() => scrollToSection('team-section')}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {t.header.team}
-            </button>
-            <button
-              onClick={() => scrollToSection('vibe-section')}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {t.header.volunteer}
-            </button>
+            {[
+              { label: t.header.manifest, id: 'manifesto' },
+              { label: t.header.projects, id: 'community' },
+              { label: t.header.team, id: 'team-section' },
+              { label: t.header.academy, id: 'community' },
+            ].map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
+                className="text-sm font-medium transition-colors"
+                style={{ color: 'rgba(232,232,240,0.6)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#E8E8F0')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,232,240,0.6)')}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
-              className="px-3 py-1.5 border border-white/20 text-white/60 hover:text-white hover:border-[#00F0FF] text-xs font-mono rounded-full transition-all"
-              title="Switch language"
+              className="px-3 py-1.5 rounded-full text-xs font-mono transition-all"
+              style={{
+                border: '1px solid rgba(232,232,240,0.12)',
+                color: 'rgba(232,232,240,0.4)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = '#E8E8F0';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = '#2D6EFF';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = 'rgba(232,232,240,0.4)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(232,232,240,0.12)';
+              }}
             >
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>
-            <button
-              onClick={() => scrollToSection('voluntariat')}
-              className="px-5 py-2 bg-[#00F0FF] text-[#030303] text-sm font-bold rounded-full hover:scale-105 transition-transform"
+            <a
+              href="/onboarding"
+              className="px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
             >
               {t.header.joinTeam}
-            </button>
+            </a>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
-              className="px-2 py-1 border border-white/20 text-white/60 hover:text-white text-xs font-mono rounded-full transition-all"
+              className="px-2 py-1 rounded-full text-xs font-mono transition-all"
+              style={{ border: '1px solid rgba(232,232,240,0.12)', color: 'rgba(232,232,240,0.4)' }}
             >
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>
-            <button
-              onClick={() => scrollToSection('voluntariat')}
-              className="px-3 py-1.5 bg-[#00F0FF] text-[#030303] text-xs font-bold rounded-full hover:scale-105 transition-transform whitespace-nowrap"
+            <a
+              href="/onboarding"
+              className="px-3 py-1.5 rounded-full text-xs font-semibold text-white whitespace-nowrap"
+              style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
             >
               {t.header.joinTeam}
-            </button>
-
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-white/80 hover:text-white transition-colors"
+              className="p-1.5 transition-colors"
+              style={{ color: 'rgba(232,232,240,0.6)' }}
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -104,42 +111,38 @@ export function DynamicIslandHeader() {
 
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed top-20 left-1/2 -translate-x-1/2 z-40 w-[135%] max-w-[540px] bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col items-center justify-center gap-10 py-24 px-10"
+          exit={{ opacity: 0, y: -16 }}
+          className="fixed top-20 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-sm rounded-2xl flex flex-col items-center justify-center gap-8 py-16 px-8"
+          style={{
+            background: 'rgba(8,8,16,0.97)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(232,232,240,0.08)',
+          }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <button
-            onClick={() => scrollToSection('manifesto')}
-            className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
-          >
-            {t.header.manifest}
-          </button>
-          <button
-            onClick={() => scrollToSection('concepts')}
-            className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
-          >
-            {t.header.projects}
-          </button>
-          <button
-            onClick={() => scrollToSection('team-section')}
-            className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
-          >
-            {t.header.team}
-          </button>
-          <button
-            onClick={() => scrollToSection('vibe-section')}
-            className="text-3xl font-medium text-white/80 hover:text-white transition-colors"
-          >
-            {t.header.volunteer}
-          </button>
-          <button
-            onClick={() => scrollToSection('voluntariat')}
-            className="px-10 py-5 bg-[#00F0FF] text-[#030303] text-xl font-bold rounded-full hover:scale-105 transition-transform"
+          {[
+            { label: t.header.manifest, id: 'manifesto' },
+            { label: t.header.projects, id: 'community' },
+            { label: t.header.team, id: 'team-section' },
+            { label: t.header.academy, id: 'community' },
+          ].map((item) => (
+            <button
+              key={item.label}
+              onClick={() => scrollToSection(item.id)}
+              className="text-2xl font-medium text-[#E8E8F0]/70 hover:text-[#E8E8F0] transition-colors"
+            >
+              {item.label}
+            </button>
+          ))}
+          <a
+            href="/onboarding"
+            className="px-10 py-4 rounded-full text-lg font-semibold text-white"
+            style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
           >
             {t.header.joinTeam}
-          </button>
+          </a>
         </motion.div>
       )}
     </>

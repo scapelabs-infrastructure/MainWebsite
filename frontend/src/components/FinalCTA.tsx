@@ -1,74 +1,83 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface FinalCTAProps {
-  onRecruitmentClick: () => void;
-  onPartnerClick: () => void;
-}
-
-export function FinalCTA({ onRecruitmentClick, onPartnerClick }: FinalCTAProps) {
+export function FinalCTA() {
   const { t } = useLanguage();
+  const cta = t.finalCtaNew;
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <section className="py-24 md:py-32 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#FF003C]/10 to-[#030303] opacity-50" />
-      
-      <div className="absolute inset-0 opacity-10">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,0,60,0.5) 1px, transparent 0)',
-            backgroundSize: '50px 50px',
-          }}
-        />
-      </div>
-
-      <div className="max-w-5xl mx-auto relative text-center">
+    <section className="relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="relative flex flex-col justify-center px-10 py-20 md:px-16 md:py-24"
+          style={{ background: 'rgba(45,110,255,0.06)', borderTop: '1px solid rgba(45,110,255,0.1)' }}
         >
-          <motion.h2 
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-16 leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            style={{ textShadow: '0 0 40px rgba(255,0,60,0.6), 0 0 80px rgba(0,240,255,0.4)' }}
-          >
-            {t.finalCta.title}
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-          >
-            <motion.button
-              onClick={onRecruitmentClick}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-12 py-6 bg-[#00F0FF] text-[#030303] font-black text-xl rounded-sm uppercase tracking-wide overflow-hidden transition-all"
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 60% 60% at 30% 50%, rgba(45,110,255,0.08) 0%, transparent 70%)',
+            }}
+          />
+          <div className="relative">
+            <p
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E8E8F0] mb-4 leading-tight"
+              style={{ fontFamily: "'DM Serif Display', serif" }}
             >
-              <div className="absolute inset-0 bg-[#00F0FF] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity" />
-              <span className="relative flex items-center gap-2">
-                {t.finalCta.volunteer}
-              </span>
-            </motion.button>
-
-            <motion.button
-              onClick={onPartnerClick}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 border-2 border-[#FF003C] text-[#FF003C] bg-[#FF003C]/10 backdrop-blur-lg font-black text-xl rounded-sm uppercase tracking-wide hover:bg-[#FF003C]/20 transition-all"
+              {cta.leftTitle}
+            </p>
+            <p className="text-[#E8E8F0]/60 text-sm md:text-base leading-relaxed mb-8 max-w-sm">
+              {cta.leftBody}
+            </p>
+            <button
+              onClick={() => scrollToSection('partners')}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D6EFF] hover:text-white transition-colors group"
             >
-              {t.finalCta.partner}
-            </motion.button>
-          </motion.div>
+              {cta.leftCta}
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+          className="relative flex flex-col justify-center px-10 py-20 md:px-16 md:py-24"
+          style={{ background: 'rgba(123,63,228,0.06)', borderTop: '1px solid rgba(123,63,228,0.1)' }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 60% 60% at 70% 50%, rgba(123,63,228,0.08) 0%, transparent 70%)',
+            }}
+          />
+          <div className="relative">
+            <p
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E8E8F0] mb-4 leading-tight"
+              style={{ fontFamily: "'DM Serif Display', serif" }}
+            >
+              {cta.rightTitle}
+            </p>
+            <p className="text-[#E8E8F0]/60 text-sm md:text-base leading-relaxed mb-8 max-w-sm">
+              {cta.rightBody}
+            </p>
+            <a
+              href="/onboarding"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#7B3FE4] hover:text-white transition-colors group"
+            >
+              {cta.rightCta}
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

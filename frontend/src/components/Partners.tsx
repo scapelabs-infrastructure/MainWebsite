@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Building, Sparkles, CheckCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import backend from '~backend/client';
 import { useLanguage } from '../i18n/LanguageContext';
-
-const partnerIcons = [GraduationCap, Building, Sparkles];
-const partnerColors = ['#00F0FF', '#FF003C', '#00F0FF'];
 
 interface PartnerModalProps {
   isOpen: boolean;
@@ -16,12 +13,7 @@ interface PartnerModalProps {
 function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
   const { t, lang } = useLanguage();
   const m = t.partners.modal;
-  const [formData, setFormData] = useState({
-    organizationName: '',
-    contactName: '',
-    email: '',
-    phone: '',
-  });
+  const [formData, setFormData] = useState({ organizationName: '', contactName: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -30,12 +22,9 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (isSubmitting) return;
-    
     setError('');
     setIsSubmitting(true);
-
     try {
       const response = await backend.forms.submit({
         formType: 'partner',
@@ -46,7 +35,6 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
         phone: formData.phone,
         language: lang,
       });
-
       if (response.success) {
         setSubmitted(true);
         setFormData({ organizationName: '', contactName: '', email: '', phone: '' });
@@ -54,39 +42,36 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
         setError(m.errorGeneric);
       }
     } catch (err) {
-      console.error('Partner form error:', err);
-      const errorMessage = err instanceof Error ? err.message : m.errorGeneric;
-      setError(errorMessage);
+      setError(err instanceof Error ? err.message : m.errorGeneric);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const canSubmit = formData.contactName && formData.email && formData.phone && (type === 'generic' || formData.organizationName);
+  const canSubmit =
+    formData.contactName && formData.email && formData.phone && (type === 'generic' || formData.organizationName);
 
   if (submitted) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-        
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="relative w-full max-w-lg bg-[#0a0a0a] border border-white/20 rounded-lg p-8 shadow-2xl text-center"
+          className="relative w-full max-w-lg rounded-2xl p-8 shadow-2xl text-center"
+          style={{ background: '#0d0d1a', border: '1px solid rgba(45,110,255,0.2)' }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="w-20 h-20 bg-[#00F0FF] rounded-full mx-auto flex items-center justify-center mb-6">
-            <CheckCircle size={40} className="text-[#030303]" />
+          <div className="w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6"
+            style={{ background: 'rgba(45,110,255,0.15)', border: '1px solid rgba(45,110,255,0.3)' }}>
+            <CheckCircle size={32} className="text-[#2D6EFF]" />
           </div>
-          <h3 className="text-3xl font-bold mb-4 text-[#00F0FF]">
-            {m.successTitle}
-          </h3>
-          <p className="text-[#888888] mb-8">
-            {m.successMsg}
-          </p>
+          <h3 className="text-2xl font-bold mb-3 text-[#E8E8F0]">{m.successTitle}</h3>
+          <p className="text-[#E8E8F0]/50 mb-8">{m.successMsg}</p>
           <button
             onClick={onClose}
-            className="px-8 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all"
+            className="px-8 py-3 rounded-lg font-semibold text-white text-sm"
+            style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
           >
             {m.close}
           </button>
@@ -98,111 +83,114 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-      
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        initial={{ opacity: 0, scale: 0.95, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ duration: 0.3 }}
-        className="relative w-full max-w-lg bg-[#0a0a0a] border border-white/20 rounded-lg p-8 shadow-2xl max-h-[90vh] overflow-y-auto"
+        transition={{ duration: 0.25 }}
+        className="relative w-full max-w-lg rounded-2xl p-8 shadow-2xl max-h-[90vh] overflow-y-auto"
+        style={{ background: '#0d0d1a', border: '1px solid rgba(45,110,255,0.15)' }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#888888] hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-[#E8E8F0]/30 hover:text-[#E8E8F0] transition-colors"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
         </button>
 
-        <h3 className="text-2xl font-bold mb-2">
-          <span className="text-[#00F0FF]">{m.titles[type as keyof typeof m.titles] || m.titles.generic}</span>
+        <h3 className="text-lg font-bold mb-1 text-[#E8E8F0]">
+          {m.titles[type as keyof typeof m.titles] || m.titles.generic}
         </h3>
-        
-        <p className="text-[#888888] mb-6">
+        <p className="text-[#E8E8F0]/40 text-sm mb-6">
           {m.descriptions[type as keyof typeof m.descriptions] || m.descriptions.generic}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {type !== 'generic' && (
             <div>
-              <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.orgName}</label>
+              <label className="block text-xs font-medium text-[#E8E8F0]/50 mb-1.5 uppercase tracking-wide">{m.orgName}</label>
               <input
                 type="text"
                 value={formData.organizationName}
                 onChange={(e) => setFormData({ ...formData, organizationName: e.target.value })}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
+                className="w-full px-4 py-3 rounded-lg text-sm text-[#E8E8F0] placeholder:text-[#E8E8F0]/20 focus:outline-none transition-colors"
+                style={{ background: 'rgba(232,232,240,0.04)', border: '1px solid rgba(232,232,240,0.08)' }}
                 placeholder={m.orgPlaceholder}
                 required
                 disabled={isSubmitting}
               />
             </div>
           )}
-
           <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.contactName}</label>
+            <label className="block text-xs font-medium text-[#E8E8F0]/50 mb-1.5 uppercase tracking-wide">{m.contactName}</label>
             <input
               type="text"
               value={formData.contactName}
               onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
+              className="w-full px-4 py-3 rounded-lg text-sm text-[#E8E8F0] placeholder:text-[#E8E8F0]/20 focus:outline-none transition-colors"
+              style={{ background: 'rgba(232,232,240,0.04)', border: '1px solid rgba(232,232,240,0.08)' }}
               placeholder={m.contactPlaceholder}
               required
               disabled={isSubmitting}
             />
           </div>
-
-          <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.email}</label>
-            <input
-              type="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
-              placeholder="email@example.com"
-              required
-              disabled={isSubmitting}
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-[#CCCCCC] mb-2">{m.phone}</label>
-            <input
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder:text-[#666666] focus:outline-none focus:border-[#00F0FF] transition-colors"
-              placeholder="07xxxxxxxx"
-              required
-              disabled={isSubmitting}
-            />
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs font-medium text-[#E8E8F0]/50 mb-1.5 uppercase tracking-wide">{m.email}</label>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg text-sm text-[#E8E8F0] placeholder:text-[#E8E8F0]/20 focus:outline-none"
+                style={{ background: 'rgba(232,232,240,0.04)', border: '1px solid rgba(232,232,240,0.08)' }}
+                placeholder="email@org.com"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#E8E8F0]/50 mb-1.5 uppercase tracking-wide">{m.phone}</label>
+              <input
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg text-sm text-[#E8E8F0] placeholder:text-[#E8E8F0]/20 focus:outline-none"
+                style={{ background: 'rgba(232,232,240,0.04)', border: '1px solid rgba(232,232,240,0.08)' }}
+                placeholder="07xxxxxxxx"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
           </div>
 
           {error && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-4 bg-red-500/10 border border-red-500/50 rounded text-red-400 flex items-center gap-3"
+              className="p-3 rounded-lg flex items-center gap-2 text-sm"
+              style={{ background: 'rgba(255,80,80,0.08)', border: '1px solid rgba(255,80,80,0.2)', color: '#ff8080' }}
             >
-              <AlertCircle size={20} />
-              <span>{error}</span>
+              <AlertCircle size={16} />
+              {error}
             </motion.div>
           )}
 
           <button
             type="submit"
             disabled={!canSubmit || isSubmitting}
-            className="w-full px-6 py-4 bg-[#00F0FF] text-[#030303] font-bold rounded uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 rounded-lg font-semibold text-white text-sm tracking-wide disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+            style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
           >
             {isSubmitting ? m.submitting : m.submit}
           </button>
         </form>
 
-        <div className="mt-6 pt-6 border-t border-white/10 text-center">
-          <p className="text-sm text-[#888888]">
+        <div className="mt-5 pt-5 text-center" style={{ borderTop: '1px solid rgba(232,232,240,0.06)' }}>
+          <p className="text-xs text-[#E8E8F0]/30">
             {m.callDirect}{' '}
-            <a href="tel:+40750480100" className="text-[#00F0FF] hover:underline font-semibold">
+            <a href="tel:+40750480100" className="text-[#2D6EFF] hover:underline">
               0750480100
             </a>
           </p>
@@ -214,134 +202,59 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
 
 export function Partners() {
   const { t } = useLanguage();
+  const ps = t.partnersSection;
   const [modalType, setModalType] = useState<string | null>(null);
 
-  const partnerTypes = t.partners.partnerTypes.map((pt, i) => ({
-    ...pt,
-    icon: partnerIcons[i],
-    color: partnerColors[i],
-  }));
-
   return (
-    <section id="partners" className="py-24 md:py-32 px-6 relative overflow-hidden">
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00F0FF]/5 to-transparent"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+    <section id="partners" className="py-20 md:py-28 px-6 relative overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(180deg, transparent 0%, rgba(45,110,255,0.03) 50%, transparent 100%)',
+        }}
       />
 
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,240,255,0.3) 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="mb-12 text-center"
         >
-          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#00F0FF] to-transparent mx-auto mb-6" />
-          <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
-            {t.partners.title} <span className="text-[#00F0FF]">{t.partners.titleHighlight}</span>
-          </h2>
-          <p className="text-base md:text-xl text-[#888888] max-w-3xl mx-auto">
-            {t.partners.subtitle}
+          <p
+            className="text-xl md:text-2xl font-bold text-[#E8E8F0] mb-10"
+            style={{ fontFamily: "'DM Serif Display', serif" }}
+          >
+            {ps.tagline}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {partnerTypes.map((partner, index) => (
-            <motion.div
-              key={partner.title}
-              initial={{ opacity: 0, y: 50 }}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {ps.partners.map((partner, i) => (
+            <motion.button
+              key={partner.name}
+              onClick={() => setModalType('sponsor')}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05, ease: 'easeInOut' }}
-              whileHover={{ y: -10 }}
-              animate={{ y: 0 }}
-              className="group relative"
+              transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
+              whileHover={{ y: -4 }}
+              className="group relative text-left p-5 rounded-xl transition-all duration-300"
+              style={{
+                background: 'rgba(8,8,16,0.6)',
+                border: '1px solid rgba(232,232,240,0.07)',
+              }}
             >
-              <div 
-                className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
-                style={{ background: `radial-gradient(circle at center, ${partner.color}40, transparent)` }}
+              <div
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{ border: '1px solid rgba(45,110,255,0.25)' }}
               />
-
-              <div className="relative h-full p-6 md:p-10 bg-white/5 backdrop-blur-lg border border-white/10 group-hover:border-white/30 rounded-lg transition-all duration-500 flex flex-col">
-                <motion.div
-                  whileHover={{ 
-                    rotate: [0, -10, 10, -10, 0],
-                    scale: 1.1
-                  }}
-                  transition={{ duration: 0.6 }}
-                  className="mb-8"
-                >
-                  <partner.icon 
-                    className="w-16 h-16" 
-                    style={{ color: partner.color }}
-                    strokeWidth={1.5}
-                  />
-                </motion.div>
-
-                <h3 className="text-2xl font-bold mb-6 tracking-tight">
-                  {partner.title}
-                </h3>
-
-                <p className="text-[#CCCCCC] leading-relaxed mb-8 flex-grow text-base">
-                  {partner.description}
-                </p>
-
-                <motion.button
-                  onClick={() => setModalType(partner.type)}
-                  whileHover={{ scale: 1.05, x: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full px-6 py-4 border-2 font-semibold rounded-sm uppercase tracking-wide text-sm transition-all duration-300 group/btn"
-                  style={{ 
-                    borderColor: partner.color,
-                    color: partner.color
-                  }}
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    {partner.cta}
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      →
-                    </motion.span>
-                  </span>
-                </motion.button>
-              </div>
-            </motion.div>
+              <p className="font-bold text-[#E8E8F0] text-sm mb-2">{partner.name}</p>
+              <p className="text-[#E8E8F0]/40 text-xs leading-relaxed">{partner.phrase}</p>
+            </motion.button>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.15, ease: 'easeInOut' }}
-          className="mt-16 text-center"
-        >
-          <p className="text-[#888888] text-base md:text-lg mb-6">
-            {t.partners.customCollab}
-          </p>
-          <button
-            onClick={() => setModalType('generic')}
-            className="inline-block px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-[#00F0FF] to-[#FF003C] text-white font-bold text-base md:text-lg rounded-sm uppercase tracking-wide hover:shadow-lg hover:shadow-[#00F0FF]/30 transition-all"
-          >
-            {t.partners.contactDirect}
-          </button>
-        </motion.div>
       </div>
 
       <PartnerModal

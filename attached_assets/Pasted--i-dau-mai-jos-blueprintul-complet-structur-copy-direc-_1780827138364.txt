@@ -1,0 +1,284 @@
+
+
+Îți dau mai jos blueprintul complet: structură, copy direcție, UX, layout, ton vizual — totul în scris, gata de implementat.
+
+---
+
+# SCAPELABS — NEW HOMEPAGE: BLUEPRINT COMPLET
+
+---
+
+## SISTEM DE DESIGN GLOBAL
+
+**Paleta:** `#080810` (fundal absolut — aproape negru cu tentă indigo) + `#E8E8F0` (tipografie primară — alb cu tentă rece) + `#2D6EFF` (accent electric albastru) + `#7B3FE4` (accent secundar, violet adânc, folosit rar). Fără cyan-magenta. Fără verde matrix. Fără orice trădează "hacker aesthetic 2019."
+
+**Tipografie:** Display headlines în **Neue Haas Grotesk Display** sau **Editorial New** (serif italic pentru contrast neașteptat pe un site tech — asta e mișcarea diferențiatoare). Body copy în **DM Sans** sau **Instrument Sans** — neutral, curat, lizibil. Combinația display serif italic + grotesc clean e semnătura vizuală a studiourilor de top (Basement Studio, Lusion, Aktie Collective). Fuge instant de "generic AI site."
+
+**Principiu layout:** Nu există secțiuni "cutie peste cutie." Fiecare section break e o schimbare de ritm — fie densitate crescută, fie spațiu dramatic, fie o animație care reorganizează elementele pe ecran.
+
+**Canvas 3D:** Three.js sau React Three Fiber rulează permanent în fundal. Scena 3D nu e un "efect special" — e stratul de bază al site-ului. Conținutul plutește deasupra lui pe glassmorphism cards cu `backdrop-filter: blur(20px)` și `background: rgba(8,8,16,0.6)`.
+
+---
+
+## HOMEPAGE — SECȚIUNE CU SECȚIUNE
+
+---
+
+### 1. HERO
+
+**Ce se vede:**
+Scena 3D ocupă 100vh. Nu e un glob care se rotește aiurea. E un **city grid** — o rețea de linii care formează un skyline urban văzut de sus, izometric, cu noduri luminoase pulsând ușor. Gândește-te la un city planning wireframe care respiră. Nodurile reprezintă punctele de intervenție ScapeLabs: școli, muzee, spații publice - afisate 3D, cu sageti pornind din grid ul sky ului catre ele... vazut modern, interconectat, interactiv, clickable - si maybe niste reprezentari abstracte a projection mapping, ar, geolocatie, interactiuni cu ecrane, roboti
+
+Mouse-ul controlează rotația pe XYZ — subtil, 15-20 grade max. La scroll, orașul se "coboară" — camera zoomează în jos și intri în el.
+
+**Headline** (centrat, display font, 72-96px):
+> *The R&D Lab*
+> **Engineering the City**
+> *as a Platform.*
+
+Prima linie în serif italic, a doua în grotesc bold, a treia din nou în italic. Ritmul acesta vizual e intenționat — alternarea serif/sans face ca headline-ul să nu poată fi citit "în fugă." Îl oprești.
+
+**Subtext** (sub headline, max 2 rânduri, 18px, opacitate 70%):
+> ScapeLabs builds interactive experiences, AI systems and spatial computing tools that transform how cities teach, engage and grow.
+
+**Două CTA-uri** în dreapta jos, fixate like a HUD element:
+- `→ Enter as Partner` (link spre B2B page)
+- `→ Join the Lab` (link spre Join page)
+
+Nu sunt butoane centrate. Sunt anchorate vizual în colțul dreapta-jos ca un element de interfață, nu ca un "click here." Asta e diferența psihologică.
+
+**Fără:** tagline-uri "We are not just an NGO." Fără "System Online." Fără text care se scrie literă cu literă.
+
+---
+
+### 2. MANIFEST — scurt, vizual
+
+**Layout:** Split 50/50. Stânga — un singur card glassmorphism cu textul. Dreapta — o animație care rulează în loop: 4-5 fragmente de proiectele de pe site Q1 reale care se schimbă cu un crossfade lent. Nu un slider cu săgeți. O galerie care respiră singură.
+
+**Copy (stânga):**
+
+> **ScapeLabs converts public space into living infrastructure.**
+>
+> We engineer AR layers over cities, deploy AI guides inside museums, and build the apps that turn a school textbook into a 3D experience. Our lab operates at the intersection of spatial computing, applied AI and urban design — executing real projects, not concept decks.
+>
+> Founded in Bucharest. Built for Europe.
+
+**Notă de autor** sub text, mic, opacitate 50%:
+> — Laris Marcu, Founder & Technical Director
+
+Fără semnătură cu titlu pompos încastrat în bloc de text. Mic. Discret. Greutatea lui vine din context, nu din font size.
+
+---
+
+### 3. TECH ARSENAL — pentru non-tehnici + pitch sponsors
+
+**Titlu secțiune:**
+> **The Tools We Deploy**
+> *(and why they matter for your brand)*
+
+**Layout: Bento Grid asimetric.** 6 carduri, dimensiuni diferite. Nu sunt egale. Cel mai mare card (2x2) e pentru AR + Spatial Computing. Celelalte 5 sunt mai mici. Fiecare card are: o iconiță simplă (SVG, nu emoji), un titlu scurt de 2-3 cuvinte, o frază de 15-20 de cuvinte care explică impactul — nu tehnologia.
+Ai dreptate. Iată rescrise:
+
+---
+
+### CARD 01 — MARE
+**Augmented Reality**
+
+> Telefonul știe unde ești și ce privești. Punem un strat digital precis peste lumea reală — o pagină de manual devine o inimă care bate în 3D, o statuie capătă voce, un parc devine nivel de joc.
+
+*Reach maxim. Zero friction. Funcționează cu telefonul din buzunar.*
+
+---
+
+### CARD 02
+**Video Mapping Interactiv**
+
+> Transformăm fațadele clădirilor în ecrane vii de zeci de metri — controlate de telefoanele spectatorilor. Mulțimea nu privește. Participă.
+
+*Generează viral content organic. Oamenii filmează și distribuie singuri.*
+
+---
+
+### CARD 03
+**Agentic AI**
+
+> Sisteme care iau decizii și execută sarcini în lanț, fără intervenție umană. Ghid de muzeu vocal, concierge de eveniment, generator de campanii în timp real.
+
+*Reducem timpul de producție cu 10x.*
+
+---
+
+### CARD 04
+**Geofencing & GPS Triggering**
+
+> Aplicația știe când ai pășit în Piața Revoluției. Automat, la metru. Orașul devine un joc cu reguli invizibile, activate de locul în care ești.
+
+*Campaniile tale ajung exact când utilizatorul e în proximitatea brandului.*
+
+---
+
+### CARD 05
+**Digital Twins**
+
+> Reconstruim digital clădiri, cartiere sau obiecte la scară 1:1. Cartierul Uranus — demolat în anii '80 — există azi ca digital twin vizitabil în AR, construit de noi pentru Senatul României.
+
+*Categoria cu cel mai mare succes la finanțări europene.*
+
+---
+
+### CARD 06
+**Gamification & Urban Games**
+
+> Mecanicile din jocurile video aplicate spațiului real. Vizitezi un monument, deblochezi un badge. Rezolvi o misiune, urci în leaderboard. Orașul devine RPG.
+
+*Engagement cu 40-60% mai mare față de comunicarea clasică.*
+
+---
+
+
+**Sub grid, un separator vizual + frază pivot spre sponsors:**
+
+> Every project we deploy is a documented case study with measurable reach. For sponsors, this translates directly into CSR visibility with EU-grade reporting.
+
+Link text: `→ See how sponsorship works` (duce spre B2B page).
+
+Tonul acestei secțiuni nu e "look at our cool tools." E: "iată de ce suntem mai eficienți decât o agenție de marketing tradițională și de ce banii tăi fac mai mult zgomot prin noi."
+
+---
+
+### 4. PARTNERS — Social proof vizual
+
+**Nu o secțiune clasică cu logo-uri gri pe fundal alb.** E un rând de carduri mici cu: logo partner + o frază de impact de 8-10 cuvinte. Exemple:
+
+- **ASPA** 
+- **Străzi pentru Oameni** 
+- **ASER** 
+- ASOCIATIA ESCAPE PROJECT
+
+Fundalul acestei secțiuni e ușor mai deschis — un strat de gradient subtil care creează un "moment de respiro" vizual între secțiunile dense.
+
+Un rând de text mic deasupra logo-urilor:
+> **We don't pitch decks. We ship products.**
+
+---
+
+### 5. PROJECTS + COMMUNITY PITCH
+
+**Titlu secțiune:**
+> **What We're Building**
+
+**Layout: două coloane.** Stânga — proiectele active (cards verticale, stacked). Dreapta — pitch-ul comunității, sticky pe scroll, care "urmărește" lista de proiecte.
+
+**Stânga — Proiectele (format card):**
+
+Fiecare card are: număr (01, 02...), titlu, o linie de descriere, un tag de status (`Active / In Development / Seeking Partners`) și un tag de tip (`B2B / Grant / B2C`).
+
+- **01 — Calea Victoriei App** — AR urban layer over Bucharest's main pedestrian boulevard. `Writing UX Document 
+- **02 — Pawsitive App** — AI-assisted dog adoption platform with gamified onboarding. `Writing UX Document · Partner: ASPA`
+- **03 — Caravana ScapeLabs** — AI literacy workshops deployed in high schools nationally. `Active · Seeking Sponsors
+- **04 — PlayBooks** — Music theory textbooks with embedded AR lessons. `In Development · Seeking Sponsors
+
+**Dreapta — Community sticky panel:**
+
+The ScapeLabs Academy
+We bridge the gap between academic theory and high-end tech execution. The Academy is our upcoming educational incubator designed to train students in the technologies and marketing frameworks that universities do not teach.
+Applied Curriculum: Intensive tracks covering Unity3D, Spatial Computing, Agentic AI Integration, and CSR Marketing Strategy.
+Official University Internships: Structured pathways allowing university students to fully equate their mandatory practice hours through active learning and guided tasks.
+The Elite Pipeline: Graduation is competitive. The top-performing talents from each cohort are selected to collaborate directly on specific modules of our active B2B and cultural deployments, supervised by our core team.
+All active client builds are architected and deployed by senior industry specialists. The Academy serves as our exclusive talent incubator.
+
+Două butoane sub text:
+- `→ Apply to the Academy`
+- `→ See open roles`
+
+**Focus 50% Academy, 20% EU/Erasmus, 30% altele** — e respectat aici prin proporția de spațiu și ierarhia vizuală. Academy e sticky și dominant. EU-ul e menționat ca o frază în copy ("Erasmus-eligible for EU students"), nu ca o secțiune separată pe homepage.
+
+---
+
+### 6. ECOSYSTEM — animație de flux, nu text
+
+**Titlu secțiune:**
+> **How the System Works**
+
+**Layout: full-width canvas animat.** Nu e o infografie statică cu săgeți. E o diagramă de noduri vii, realizată în D3.js sau Three.js, cu 5 noduri centrale:
+
+```
+ScapeLabs Lab  →  EU / Erasmus Funding
+     ↓                    ↓
+  Partners      →      AI Agents
+     ↓
+  City / Impact
+```
+
+Nodurile se leagă cu linii animate (particule care curg de-a lungul conexiunilor, ca un flux de date). La hover pe fiecare nod, apare un tooltip cu o frază scurtă despre ce aduce acel nod în sistem.
+
+**La hover pe "EU / Erasmus":**
+> Funding multipliers. Every 1 EUR of partner money can unlock 3-5x through EU co-financing.
+
+**La hover pe "AI Agents":**
+> Our agentic pipelines cut production time by 10x — meaning your campaign goes live faster and cheaper.
+
+**La hover pe "Partners":**
+> Schools, municipalities, corporations and cultural institutions — each partner type unlocks a different funding stream.
+
+Sub diagramă, o singură frază bold:
+> **We don't operate in a vacuum. We architect the network.**
+
+---
+
+### 7. THE BOARD + UNFAIR ADVANTAGES
+
+**Nu e o secțiune cu poze de profil și titluri pompoase.** E un format editorial.
+
+**Titlu:**
+> **The people behind the builds**
+
+**Layout: stânga — text bloc mare. Dreapta — grid 2x2 cu membrii board-ului.**
+
+**Text bloc stânga:**
+> ScapeLabs started with an unfair advantage: a senior Spatial Computing engineer as founder, writing production Unity3D code since age 11, with experience architecting immersive experiences for museums, the Senate, and game publishers. - here add linkedin button /in/larismarcu ; The core team is made of specialists with international portfolios in immersive experiences, archviz, game design & development, teachers and marketing specialists. 
+
+**Grid dreapta** (4 carduri, board members):
+- Laris Marcu — same text as now
+- Alexandru Cinezan — same text as now
+- Baciu Stefan - same text as now
+- Thomas Schubert - same text as now
+- Rania Rahman - Student at Politehnica university (make the text better)
+- Armina Dinu - marketing intern
+- Alex Moisei - web developer and graphic designer
+- [+ restul]
+
+Fiecare card: nume bold, titlu mic, o singură frază de "unfair advantage" personală. Nu bio-uri. Nu "passionate about technology."
+
+---
+
+### 8. CTA FINAL — dual-track clar
+
+**Layout: split screen 50/50, fiecare jumătate cu fundal ușor diferit (unul mai cald, unul mai rece — creează separare psihologică).**
+
+**Stânga — Pentru parteneri:**
+> **You have the budget. We have the technology.**
+> Build a CSR campaign that actually reaches people — through AR, AI and documented EU-scale impact.
+> `→ Open B2B Deck`
+
+**Dreapta — Pentru comunitate:**
+> **You have the drive. We have the projects.**
+> Join the Academy or the team. Ship real products. Build a portfolio that skips the junior years.
+> `→ Join the Lab`
+
+**Fără footer cu "© 2026 ScapeLabs. SYSTEM ONLINE."**
+
+Footer-ul e simplu, mic, discret:
+```
+ScapeLabs Association · Bucharest, Romania
+contact@scapelabs.ro · partnership@scapelabs.ro
+Privacy · Terms
+```
+
+Și atât. Fără status indicators. Fără faze.
+
+---
+
+## REGULI UX GLOBALE
+
+**Scroll behavior:** Fiecare secțiune intră în viewport cu o animație diferită — nu toate "fade in from bottom." Alternezi: slide din stânga, scale up, reveal cu clip-path, opacity staggered pe copii. Varietatea asta face ca site-ul să pară viu, nu templateat.
