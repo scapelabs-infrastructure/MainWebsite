@@ -239,7 +239,7 @@ export function WorkWithUs() {
               </div>
 
               {/* 3 sponsor type cards */}
-              <div className="space-y-3">
+              <div className="space-y-3 mb-5">
                 {[
                   { title: w.csr.card1Title, desc: w.csr.card1Desc },
                   { title: w.csr.card2Title, desc: w.csr.card2Desc },
@@ -265,6 +265,29 @@ export function WorkWithUs() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Tax callout — zero cost */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="rounded-xl p-5 flex gap-4 items-start"
+                style={{
+                  background: `linear-gradient(135deg, ${GOLD}12 0%, ${GOLD}06 100%)`,
+                  border: `1px solid ${GOLD}55`,
+                }}
+              >
+                <span className="text-xl flex-shrink-0 mt-0.5">💡</span>
+                <div>
+                  <p className="text-sm font-bold mb-1.5" style={{ color: GOLD }}>
+                    {w.csr.taxBadge}
+                  </p>
+                  <p className="text-[#E8E8F0]/70 text-sm leading-relaxed">
+                    {w.csr.taxNote}
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>

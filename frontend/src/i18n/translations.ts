@@ -491,6 +491,8 @@ export const translations = {
         card2Desc: 'Contribui cu resurse tehnice sau financiare la infrastructura lab-ului. Acces la demo-uri exclusive și first look pe proiecte noi.',
         card3Title: 'Education Partner',
         card3Desc: 'Finanțezi Caravana ScapeLabs în licee. Brandul tău intră în 10–30 de școli cu un mesaj de responsabilitate socială autentic.',
+        taxBadge: 'Cost zero pentru compania ta',
+        taxNote: 'Poți finanța ScapeLabs fără niciun cost suplimentar prin mecanismul de sponsorizare: 20% din impozitul pe profit datorat, în limita a 0,75% din cifra de afaceri, se redirecționează direct către noi — banii pe care i-ai fi plătit oricum la stat.',
       },
       services: {
         title: 'Ce construim pentru clienți',
@@ -1056,6 +1058,8 @@ export const translations = {
         card2Desc: 'You contribute technical or financial resources to the lab\'s infrastructure. Exclusive demo access and first look at new projects.',
         card3Title: 'Education Partner',
         card3Desc: 'You fund the ScapeLabs Caravan in high schools. Your brand enters 10–30 schools with an authentic social responsibility message.',
+        taxBadge: 'Zero cost to your company',
+        taxNote: 'You can fund ScapeLabs at no extra cost via the sponsorship mechanism: up to 20% of your owed profit tax, capped at 0.75% of annual turnover, is redirected directly to us — money you would have paid to the state anyway.',
       },
       services: {
         title: 'What we build for clients',
