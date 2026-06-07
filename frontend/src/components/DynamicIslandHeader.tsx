@@ -48,7 +48,6 @@ export function DynamicIslandHeader() {
               { label: t.header.manifest, id: 'manifesto' },
               { label: t.header.tools, id: 'tech-arsenal' },
               { label: t.header.team, id: 'team-section' },
-              { label: t.header.academy, id: 'community' },
             ].map((item) => (
               <button
                 key={item.label}
@@ -61,6 +60,15 @@ export function DynamicIslandHeader() {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/join"
+              className="text-sm font-medium transition-colors"
+              style={{ color: 'rgba(232,232,240,0.6)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#E8E8F0')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,232,240,0.6)')}
+            >
+              {t.header.academy}
+            </a>
             <a
               href="/work-with-us"
               className="text-sm font-medium whitespace-nowrap transition-colors"
@@ -143,7 +151,6 @@ export function DynamicIslandHeader() {
             { label: t.header.manifest, id: 'manifesto' },
             { label: t.header.tools, id: 'tech-arsenal' },
             { label: t.header.team, id: 'team-section' },
-            { label: t.header.academy, id: 'community' },
           ].map((item) => (
             <button
               key={item.label}
@@ -153,6 +160,12 @@ export function DynamicIslandHeader() {
               {item.label}
             </button>
           ))}
+          <a
+            href="/join"
+            className="text-2xl font-medium text-[#E8E8F0]/70 hover:text-[#E8E8F0] transition-colors"
+          >
+            {t.header.academy}
+          </a>
           <a
             href="/work-with-us"
             className="text-2xl font-medium transition-colors"
