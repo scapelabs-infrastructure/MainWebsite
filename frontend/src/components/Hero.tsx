@@ -57,8 +57,8 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/work-with-us"
+          <button
+            onClick={() => scrollToSection('community-hub')}
             className="px-7 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90 whitespace-nowrap"
             style={{
               background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)',
@@ -66,10 +66,10 @@ export function Hero() {
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            {t.hero.cta1}
-          </a>
-          <button
-            onClick={() => scrollToSection('community-hub')}
+            {t.hero.cta2}
+          </button>
+          <a
+            href="/work-with-us"
             className="px-7 py-3 rounded-full text-sm font-semibold transition-colors whitespace-nowrap"
             style={{
               border: '1px solid rgba(232,232,240,0.2)',
@@ -86,8 +86,8 @@ export function Hero() {
               e.currentTarget.style.color = 'rgba(232,232,240,0.8)';
             }}
           >
-            {t.hero.cta2}
-          </button>
+            {t.hero.cta1}
+          </a>
         </div>
       </div>
 
