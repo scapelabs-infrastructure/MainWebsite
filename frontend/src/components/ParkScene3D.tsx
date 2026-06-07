@@ -75,28 +75,63 @@ function Ground() {
   );
 }
 
-/* ---------- Stone alley / path ribbon ---------- */
-function Path({ x, z, w, l, rotation = 0 }: { x: number; z: number; w: number; l: number; rotation?: number }) {
-  const geo = useMemo(() => new THREE.PlaneGeometry(w, l), [w, l]);
-  return (
-    <mesh geometry={geo} rotation={[-Math.PI / 2, 0, rotation]} position={[x, 0.02, z]}>
-      <meshStandardMaterial color="#9a8f78" roughness={0.95} />
-    </mesh>
+/* ---------- Curved stone alley (flat ribbon built along a spline) ---------- */
+const PATH_COLOR = '#9a8f78';
+
+function curveFrom(pts2: [number, number][], closed = false) {
+  return new THREE.CatmullRomCurve3(
+    pts2.map(([x, z]) => new THREE.Vector3(x, 0, z)),
+    closed,
+    'catmullrom',
+    0.5
   );
 }
 
-/* ---------- Radial alley spoke from the plaza ---------- */
-function Spoke({ angle, inner = 3.0, length = 7, w = 1.7 }: {
-  angle: number; inner?: number; length?: number; w?: number;
+function makeRibbon(pts2: [number, number][], width: number, closed = false, segments = 96) {
+  const curve = curveFrom(pts2, closed);
+  const samples = curve.getPoints(segments);
+  if (closed) samples.pop(); // drop duplicate closing point; we wrap with modulo
+  const n = samples.length;
+  const positions: number[] = [];
+  const normals: number[] = [];
+  const indices: number[] = [];
+  const half = width / 2;
+  for (let i = 0; i < n; i++) {
+    const p = samples[i];
+    const prev = samples[closed ? (i - 1 + n) % n : Math.max(0, i - 1)];
+    const next = samples[closed ? (i + 1) % n : Math.min(n - 1, i + 1)];
+    const tx = next.x - prev.x;
+    const tz = next.z - prev.z;
+    const len = Math.hypot(tx, tz) || 1;
+    const nx = -tz / len;
+    const nz = tx / len;
+    positions.push(p.x + nx * half, 0, p.z + nz * half);
+    positions.push(p.x - nx * half, 0, p.z - nz * half);
+    normals.push(0, 1, 0, 0, 1, 0);
+  }
+  const segs = closed ? n : n - 1;
+  for (let i = 0; i < segs; i++) {
+    const a = i * 2;
+    const b = i * 2 + 1;
+    const c = ((i + 1) % n) * 2;
+    const d = ((i + 1) % n) * 2 + 1;
+    indices.push(a, b, c, b, d, c);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+  geo.setIndex(indices);
+  return geo;
+}
+
+function CurvedPath({ points, width = 1.8, closed = false, color = PATH_COLOR, y = 0.02 }: {
+  points: [number, number][]; width?: number; closed?: boolean; color?: string; y?: number;
 }) {
-  const r0 = inner + length / 2;
-  const geo = useMemo(() => new THREE.PlaneGeometry(w, length), [w, length]);
+  const geo = useMemo(() => makeRibbon(points, width, closed), [points, width, closed]);
   return (
-    <group rotation={[0, angle, 0]}>
-      <mesh geometry={geo} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.018, r0]}>
-        <meshStandardMaterial color="#9a8f78" roughness={0.95} />
-      </mesh>
-    </group>
+    <mesh geometry={geo} position={[0, y, 0]}>
+      <meshStandardMaterial color={color} roughness={0.95} side={THREE.DoubleSide} />
+    </mesh>
   );
 }
 
@@ -258,9 +293,9 @@ function Kiosk({ position, rotation = 0, accent = BLUE }: {
   );
 }
 
-/* ---------- Robot rover (sleek, matte) ---------- */
-function Robot({ offset, speed = 1, lane = 0, accent = BLUE }: {
-  offset: number; speed?: number; lane?: number; accent?: string;
+/* ---------- Robot rover (sleek, matte) — follows a path curve ---------- */
+function Robot({ curve, offset = 0, speed = 0.04, accent = BLUE }: {
+  curve: THREE.CatmullRomCurve3; offset?: number; speed?: number; accent?: string;
 }) {
   const ref = useRef<THREE.Group>(null);
   const wheelsRef = useRef<THREE.Group>(null);
@@ -268,11 +303,11 @@ function Robot({ offset, speed = 1, lane = 0, accent = BLUE }: {
   useFrame((state) => {
     if (!ref.current) return;
     const t = state.clock.elapsedTime;
-    const cycle = (t * speed * 0.05 + offset) % 1;
-    ref.current.position.z = THREE.MathUtils.lerp(8, -3, cycle);
-    ref.current.position.x = lane + Math.sin(t * 1.3 + offset * 8) * 0.05;
-    ref.current.position.y = 0.24 + Math.sin(t * 6 + offset * 5) * 0.012;
-    ref.current.rotation.y = Math.PI;
+    const u = (t * speed + offset) % 1;
+    const p = curve.getPoint(u);
+    const tan = curve.getTangent(u);
+    ref.current.position.set(p.x, 0.24 + Math.sin(t * 6 + offset * 5) * 0.01, p.z);
+    ref.current.rotation.y = Math.atan2(tan.x, tan.z) + Math.PI;
     if (wheelsRef.current) {
       wheelsRef.current.children.forEach((w: THREE.Object3D) => {
         (w as THREE.Mesh).rotation.x = t * 6;
@@ -526,82 +561,140 @@ function Bench({ x, z, rotation = 0 }: { x: number; z: number; rotation?: number
 
 /* ---------- Scene assembly ---------- */
 function ParkScene({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: number }> }) {
-  // Procedural woodland: dense ring around the park + scattered inner trees,
-  // avoiding the central alley corridor and plaza.
+  // ---- Coherent curved alley plan (a real park, viewed top-down) ----
+  // Main promenade gently S-curves from the foreground into the plaza.
+  const promenadePts = useMemo<[number, number][]>(
+    () => [[0.9, 13.5], [0.3, 10.5], [-0.7, 7.8], [0.2, 5.2], [0, 3.3]],
+    []
+  );
+  // A ring promenade loops around the central plaza.
+  const loopPts = useMemo<[number, number][]>(() => {
+    const a: [number, number][] = [];
+    for (let i = 0; i < 24; i++) {
+      const th = (i / 24) * Math.PI * 2;
+      a.push([Math.sin(th) * 8.2, Math.cos(th) * 6.6 - 0.6]);
+    }
+    return a; // no duplicate endpoint; curve/ribbon close themselves
+  }, []);
+  // Curved branches off the plaza to the cultural corner and the treasure trail.
+  const culturalPts = useMemo<[number, number][]>(
+    () => [[2.6, -1.4], [4.6, -2.4], [6.4, -3.2], [8.0, -3.7]],
+    []
+  );
+  const treasurePts = useMemo<[number, number][]>(
+    () => [[-2.6, -1.3], [-4.4, -2.5], [-6.0, -3.6], [-7.6, -4.3], [-9.0, -4.8]],
+    []
+  );
+
+  const promenadeCurve = useMemo(() => curveFrom(promenadePts), [promenadePts]);
+  const loopCurve = useMemo(() => curveFrom(loopPts, true), [loopPts]);
+  const treasureCurve = useMemo(() => curveFrom(treasurePts), [treasurePts]);
+
+  const treasureMarkers = useMemo<[number, number, number][]>(
+    () => [0.12, 0.32, 0.52, 0.72, 0.9].map((u) => {
+      const p = treasureCurve.getPoint(u);
+      return [p.x, 0, p.z];
+    }),
+    [treasureCurve]
+  );
+  const chestPos = useMemo<[number, number, number]>(() => {
+    const p = treasureCurve.getPoint(1);
+    return [p.x - 0.3, 0, p.z - 0.3];
+  }, [treasureCurve]);
+  const culturalPos = useMemo<[number, number, number]>(() => {
+    const last = culturalPts[culturalPts.length - 1];
+    return [last[0] + 0.6, 0, last[1] - 0.2];
+  }, [culturalPts]);
+
+  // Trees: a deep distant treeline + inner trees that auto-avoid every alley.
   const trees = useMemo<TreeData[]>(() => {
     const rng = mulberry32(42);
     const out: TreeData[] = [];
-    // surrounding woods -> distant treeline that fades into fog (horizon)
-    for (let i = 0; i < 130; i++) {
-      const a = (i / 130) * Math.PI * 2 + rng() * 0.5;
-      const rad = 12 + rng() * 20; // 12..32, a deep band of trees
+    for (let i = 0; i < 140; i++) {
+      const a = (i / 140) * Math.PI * 2 + rng() * 0.5;
+      const rad = 11 + rng() * 21; // deep band fading into fog (horizon)
       out.push({
         x: Math.cos(a) * rad,
         z: Math.sin(a) * rad * 0.95,
-        s: 0.85 + rng() * 1.3,
+        s: 0.85 + rng() * 1.35,
         tone: Math.floor(rng() * 5),
       });
     }
-    // scattered inner trees lining the lawns between alleys
-    for (let i = 0; i < 40; i++) {
-      const x = (rng() - 0.5) * 22;
-      const z = (rng() - 0.5) * 22;
-      if (Math.abs(x) < 2.2 && z > -5 && z < 10) continue; // keep main alley clear
-      if (Math.sqrt(x * x + z * z) < 4.2) continue; // keep plaza clear
-      out.push({ x, z, s: 0.7 + rng() * 0.8, tone: Math.floor(rng() * 5) });
+    // Clearance samples taken along every path so no tree sits on an alley.
+    const clearance: [number, number][] = [];
+    const sample = (pts: [number, number][], n: number, closed = false) => {
+      const c = curveFrom(pts, closed);
+      c.getPoints(n).forEach((p: THREE.Vector3) => clearance.push([p.x, p.z]));
+    };
+    sample(promenadePts, 30);
+    sample(loopPts, 44, true);
+    sample(culturalPts, 18);
+    sample(treasurePts, 18);
+    const near = (x: number, z: number, d: number) =>
+      clearance.some(([cx, cz]) => (cx - x) ** 2 + (cz - z) ** 2 < d * d);
+
+    let placed = 0;
+    let guard = 0;
+    while (placed < 28 && guard < 500) {
+      guard++;
+      const x = (rng() - 0.5) * 20;
+      const z = (rng() - 0.5) * 20;
+      if (Math.hypot(x, z) < 4.6) continue; // keep plaza clear
+      if (near(x, z, 1.7)) continue; // keep alleys clear
+      if (Math.hypot(x - culturalPos[0], z - culturalPos[2]) < 2.6) continue;
+      out.push({ x, z, s: 0.7 + rng() * 0.85, tone: Math.floor(rng() * 5) });
+      placed++;
     }
     return out;
-  }, []);
+  }, [promenadePts, loopPts, culturalPts, treasurePts, culturalPos]);
 
   return (
     <>
       <fog attach="fog" args={['#080810', 24, 52]} />
       <Ground />
-      <Plaza radius={3.2} />
 
-      {/* main alley approaching the plaza from the front (camera side) */}
-      <Path x={0} z={6.8} w={2.6} l={9} />
-      {/* radial alley network spreading out from the plaza */}
-      <Spoke angle={Math.PI * 0.28} length={9} />
-      <Spoke angle={-Math.PI * 0.28} length={9} />
-      <Spoke angle={Math.PI * 0.5} length={8} />
-      <Spoke angle={-Math.PI * 0.5} length={8} />
-      <Spoke angle={Math.PI * 0.72} length={8.5} />
-      <Spoke angle={-Math.PI * 0.72} length={8.5} />
-      <Spoke angle={Math.PI} length={9} w={2} />
+      {/* curved alley network */}
+      <CurvedPath points={loopPts} width={1.7} closed />
+      <CurvedPath points={promenadePts} width={2.6} />
+      <CurvedPath points={culturalPts} width={1.5} />
+      <CurvedPath points={treasurePts} width={1.1} />
+      <Plaza radius={3.2} />
 
       <InstancedTrees data={trees} />
 
-      {/* lamp posts line the main alley (only the front pair cast real light) */}
-      <LampPost x={-1.7} z={8.5} light />
-      <LampPost x={1.7} z={8.5} light />
-      <LampPost x={-1.7} z={5.0} />
-      <LampPost x={1.7} z={5.0} />
+      {/* lamp posts follow the promenade and ring the plaza */}
+      <LampPost x={1.8} z={10.8} light />
+      <LampPost x={-1.7} z={8.0} light />
+      <LampPost x={1.4} z={5.2} />
+      <LampPost x={5.8} z={1.2} />
+      <LampPost x={-5.8} z={1.2} />
+      <LampPost x={0} z={-6.9} />
 
-      <Bench x={2.0} z={6.5} rotation={-Math.PI / 2} />
-      <Bench x={-2.0} z={3.5} rotation={Math.PI / 2} />
+      <Bench x={2.1} z={9.2} rotation={-Math.PI / 2} />
+      <Bench x={-2.1} z={6.2} rotation={Math.PI / 2} />
+      <Bench x={3.4} z={-0.4} rotation={-Math.PI / 2.3} />
 
-      {/* interactive screen kiosks along the approach */}
-      <Kiosk position={[1.9, 0, 4.0]} rotation={-Math.PI / 2.2} accent={BLUE} />
-      <Kiosk position={[-1.9, 0, 6.5]} rotation={Math.PI / 2.2} accent={VIOLET} />
+      {/* interactive screen kiosks beside the promenade */}
+      <Kiosk position={[2.1, 0, 9.8]} rotation={-Math.PI / 2} accent={BLUE} />
+      <Kiosk position={[-2.0, 0, 6.8]} rotation={Math.PI / 2} accent={VIOLET} />
+      <Kiosk position={[2.5, 0, 3.2]} rotation={-Math.PI / 1.7} accent={BLUE} />
 
-      {/* robots roll up the alley toward the plaza */}
-      <Robot offset={0} speed={1} lane={-0.55} accent={BLUE} />
-      <Robot offset={0.5} speed={0.85} lane={0.55} accent={VIOLET} />
+      {/* robots cruise the promenade and the ring path */}
+      <Robot curve={promenadeCurve} offset={0} speed={0.05} accent={BLUE} />
+      <Robot curve={loopCurve} offset={0.15} speed={0.03} accent={VIOLET} />
+      <Robot curve={loopCurve} offset={0.62} speed={0.03} accent={BLUE} />
 
       {/* projection mapping at the heart of the plaza */}
       <ProjectionMapping position={[0, 0, 0]} />
 
-      {/* treasure hunt trail leading off into the left woods */}
-      {([
-        [-2.4, 0, -1.0], [-3.4, 0, -1.8], [-4.4, 0, -2.6], [-5.4, 0, -3.4], [-6.3, 0, -4.2],
-      ] as [number, number, number][]).map((p, i) => (
+      {/* treasure hunt trail winding into the left woods */}
+      {treasureMarkers.map((p, i) => (
         <TreasureMarker key={i} position={p} index={i} />
       ))}
-      <TreasureChest position={[-6.8, 0, -4.6]} />
+      <TreasureChest position={chestPos} />
 
-      {/* cultural corner at the end of the right alley */}
-      <CulturalCorner position={[5.6, 0, -3.6]} />
+      {/* cultural corner at the end of its own alley */}
+      <CulturalCorner position={culturalPos} />
 
       {/* atmospheric, professional lighting (cool moonlight + warm lamps) */}
       <ambientLight intensity={0.6} />
