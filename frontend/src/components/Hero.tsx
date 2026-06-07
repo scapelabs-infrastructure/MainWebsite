@@ -24,51 +24,28 @@ export function Hero() {
       />
 
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-28 md:pt-32">
-        <div className="mb-6 md:mb-8">
+        <div className="mb-8 md:mb-10">
           <img
             src="/ScapeLabs-Logo.png"
             alt="ScapeLabs"
-            className="h-16 md:h-20 w-auto mx-auto"
+            className="h-28 md:h-36 lg:h-40 w-auto mx-auto"
           />
         </div>
 
-        <h1 className="mb-7" style={{ lineHeight: 1.04 }}>
-          <span
-            className="block text-2xl md:text-4xl lg:text-5xl italic text-[#C9CEE0]"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              textShadow: '0 2px 24px rgba(0,0,0,0.55)',
-            }}
-          >
-            {t.hero.line1}
-          </span>
-          <span
-            className="block text-5xl md:text-7xl lg:text-8xl font-extrabold text-white"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              letterSpacing: '-0.035em',
-              textShadow: '0 4px 40px rgba(0,0,0,0.65)',
-            }}
-          >
-            {t.hero.line2}
-          </span>
-          <span
-            className="block text-3xl md:text-5xl lg:text-6xl italic"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              background: 'linear-gradient(90deg, #5B95FF, #A87BFF)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              filter: 'drop-shadow(0 2px 18px rgba(91,149,255,0.35))',
-            }}
-          >
-            {t.hero.line3}
-          </span>
+        <h1
+          className="mb-7 uppercase font-extrabold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto"
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            letterSpacing: '-0.02em',
+            lineHeight: 1.05,
+            textShadow: '0 4px 40px rgba(0,0,0,0.7)',
+          }}
+        >
+          {t.hero.headline}
         </h1>
 
         <p
-          className="text-[#C4C9DA] text-base md:text-lg max-w-[540px] mx-auto leading-relaxed"
+          className="text-[#C4C9DA] text-base md:text-lg max-w-[620px] mx-auto leading-relaxed"
           style={{
             fontFamily: "'Inter', sans-serif",
             textShadow: '0 1px 16px rgba(0,0,0,0.6)',
