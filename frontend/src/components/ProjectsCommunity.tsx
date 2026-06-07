@@ -17,10 +17,10 @@ const statusColors: Record<string, string> = {
 
 const projectImages = [
   '/project-academy.png',
-  '/3.jpeg',
-  '/1.jpeg',
-  '/2.jpeg',
-  '/vision-bucharest.png',
+  '/project-caravana.png',
+  '/project-playbooks.png',
+  '/project-pawsitive.png',
+  '/project-calea-victoriei.png',
 ];
 
 export function ProjectsCommunity() {
