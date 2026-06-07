@@ -14,14 +14,12 @@ export function Hero() {
         <NeonScene3D />
       </div>
 
-      {/* darkening scrim + soft blur panel to lift text off the neon scene */}
+      {/* darkening scrim to lift text off the neon scene (smooth fade, no hard edge) */}
       <div
-        className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-[5] w-[min(94vw,1000px)] h-[78vh] pointer-events-none rounded-[40%]"
+        className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-[5] w-[min(100vw,1200px)] h-[90vh] pointer-events-none"
         style={{
           background:
-            'radial-gradient(closest-side, rgba(6,6,15,0.9) 0%, rgba(6,6,15,0.78) 38%, rgba(6,6,15,0.4) 66%, transparent 82%)',
-          backdropFilter: 'blur(3px)',
-          WebkitBackdropFilter: 'blur(3px)',
+            'radial-gradient(closest-side, rgba(6,6,15,0.92) 0%, rgba(6,6,15,0.82) 32%, rgba(6,6,15,0.5) 58%, rgba(6,6,15,0.2) 78%, transparent 100%)',
         }}
       />
 
