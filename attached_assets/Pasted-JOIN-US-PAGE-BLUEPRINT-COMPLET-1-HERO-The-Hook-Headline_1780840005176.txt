@@ -1,0 +1,120 @@
+JOIN US PAGE — BLUEPRINT COMPLET
+
+1. HERO (The Hook)
+
+Headline (display, mare):
+
+You want to build the future. This is where you start.
+
+Subtext (2 rânduri max):
+
+ScapeLabs is an AI-native R&D lab operating at the intersection of spatial
+computing, applied AI and urban design. We build real tech, we travel Europe,
+and we connect the best young minds in Bucharest.
+
+Două CTA-uri vizibile din hero, ca tab-uri active:
+
+  - The Community — scroll anchor
+  - The Academy — scroll anchor
+
+(Nu butoane clasice. Două pill-uri active în partea de jos a hero-ului, ca o
+navigație internă a paginii.)
+
+2. THE COMMUNITY (The Insider Network)
+
+Titlu:
+
+The ultimate tech & urban network.
+
+Copy (scurt, tăios):
+
+Nu trebuie să fii programator ca să faci parte din viitor. Comunitatea ScapeLabs
+este grupul unde studenții, vizionarii și creativii se conectează. Ești primul care testează aplicațiile noastre prin oraș, participi la seri de gaming digital (Cyber-Arena) și ai acces direct la resurse pe care nu le găsești la facultate.
+
+Ce primești instant pe grupul de WhatsApp: Layout: 3 carduri subțiri, minimale
+
+  - Cheat Codes: Prompt-uri AI si tips & tricks care îți salvează sesiunea și tool-uri pe care
+    școala nu ți le arată.
+  - Networking Real: Oameni cu care poți ieși la o plimbare sau cu care poți lansa
+    un startup sau proiect ScapeLabs inca de azi.
+  - VIP Access: Invitații gratuite la evenimente partenere și testări Beta ale proiectelor.
+
+Buton masiv (Primary CTA):
+
+[ JOIN THE COMMUNITY → ] (Linkează direct către:
+https://chat.whatsapp.com/GLOwIzmGZl21VmQsYqnsgN)
+
+3. THE EU TICKET (Scalabilitate)
+
+Titlu:
+
+ScapeLabs is your European passport.
+
+Copy:
+
+Prin parteneriatele noastre strategice (Erasmus+ și Corpul European de
+Solidaritate), experiența ta aici devine internațională. Trimitem cei mai activi
+membri ai comunității la schimburi de tineri și hackathoane în Europa — cu zbor
+și cazare 100% acoperite de fonduri UE.
+
+Numărul OID — afișat ca un badge de credențial tehnic.
+
+OID: PENDING — (Q3 2026) (afisat ca un cifru care se descifreaza)
+
+4. THE ACADEMY (Your Gateway to the Core Team)
+
+Titlu:
+
+ScapeLabs Academy - Learn by shipping (subtitlu italic).
+
+Copy:
+
+Ești gata să intri în tranșee? Academia este singura cale de acces către Core
+Team-ul ScapeLabs. Nu predăm cursuri teoretice. Studenții care intră în Academy
+sunt aruncați direct în dezvoltarea MVP-urilor active (Pawsitive, Calea
+Victoriei, Caravana) sub ghidajul unui Senior Spatial Computing Engineer.
+
+Ieși cu un portofoliu real, nu cu o diplomă pdf. Și da, semnăm convențiile de
+practică obligatorie pentru facultate.
+
+3 track-uri vizuale (carduri verticale simple):
+
+  - Tech Track — AR, Unity3D, AI pipelines, WebAR. Sari de la tutoriale la
+    produse reale.
+  - Creative Track — UI/UX, concept art, copywriting, game design. Definești cum
+    arată viitorul.
+  - Growth Track — Fundraising, grant writing, marketing, PR. Înveți să închizi deal-uri
+    reale și parteneriate corporate.
+
+Pre-register form — inline, simplu, 3 câmpuri:
+
+Nume   |   Email   |   Track preferat ▾ siii link de join whatsapp community cu link ul acela
+[ APPLY TO THE ACADEMY ]
+
+(Fără pagină separată. Formular integrat direct în layout).
+
+5. THE VIBE (Social Proof)
+
+Layout: O fâșie (strip) de text + imagini, imediat sub formularul Academy.
+
+Zero bureaucracy: Progres raportat în mesaje audio de 60 de secunde, nu în
+ședințe de 2 ore. Real portfolio: Lucrezi pe proiecte cu parteneri
+instituționali (ASPA, Primării), nu pe teme de laborator. Premium tools: Acces
+la stack-ul complet: AI tools, licențe ONG, hardware lab.
+
+(Opțional: Sub acest text, un slider fluid cu 3-4 poze/video-uri scurte de pe
+teren sau din VR, să arate exact dinamica echipei).
+
+6. CTA FINAL
+
+Split simplu, 50/50:
+
+Stânga:
+
+Vrei doar să cunoști oameni cool și să afli oportunități? → Join the WhatsApp
+Community (Același link)
+
+Dreapta:
+
+Vrei să construiești proiecte și să intri în Core Team? → Apply to the Academy
+(Ancoră spre formularul de mai sus)

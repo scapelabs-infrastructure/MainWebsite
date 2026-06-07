@@ -75,7 +75,7 @@ export function DynamicIslandHeader() {
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>
             <a
-              href="/onboarding"
+              href="/join"
               className="px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
             >
@@ -92,7 +92,7 @@ export function DynamicIslandHeader() {
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>
             <a
-              href="/onboarding"
+              href="/join"
               className="px-3 py-1.5 rounded-full text-xs font-semibold text-white whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
             >

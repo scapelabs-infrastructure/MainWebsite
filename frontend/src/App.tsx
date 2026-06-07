@@ -13,6 +13,7 @@ import { FilmGrain } from './components/FilmGrain';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
 import { Onboarding } from './pages/Onboarding';
+import { JoinUs } from './pages/JoinUs';
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -57,6 +58,7 @@ export default function App() {
   if (path === '/privacy-policy') return <PrivacyPolicy />;
   if (path === '/terms-of-service') return <TermsOfService />;
   if (path === '/onboarding') return <Onboarding />;
+  if (path === '/join') return <JoinUs />;
 
   return (
     <div
