@@ -61,7 +61,7 @@ export function DynamicIslandHeader() {
               </button>
             ))}
             <a
-              href="/join"
+              href="/join#section-academy"
               className="text-sm font-medium transition-colors"
               style={{ color: 'rgba(232,232,240,0.6)' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#E8E8F0')}
@@ -155,7 +155,7 @@ export function DynamicIslandHeader() {
             </button>
           ))}
           <a
-            href="/join"
+            href="/join#section-academy"
             className="text-2xl font-medium text-[#E8E8F0]/70 hover:text-[#E8E8F0] transition-colors"
           >
             {t.header.academy}
