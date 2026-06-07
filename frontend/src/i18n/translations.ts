@@ -146,7 +146,7 @@ export const translations = {
         },
         {
           title: 'Strategie Erasmus+ & Mobilitate EU',
-          desc: 'Valorificăm activ programele Erasmus+ pentru a trimite cei mai activi membri în Europa — cu travel gratuit, formare profesională și networking internațional. Construim un pipeline care transformă talentul local în contribuitori europeni.',
+          desc: 'Valorificăm activ programele Erasmus+ pentru a trimite cei mai activi membri în Europa — cu transport gratuit, formare profesională și networking internațional. Construim un pipeline care transformă talentul local în contribuitori europeni.',
         },
         {
           title: 'Corpul European de Solidaritate',
