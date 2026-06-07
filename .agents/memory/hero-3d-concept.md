@@ -1,21 +1,18 @@
 ---
 name: Hero 3D concept
-description: What the ScapeLabs homepage hero Three.js scene must depict — user has rejected abstract twice.
+description: What the ScapeLabs homepage hero Three.js scene must depict — latest direction is ABSTRACT neon, superseding the earlier literal-park requirement.
 ---
 
-The hero background 3D scene (`frontend/src/components/ParkScene3D.tsx`) must be a **literal, recognizable park viewed from above**, where the camera descends and focuses onto a **central alley**. It must contain literal objects, NOT abstract sci-fi:
+The hero background 3D scene (`frontend/src/components/NeonScene3D.tsx`) must be an **abstract neon scene — neon lights + modern geometry**, looking great on MOBILE too. NOT a cartoon, NOT a forest/park, NOT a literal diorama.
 
-- Central alley/walkway with branch paths, lawns, trees, benches
-- Interactive screen kiosks (totems with glowing animated displays)
-- Rolling robots moving along the alley
-- A projector doing projection-mapping onto a plaza (light cone + animated projected pattern)
-- A glowing treasure-hunt trail of markers leading to a treasure chest with a beacon
-- A cultural corner: raised stage + framed art panels + rotating sculpture + spotlight
+**Current motif (built):** a central glowing emissive icosahedron core (pulsing) with additive halos, tilted emissive torus rings, an orbiting constellation of wireframe polyhedra (EdgesGeometry + bright lineBasicMaterial + glassy transparent body), a sparse additive Points depth field, floating in space (no ground/grid), with a soft radial vignette. Brand neon palette: BLUE `#2D6EFF`, VIOLET `#7B3FE4`, CYAN `#00E5FF`, accent PINK `#FF3D8B`.
 
-**Why:** The user explicitly and repeatedly rejected "abstract things" — abstract city grids, floating AR HUD panels, GPS pulse rings, particle data streams, spinning octahedron "badges". They want concrete park elements that read instantly.
+**Why:** The user PIVOTED. They had earlier rejected abstract grids/HUD/particles AND then a built literal curved-park scene; the final explicit instruction is "make it abstract — neon lights, modern geometry, not a cartoon, not a forest, looks good on mobile, great from the first try." The latest explicit instruction wins over older park memory.
 
-**How to apply:** When editing the hero scene, keep everything representational. Never reintroduce abstract grids/HUD/particle abstractions as the main motif. WebGL does not render in the Replit preview sandbox (no GPU) — verify code correctness via compile + architect review, not screenshots; it renders on real browsers.
+**How to apply:** Keep the hero abstract/geometric/neon. Do NOT reintroduce the park/forest/robots/treasure motifs. If the user pivots again, the newest explicit instruction always overrides this file.
 
-**Look & feel (also rejected once):** Must read as a serious, professional park LANDSCAPE — not a small cartoonish diorama floating on black. Requirements that fixed the rejection: continuous dark-green grassy ground that fades into linear `fog` (no green islands on a black plane), a dense surrounding woodland for depth/context, an alley network with a central plaza, classic warm lamp posts, smooth layered-sphere foliage with muted greens (avoid low-poly flatShading + saturated primary colors), and toned-down neon.
+**Glow without postprocessing:** drei and @react-three/postprocessing are NOT installed (only @react-three/fiber v9, three 0.174, react 19). Real bloom would mean a new dependency with version risk. Instead fake neon via high emissive materials + additive-blended halo sprites using a single shared `CanvasTexture` radial-gradient (module-level singleton). This is reliable and cheap.
 
-**Performance:** It's a hero background, so keep it cheap. Trees MUST be `InstancedMesh` (one instanced trunk mesh + one instanced foliage mesh, per-instance color via `setColorAt`) — ~100 trees as individual groups is too many draw calls. Keep dynamic positional lights to a handful (a few focal point lights + one spotlight); use emissive materials for everything else instead of real lights. Cap `dpr={[1, 1.5]}` on the Canvas.
+**Verification limit:** WebGL does NOT render in the Replit sandbox (no GPU) — verify via `npx tsc --noEmit` (ignore the harmless `module 'three'` declaration error) + browser console logs (watch for stale HMR entries) + architect review, NOT screenshots. It renders on the user's real browser.
+
+**Performance / mobile:** Keep object counts low (~6 orbit solids, 3 rings, ~110 points). Cap `dpr={[1,1.6]}`. Drive responsive `scale` + camera `z` from `window.innerWidth` via a resize listener. Use `pointermove` (not `mousemove`) for parallax so touch devices also respond.
