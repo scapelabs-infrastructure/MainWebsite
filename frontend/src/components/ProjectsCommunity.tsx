@@ -35,7 +35,7 @@ export function ProjectsCommunity() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-16"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {pc.title}
         </motion.h2>
@@ -62,7 +62,7 @@ export function ProjectsCommunity() {
                 <div className="flex items-start gap-4">
                   <span
                     className="text-3xl font-bold flex-shrink-0 leading-none mt-0.5"
-                    style={{ color: 'rgba(45,110,255,0.25)', fontFamily: "'Playfair Display', serif" }}
+                    style={{ color: 'rgba(45,110,255,0.25)', fontFamily: "'Inter', sans-serif" }}
                   >
                     {project.num}
                   </span>
@@ -112,7 +112,7 @@ export function ProjectsCommunity() {
 
               <h3
                 className="text-2xl md:text-3xl font-bold text-[#E8E8F0] mb-4"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {pc.academyTitle}
               </h3>

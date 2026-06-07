@@ -38,11 +38,11 @@ export function TechArsenal() {
         >
           <h2
             className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-2"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {ta.title}
           </h2>
-          <p className="text-[#E8E8F0]/40 text-lg italic" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <p className="text-[#E8E8F0]/40 text-lg italic" style={{ fontFamily: "'Inter', sans-serif" }}>
             {ta.subtitle}
           </p>
         </motion.div>

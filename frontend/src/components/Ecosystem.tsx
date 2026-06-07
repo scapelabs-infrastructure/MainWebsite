@@ -53,7 +53,7 @@ export function Ecosystem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-16 text-center"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {eco.title}
         </motion.h2>
@@ -179,7 +179,7 @@ export function Ecosystem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
           className="mt-10 text-center text-xl md:text-2xl font-bold text-[#E8E8F0]"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {eco.bottomLine}
         </motion.p>

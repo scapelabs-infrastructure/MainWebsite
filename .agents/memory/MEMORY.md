@@ -1,0 +1,1 @@
+- [Font convention](font-convention.md) — Inter everywhere except 3 specific Playfair Display Italic accent elements; all section titles/headers must be Inter.

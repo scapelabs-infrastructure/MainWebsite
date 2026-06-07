@@ -224,7 +224,7 @@ export function Partners() {
         >
           <p
             className="text-xl md:text-2xl font-bold text-[#E8E8F0] mb-10"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {ps.tagline}
           </p>
