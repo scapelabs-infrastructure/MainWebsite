@@ -1,16 +1,22 @@
 import { motion } from 'framer-motion';
 import { Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2 } from 'lucide-react';
+import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { PartnerModal } from './Partners';
 
 const cardIcons = [Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2];
+
+const partnerLogos: Record<string, string> = {
+  ASPA: '/partner-aspa.png',
+  'Străzi pentru Oameni': '/partner-strazi.png',
+  ASER: '/partner-aser.png',
+  'Asociația Escape Project': '/partner-escape.png',
+};
 
 export function TechArsenal() {
   const { t } = useLanguage();
   const ta = t.techArsenal;
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const [sponsorOpen, setSponsorOpen] = useState(false);
 
   return (
     <section id="tech-arsenal" className="py-24 md:py-36 px-6 relative overflow-hidden">
@@ -113,25 +119,57 @@ export function TechArsenal() {
           })}
         </div>
 
+        <div id="partners" className="mt-16 scroll-mt-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 items-center">
+            {t.partnersSection.partners.map((partner, i) => {
+              const logo = partnerLogos[partner.name];
+              if (!logo) return null;
+              return (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
+                className="flex items-center justify-center px-2"
+              >
+                <img
+                  src={logo}
+                  alt={partner.name}
+                  loading="lazy"
+                  className="h-12 md:h-14 w-auto max-w-full object-contain transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
+                  style={{
+                    filter: 'grayscale(1) brightness(0) invert(1)',
+                    opacity: 0.6,
+                  }}
+                />
+              </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-          className="mt-14 pt-10"
+          className="mt-16 pt-10"
           style={{ borderTop: '1px solid rgba(232,232,240,0.07)' }}
         >
           <p className="text-[#E8E8F0]/55 text-sm md:text-base max-w-2xl mb-4">
             {ta.sponsorPivot}
           </p>
           <button
-            onClick={() => scrollToSection('partners')}
+            onClick={() => setSponsorOpen(true)}
             className="text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
           >
             {ta.sponsorLink}
           </button>
         </motion.div>
       </div>
+
+      <PartnerModal isOpen={sponsorOpen} onClose={() => setSponsorOpen(false)} type="sponsor" />
     </section>
   );
 }

@@ -67,7 +67,6 @@ export const translations = {
       ],
     },
     partnersSection: {
-      tagline: 'Nu prezentăm pitch deck-uri. Livrăm produse.',
       partners: [
         { name: 'ASPA', phrase: 'Adopții sustenabile prin tehnologie și educație' },
         { name: 'Străzi pentru Oameni', phrase: 'Mobilitate urbană prin design participativ' },
@@ -448,7 +447,6 @@ export const translations = {
       ],
     },
     partnersSection: {
-      tagline: "We don't pitch decks. We ship products.",
       partners: [
         { name: 'ASPA', phrase: 'Sustainable adoptions through technology and education' },
         { name: 'Străzi pentru Oameni', phrase: 'Urban mobility through participatory design' },

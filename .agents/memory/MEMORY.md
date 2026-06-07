@@ -1,2 +1,3 @@
 - [Font convention](font-convention.md) — Inter everywhere; Playfair Italic now ONLY for Manifesto founder signature; hero is all-Inter bold uppercase (no Playfair).
 - [Hero 3D concept](hero-3d-concept.md) — hero uses an ABSTRACT neon 3D scene (NeonScene3D.tsx); supersedes the older literal-park concept.
+- [Fast Refresh provider split](fast-refresh-provider-split.md) — React Context Provider component + its hook must live in SEPARATE files or Vite HMR breaks "useLanguage must be used within Provider".

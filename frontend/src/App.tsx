@@ -3,7 +3,6 @@ import { DynamicIslandHeader } from './components/DynamicIslandHeader';
 import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { TechArsenal } from './components/TechArsenal';
-import { Partners } from './components/Partners';
 import { ProjectsCommunity } from './components/ProjectsCommunity';
 import { Ecosystem } from './components/Ecosystem';
 import { Team } from './components/Team';
@@ -69,7 +68,6 @@ export default function App() {
       <Hero />
       <Manifesto />
       <TechArsenal />
-      <Partners />
       <ProjectsCommunity />
       <Ecosystem />
       <Team />

@@ -10,7 +10,7 @@ interface PartnerModalProps {
   type: string;
 }
 
-function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
+export function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
   const { t, lang } = useLanguage();
   const m = t.partners.modal;
   const [formData, setFormData] = useState({ organizationName: '', contactName: '', email: '', phone: '' });
@@ -200,68 +200,3 @@ function PartnerModal({ isOpen, onClose, type }: PartnerModalProps) {
   );
 }
 
-export function Partners() {
-  const { t } = useLanguage();
-  const ps = t.partnersSection;
-  const [modalType, setModalType] = useState<string | null>(null);
-
-  return (
-    <section id="partners" className="py-20 md:py-28 px-6 relative overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(180deg, transparent 0%, rgba(45,110,255,0.03) 50%, transparent 100%)',
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="mb-12 text-center"
-        >
-          <p
-            className="text-xl md:text-2xl font-bold text-[#E8E8F0] mb-10"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            {ps.tagline}
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {ps.partners.map((partner, i) => (
-            <motion.button
-              key={partner.name}
-              onClick={() => setModalType('sponsor')}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
-              whileHover={{ y: -4 }}
-              className="group relative text-left p-5 rounded-xl transition-all duration-300"
-              style={{
-                background: 'rgba(8,8,16,0.6)',
-                border: '1px solid rgba(232,232,240,0.07)',
-              }}
-            >
-              <div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{ border: '1px solid rgba(45,110,255,0.25)' }}
-              />
-              <p className="font-bold text-[#E8E8F0] text-sm mb-2">{partner.name}</p>
-              <p className="text-[#E8E8F0]/40 text-xs leading-relaxed">{partner.phrase}</p>
-            </motion.button>
-          ))}
-        </div>
-      </div>
-
-      <PartnerModal
-        isOpen={modalType !== null}
-        onClose={() => setModalType(null)}
-        type={modalType || ''}
-      />
-    </section>
-  );
-}
