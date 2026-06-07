@@ -39,10 +39,10 @@ export function DynamicIslandHeader() {
         >
           <a
             href="/"
-            className="flex items-center flex-shrink-0 transition-opacity"
-            style={{ opacity: isHome ? 1 : 0.55 }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = isHome ? '1' : '0.55')}
+            className="flex items-center flex-shrink-0 transition-all duration-300"
+            style={{ filter: isHome ? 'brightness(1.25) drop-shadow(0 0 6px rgba(255,255,255,0.25))' : 'brightness(1)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.25) drop-shadow(0 0 6px rgba(255,255,255,0.25))')}
+            onMouseLeave={(e) => (e.currentTarget.style.filter = isHome ? 'brightness(1.25) drop-shadow(0 0 6px rgba(255,255,255,0.25))' : 'brightness(1)')}
           >
             <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-10 md:h-12 w-auto" />
           </a>
