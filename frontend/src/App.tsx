@@ -56,6 +56,24 @@ export default function App() {
     document.documentElement.style.scrollBehavior = 'smooth';
   }, [path]);
 
+  useEffect(() => {
+    if (path === '/') {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.slice(1);
+        const attempt = (tries: number) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else if (tries > 0) {
+            setTimeout(() => attempt(tries - 1), 150);
+          }
+        };
+        setTimeout(() => attempt(10), 200);
+      }
+    }
+  }, [path]);
+
   if (path === '/privacy-policy') return <PrivacyPolicy />;
   if (path === '/terms-of-service') return <TermsOfService />;
   if (path === '/onboarding') return <Onboarding />;

@@ -142,6 +142,7 @@ export function TechArsenal() {
                     alt={partner.name}
                     loading="lazy"
                     className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain transition-all duration-300 hover:scale-[1.04]"
+                    style={{ filter: 'none', opacity: 1 }}
                   />
                 </a>
               </motion.div>
