@@ -14,6 +14,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
 import { Onboarding } from './pages/Onboarding';
 import { JoinUs } from './pages/JoinUs';
+import { WorkWithUs } from './pages/WorkWithUs';
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -59,6 +60,7 @@ export default function App() {
   if (path === '/terms-of-service') return <TermsOfService />;
   if (path === '/onboarding') return <Onboarding />;
   if (path === '/join') return <JoinUs />;
+  if (path === '/work-with-us') return <WorkWithUs />;
 
   return (
     <div

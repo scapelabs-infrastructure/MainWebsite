@@ -53,6 +53,15 @@ export function DynamicIslandHeader() {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/work-with-us"
+              className="text-sm font-medium whitespace-nowrap transition-colors"
+              style={{ color: 'rgba(212,168,67,0.7)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#D4A843')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(212,168,67,0.7)')}
+            >
+              {t.header.workWithUs}
+            </a>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -137,7 +146,14 @@ export function DynamicIslandHeader() {
             </button>
           ))}
           <a
-            href="/onboarding"
+            href="/work-with-us"
+            className="text-2xl font-medium transition-colors"
+            style={{ color: 'rgba(212,168,67,0.7)' }}
+          >
+            {t.header.workWithUs}
+          </a>
+          <a
+            href="/join"
             className="px-10 py-4 rounded-full text-lg font-semibold text-white"
             style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
           >

@@ -1,0 +1,142 @@
+**Numele în meniu:** `Work With Us`
+
+
+---
+
+# STUDIO PAGE — BLUEPRINT COMPLET
+
+---
+
+## VIZUAL GLOBAL
+
+Paleta rămâne dark, dar această pagină poate permite un accent mai cald — un gold/amber foarte subtil pe câteva elemente, semnalând "premium commercial."
+
+---
+
+## 1. HERO
+
+**Headline:**
+> *Your campaign runs for a week.*
+> **Ours runs for a decade.**
+
+**Subtext:**
+> ScapeLabs builds AR experiences, AI systems and spatial computing installations that people remember, share and return to. We don't sell media space. We engineer impact infrastructure.
+
+**Două CTA-uri:**
+- `→ See our work` — scroll anchor spre proiecte
+- `→ Start a conversation` — deschide un contact form modal
+
+---
+
+## 2. CSR SPONSORSHIP — explicat clar
+
+**Titlu:**
+> **Why smart companies fund ScapeLabs**
+
+**Layout:** Stânga — text. Dreapta — un simplu calculator vizual (static, nu interactiv neapărat):
+
+```
+Your investment:     10.000 EUR
+EU co-financing:   × 3-5x
+Total impact:       30.000–50.000 EUR
+Documented reach:   tens of thousands of users
+```
+
+**Copy stânga:**
+> Când finanțezi un proiect ScapeLabs, banii tăi intră într-un ecosistem de multiplicare. Contribuția ta corporativă funcționează ca leverage pentru finanțări europene — AFCN, Erasmus+, granturi culturale — care amplifică impactul de 3 până la 5 ori. Primești vizibilitate documentată, raportare transparentă și asocierea brandului cu tehnologie reală, nu cu o campanie de imagine.
+
+**3 moduri de sponsorizare** (carduri simple, orizontale):
+
+- **Project Sponsor** — Finanțezi un proiect specific. Brandul tău apare în toate materialele, aplicația, evenimentele și raportul final de impact.
+- **Tech Partner** — Contribui cu resurse tehnice sau financiare la infrastructura lab-ului. Acces la demo-uri exclusive și first look pe proiecte noi.
+- **Education Partner** — Finanțezi Caravana ScapeLabs în licee. Brandul tău intră în 10-30 de școli cu un mesaj de responsabilitate socială autentic.
+
+---
+
+## 3. TECH ARSENAL — pitch comercial
+
+**Titlu:**
+> **What we build for clients**
+
+**Nu reiei cardurile de pe homepage.** Aici e unghiul diferit — același arsenal, dar prezentat ca servicii livrabile, nu ca tehnologii fascinante.
+
+**Layout: tabel simplu, 3 coloane — Ce livrăm / Unde se aplică / Rezultat măsurabil**
+
+| Ce livrăm | Unde se aplică | Rezultat |
+|---|---|---|
+| AR Experience | Muzee, retail, evenimente | Timp de engagement 3x mai lung |
+| Digital Twin | Patrimoniu, real estate, instituții publice | Documentare 1:1, eligibil granturi EU |
+| AI Guide / Chatbot | Expoziții, conferințe, spații publice | Interacțiuni automatizate, zero staff cost |
+| Urban Game | Campanii de brand, turism, educație civică | Reach organic prin social sharing |
+| Interactive Mapping | Evenimente corporate, concerte, lansări | Spectacol care devine știre |
+
+---
+
+## 4. SCAPESTUDIO — servicii comerciale
+
+**Titlu:**
+> **ScapeStudio**
+> *The commercial arm of the lab.*
+
+**Copy:**
+> ScapeStudio este divizia comercială prin care livrăm proiecte tech pentru clienți privați. Același team, același stack, același standard de execuție — fără overhead de agenție. Lucrezi direct cu engineerii și designerii care au construit pentru Senatul României și Guvernul Saudit.
+
+**4 servicii, carduri verticale:**
+
+- **AR Campaigns** — Experiențe augmentate pentru lansări de produs, activări de brand și spații comerciale.
+- **Spatial Installations** — Video mapping și instalații interactive pentru evenimente și spații publice.
+- **AI Integration** — Asistenți vocali, agenți automatizați și sisteme generative pentru business.
+- **Digital Twins** — Reconstituiri 3D de precizie pentru arhitectură, patrimoniu și real estate.
+
+Sub servicii, o frază mică, onestă:
+> *Lucrăm cu un număr limitat de clienți comerciali per trimestru pentru a menține calitatea execuției.*
+
+Asta creează scarcity fără să o forțezi.
+
+---
+
+## 5. EVENTS PARTNERSHIPS
+
+**Titlu:**
+> **Your event, engineered.**
+
+**Copy (scurt):**
+> Aducem tech-ul în evenimentul tău — video mapping pe fațadă, instalații interactive în sală, AI concierge pentru participanți, urban game activat în perimetrul locației. De la conferințe corporate la festivaluri publice.
+
+**3 formate de colaborare:**
+- **Activation** — O instalație sau experiență AR punctuală la evenimentul tău.
+- **Full Production** — ScapeStudio preia tech production-ul complet al evenimentului.
+- **Tech Impact Day** — Format dedicat pentru corporații — zi de inovație cu workshops, demo-uri live și activări AR pentru echipa ta sau clienții tăi.
+
+---
+
+## 6. TECH IMPACT DAYS
+
+**Titlu:**
+> **Tech Impact Day**
+> *Bring the lab to your company.*
+
+**Copy:**
+> Un format de o zi în care aducem lab-ul ScapeLabs direct în sediul tău. Echipa ta testează AR, interacționează cu AI agents, vede un digital twin construit live și participă la un workshop de prototipare rapidă. Nu e un team building. E o recalibrare a felului în care compania ta gândește despre tehnologie.
+
+**Format vizual:** timeline simplu orizontal cu orele zilei — 09:00 Intro & Demo / 11:00 Workshop AR / 14:00 AI Prototyping / 16:00 Showcase & Debrief.
+
+---
+
+## 7. CTA FINAL
+
+**Titlu:**
+> **Let's build something worth talking about.**
+
+**Form inline, 4 câmpuri:**
+```
+Numele tău   |   Compania   |   Ce te interesează ▾   |   Mesaj scurt
+[ Start the conversation ]
+```
+
+Sub form, mic:
+> Sau scrie direct la `partnership@scapelabs.ro`
+
+---
+
+Pagina asta vorbește simultan cu CMO-ul de la o corporație, cu directorul unui muzeu și cu organizatorul unui festival — fără să pară că încearcă să mulțumească pe toată lumea. Fiecare secțiune are un unghi specific, un deliverable clar și un next step evident.
