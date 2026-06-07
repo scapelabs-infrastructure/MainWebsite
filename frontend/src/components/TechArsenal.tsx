@@ -6,12 +6,12 @@ import { PartnerModal } from './Partners';
 
 const cardIcons = [Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2];
 
-const partnerLogos: Record<string, string> = {
-  ASPA: '/partner-aspa.png',
-  'Străzi pentru Oameni': '/partner-strazi.png',
-  ASER: '/partner-aser.png',
-  'Asociația Escape Project': '/partner-escape.png',
-};
+const partners = [
+  { name: 'Asociația Escape Project', logo: '/partner-escape.png' },
+  { name: 'ASER', logo: '/partner-aser.png' },
+  { name: 'Străzi pentru Oameni', logo: '/partner-strazi.png' },
+  { name: 'ASPA', logo: '/partner-aspa.png' },
+];
 
 export function TechArsenal() {
   const { t } = useLanguage();
@@ -120,32 +120,24 @@ export function TechArsenal() {
         </div>
 
         <div id="partners" className="mt-16 scroll-mt-24">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 items-center">
-            {t.partnersSection.partners.map((partner, i) => {
-              const logo = partnerLogos[partner.name];
-              if (!logo) return null;
-              return (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center">
+            {partners.map((partner, i) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
-                className="flex items-center justify-center px-2"
+                className="flex items-center justify-center h-16 md:h-20"
               >
                 <img
-                  src={logo}
+                  src={partner.logo}
                   alt={partner.name}
                   loading="lazy"
-                  className="h-12 md:h-14 w-auto max-w-full object-contain transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
-                  style={{
-                    filter: 'grayscale(1) brightness(0) invert(1)',
-                    opacity: 0.6,
-                  }}
+                  className="max-h-full w-auto max-w-[150px] md:max-w-[175px] object-contain opacity-70 transition-all duration-300 hover:opacity-100 hover:scale-[1.04]"
                 />
               </motion.div>
-              );
-            })}
+            ))}
           </div>
         </div>
 
