@@ -51,7 +51,7 @@ function Ground() {
   // a few large overlapping grass patches for tonal variation
   const patches = useMemo(() => {
     const rng = mulberry32(7);
-    const greens = ['#0a1f0f', '#0c2614', '#081a0c', '#0e2a16'];
+    const greens = ['#1f4d2c', '#2a5e38', '#173f24', '#245634'];
     return Array.from({ length: 14 }, () => ({
       x: (rng() - 0.5) * 30,
       z: (rng() - 0.5) * 30,
@@ -63,7 +63,7 @@ function Ground() {
   return (
     <group>
       <mesh geometry={baseGeo} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
-        <meshStandardMaterial color="#091d0e" roughness={1} />
+        <meshStandardMaterial color="#1c4a2b" roughness={1} />
       </mesh>
       {patches.map((p, i) => (
         <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[p.x, 0.004 + i * 0.0008, p.z]}>
@@ -80,7 +80,7 @@ function Path({ x, z, w, l, rotation = 0 }: { x: number; z: number; w: number; l
   const geo = useMemo(() => new THREE.PlaneGeometry(w, l), [w, l]);
   return (
     <mesh geometry={geo} rotation={[-Math.PI / 2, 0, rotation]} position={[x, 0.02, z]}>
-      <meshStandardMaterial color="#1b1b24" roughness={0.95} />
+      <meshStandardMaterial color="#9a8f78" roughness={0.95} />
     </mesh>
   );
 }
@@ -93,7 +93,7 @@ function Plaza({ radius = 3.2 }: { radius?: number }) {
   return (
     <group rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.025, 0]}>
       <mesh geometry={geo}>
-        <meshStandardMaterial color="#1d1d27" roughness={0.9} />
+        <meshStandardMaterial color="#8d8470" roughness={0.9} />
       </mesh>
       <mesh geometry={ringGeo} position={[0, 0, 0.001]}>
         <meshBasicMaterial color={BLUE} transparent opacity={0.16} blending={THREE.AdditiveBlending} />
@@ -106,7 +106,7 @@ function Plaza({ radius = 3.2 }: { radius?: number }) {
 }
 
 /* ---------- Trees: instanced for performance (2 draw calls total) ---------- */
-const TREE_GREENS = ['#123320', '#0e2a18', '#163a24', '#0c2414', '#15351f'];
+const TREE_GREENS = ['#2e7d46', '#246b3a', '#358a52', '#1f6234', '#3a9a5a'];
 const FOLIAGE_BASE_R = 0.42;
 const FOLIAGE_OFFSETS = [
   { dx: 0, dy: 0.82, dz: 0, r: 0.42 },
@@ -155,11 +155,11 @@ function InstancedTrees({ data }: { data: TreeData[] }) {
 
   return (
     <>
-      <instancedMesh ref={trunkRef} args={[undefined, undefined, data.length]}>
+      <instancedMesh ref={trunkRef} args={[undefined, undefined, data.length]} frustumCulled={false}>
         <cylinderGeometry args={[0.06, 0.11, 0.64, 7]} />
-        <meshStandardMaterial color="#241910" roughness={1} />
+        <meshStandardMaterial color="#4a3320" roughness={1} />
       </instancedMesh>
-      <instancedMesh ref={foliageRef} args={[undefined, undefined, foliageCount]}>
+      <instancedMesh ref={foliageRef} args={[undefined, undefined, foliageCount]} frustumCulled={false}>
         <sphereGeometry args={[FOLIAGE_BASE_R, 12, 12]} />
         <meshStandardMaterial roughness={1} />
       </instancedMesh>
@@ -540,7 +540,7 @@ function ParkScene({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
 
   return (
     <>
-      <fog attach="fog" args={['#080810', 16, 42]} />
+      <fog attach="fog" args={['#0d1018', 26, 60]} />
       <Ground />
       <Plaza radius={3.2} />
 
@@ -585,9 +585,9 @@ function ParkScene({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
       <CulturalCorner position={[5.6, 0, -3.6]} />
 
       {/* atmospheric, professional lighting (cool moonlight + warm lamps) */}
-      <ambientLight intensity={0.28} />
-      <directionalLight position={[6, 14, 8]} intensity={0.45} color="#9fb0e6" />
-      <hemisphereLight args={['#2a3a5a', '#0a1505', 0.35]} />
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[6, 16, 8]} intensity={1.1} color="#cdd6f5" />
+      <hemisphereLight args={['#4a5a82', '#1c3a18', 0.7]} />
 
       <CameraRig mouse={mouse} />
     </>
