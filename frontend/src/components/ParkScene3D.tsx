@@ -47,7 +47,7 @@ function CameraRig({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
 
 /* ---------- Continuous grassy ground (fades into fog) ---------- */
 function Ground() {
-  const baseGeo = useMemo(() => new THREE.PlaneGeometry(80, 80), []);
+  const baseGeo = useMemo(() => new THREE.PlaneGeometry(150, 150), []);
   // a few large overlapping grass patches for tonal variation
   const patches = useMemo(() => {
     const rng = mulberry32(7);
@@ -82,6 +82,21 @@ function Path({ x, z, w, l, rotation = 0 }: { x: number; z: number; w: number; l
     <mesh geometry={geo} rotation={[-Math.PI / 2, 0, rotation]} position={[x, 0.02, z]}>
       <meshStandardMaterial color="#9a8f78" roughness={0.95} />
     </mesh>
+  );
+}
+
+/* ---------- Radial alley spoke from the plaza ---------- */
+function Spoke({ angle, inner = 3.0, length = 7, w = 1.7 }: {
+  angle: number; inner?: number; length?: number; w?: number;
+}) {
+  const r0 = inner + length / 2;
+  const geo = useMemo(() => new THREE.PlaneGeometry(w, length), [w, length]);
+  return (
+    <group rotation={[0, angle, 0]}>
+      <mesh geometry={geo} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.018, r0]}>
+        <meshStandardMaterial color="#9a8f78" roughness={0.95} />
+      </mesh>
+    </group>
   );
 }
 
@@ -516,40 +531,44 @@ function ParkScene({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
   const trees = useMemo<TreeData[]>(() => {
     const rng = mulberry32(42);
     const out: TreeData[] = [];
-    // surrounding woods (depth/context, fades into fog)
-    for (let i = 0; i < 70; i++) {
-      const a = (i / 70) * Math.PI * 2 + rng() * 0.4;
-      const rad = 9 + rng() * 11;
+    // surrounding woods -> distant treeline that fades into fog (horizon)
+    for (let i = 0; i < 130; i++) {
+      const a = (i / 130) * Math.PI * 2 + rng() * 0.5;
+      const rad = 12 + rng() * 20; // 12..32, a deep band of trees
       out.push({
         x: Math.cos(a) * rad,
         z: Math.sin(a) * rad * 0.95,
-        s: 0.8 + rng() * 1.1,
+        s: 0.85 + rng() * 1.3,
         tone: Math.floor(rng() * 5),
       });
     }
-    // scattered inner trees lining lawns
-    for (let i = 0; i < 30; i++) {
-      const x = (rng() - 0.5) * 16;
-      const z = (rng() - 0.5) * 16;
-      if (Math.abs(x) < 2.0 && z > -4 && z < 9) continue; // keep alley clear
-      if (Math.sqrt(x * x + z * z) < 3.6) continue; // keep plaza clear
-      out.push({ x, z, s: 0.7 + rng() * 0.7, tone: Math.floor(rng() * 5) });
+    // scattered inner trees lining the lawns between alleys
+    for (let i = 0; i < 40; i++) {
+      const x = (rng() - 0.5) * 22;
+      const z = (rng() - 0.5) * 22;
+      if (Math.abs(x) < 2.2 && z > -5 && z < 10) continue; // keep main alley clear
+      if (Math.sqrt(x * x + z * z) < 4.2) continue; // keep plaza clear
+      out.push({ x, z, s: 0.7 + rng() * 0.8, tone: Math.floor(rng() * 5) });
     }
     return out;
   }, []);
 
   return (
     <>
-      <fog attach="fog" args={['#0d1018', 26, 60]} />
+      <fog attach="fog" args={['#080810', 24, 52]} />
       <Ground />
       <Plaza radius={3.2} />
 
-      {/* main alley approaching the plaza from the front */}
-      <Path x={0} z={6.6} w={2.6} l={8.5} />
-      {/* alleys radiating from the plaza */}
-      <Path x={-4.4} z={-2.6} w={1.8} l={6} rotation={Math.PI / 3} />
-      <Path x={4.4} z={-2.6} w={1.8} l={6} rotation={-Math.PI / 3} />
-      <Path x={0} z={-5.5} w={1.8} l={5} />
+      {/* main alley approaching the plaza from the front (camera side) */}
+      <Path x={0} z={6.8} w={2.6} l={9} />
+      {/* radial alley network spreading out from the plaza */}
+      <Spoke angle={Math.PI * 0.28} length={9} />
+      <Spoke angle={-Math.PI * 0.28} length={9} />
+      <Spoke angle={Math.PI * 0.5} length={8} />
+      <Spoke angle={-Math.PI * 0.5} length={8} />
+      <Spoke angle={Math.PI * 0.72} length={8.5} />
+      <Spoke angle={-Math.PI * 0.72} length={8.5} />
+      <Spoke angle={Math.PI} length={9} w={2} />
 
       <InstancedTrees data={trees} />
 
@@ -616,7 +635,7 @@ export function ParkScene3D() {
         <color attach="background" args={['#080810']} />
         <ParkScene mouse={mouse} />
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#080810]/5 to-[#080810] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#080810]/30 via-transparent to-[#080810]/45 pointer-events-none" />
     </div>
   );
 }

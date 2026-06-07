@@ -9,21 +9,21 @@ export function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-start justify-center overflow-hidden">
       <div className="absolute inset-0">
         <ParkScene3D />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <div className="mb-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 md:pt-28">
+        <div className="mb-4">
           <img
             src="/ScapeLabs-Logo.png"
             alt="ScapeLabs"
-            className="h-24 md:h-32 w-auto mx-auto"
+            className="h-20 md:h-24 w-auto mx-auto"
           />
         </div>
 
-        <h1 className="leading-tight mb-8">
+        <h1 className="leading-tight mb-6">
           <span
             className="block text-4xl md:text-6xl lg:text-7xl text-[#E8E8F0]/80 italic"
             style={{ fontFamily: "'Playfair Display', serif" }}
