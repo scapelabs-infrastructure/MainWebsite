@@ -89,6 +89,24 @@ export function TechArsenal() {
                   {card.body}
                 </p>
 
+                <div
+                  className="rounded-xl px-4 py-3"
+                  style={{
+                    background: 'rgba(45,110,255,0.08)',
+                    border: '1px solid rgba(110,150,255,0.18)',
+                  }}
+                >
+                  <span
+                    className="block text-[11px] font-bold uppercase tracking-[0.14em] mb-1"
+                    style={{ color: '#8FB4FF' }}
+                  >
+                    {ta.impactLabel}
+                  </span>
+                  <p className="text-[#E8E8F0]/90 text-[14px] md:text-[15px] leading-relaxed">
+                    {card.impact}
+                  </p>
+                </div>
+
                 <p
                   className="text-sm md:text-[15px] font-semibold mt-auto pt-4"
                   style={{

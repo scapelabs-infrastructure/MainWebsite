@@ -24,37 +24,44 @@ export const translations = {
     techArsenal: {
       title: 'Instrumentele pe care le Implementăm',
       subtitle: 'și de ce contează pentru brandul tău',
+      impactLabel: 'Impact',
       sponsorPivot: 'Fiecare proiect pe care îl implementăm este un studiu de caz documentat cu impact măsurabil. Pentru sponsori, aceasta se traduce direct în vizibilitate CSR cu raportare de standard european.',
       sponsorLink: '→ Vezi cum funcționează sponsorizarea',
       cards: [
         {
           title: 'Realitate Augmentată',
           body: 'Telefonul știe unde ești și ce privești. Punem un strat digital precis peste lumea reală — o pagină de manual devine o inimă care bate în 3D, o statuie capătă voce, un parc devine nivel de joc.',
+          impact: 'Transformă spectatorii pasivi în cursanți activi — patrimoniul și educația devin tangibile și de neuitat.',
           tagline: 'Reach maxim. Zero friction. Funcționează cu telefonul din buzunar.',
         },
         {
           title: 'Video Mapping Interactiv',
           body: 'Transformăm fațadele clădirilor în ecrane vii de zeci de metri — controlate de telefoanele spectatorilor. Mulțimea nu privește. Participă.',
+          impact: 'Transformă o piață urbană într-un moment cultural trăit împreună de mii de oameni.',
           tagline: 'Generează conținut viral organic. Oamenii filmează și distribuie singuri.',
         },
         {
           title: 'Agentic AI',
           body: 'Sisteme care iau decizii și execută sarcini în lanț, fără intervenție umană. Ghid de muzeu vocal, concierge de eveniment, generator de campanii în timp real.',
+          impact: 'Oferă ghidare personală, non-stop, la scară, eliberând oamenii pentru munca cu adevărat creativă.',
           tagline: 'Reducem timpul de producție cu 10x.',
         },
         {
           title: 'Geofencing & GPS',
           body: 'Aplicația știe când ai pășit în Piața Revoluției. Automat, la metru. Orașul devine un joc cu reguli invizibile, activate de locul în care ești.',
+          impact: 'Livrează mesajul potrivit în locul potrivit, făcând fiecare interacțiune relevantă și utilă.',
           tagline: 'Campaniile tale ajung exact când utilizatorul e în proximitatea brandului.',
         },
         {
           title: 'Digital Twins',
           body: 'Reconstruim digital clădiri, cartiere sau obiecte la scară 1:1. Cartierul Uranus — demolat în anii \'80 — există azi ca digital twin vizitabil în AR, construit de noi pentru Senatul României.',
+          impact: 'Păstrează patrimoniul pierdut și permite orașelor să testeze decizii înainte de prima cărămidă.',
           tagline: 'Categoria cu cel mai mare succes la finanțări europene.',
         },
         {
           title: 'Gamification Urbană',
           body: 'Mecanicile din jocurile video aplicate spațiului real. Vizitezi un monument, deblochezi un badge. Rezolvi o misiune, urci în leaderboard. Orașul devine RPG.',
+          impact: 'Motivează oamenii să exploreze, să învețe și să participe la viața orașului prin joc.',
           tagline: 'Engagement cu 40-60% mai mare față de comunicarea clasică.',
         },
       ],
@@ -398,37 +405,44 @@ export const translations = {
     techArsenal: {
       title: 'The Tools We Deploy',
       subtitle: 'and why they matter for your brand',
+      impactLabel: 'Impact',
       sponsorPivot: 'Every project we deploy is a documented case study with measurable reach. For sponsors, this translates directly into CSR visibility with EU-grade reporting.',
       sponsorLink: '→ See how sponsorship works',
       cards: [
         {
           title: 'Augmented Reality',
           body: 'The phone knows where you are and what you are looking at. We place a precise digital layer over the real world — a textbook page becomes a beating 3D heart, a statue finds its voice, a park becomes a game level.',
+          impact: 'Turns passive viewers into active learners — heritage and education become hands-on and unforgettable.',
           tagline: 'Maximum reach. Zero friction. Works with the phone already in your pocket.',
         },
         {
           title: 'Interactive Video Mapping',
           body: 'We turn building facades into live screens spanning dozens of metres — controlled by the phones of spectators in the crowd. The audience does not watch. It participates.',
+          impact: 'Turns a city square into a shared cultural moment that thousands experience together.',
           tagline: 'Generates organic viral content. People film and share on their own.',
         },
         {
           title: 'Agentic AI',
           body: 'Systems that make decisions and execute chained tasks without human intervention. A vocal museum guide, an event concierge, a real-time campaign generator.',
+          impact: 'Delivers personal, always-on guidance at scale while freeing people for truly creative work.',
           tagline: 'We cut production time by 10x.',
         },
         {
           title: 'Geofencing & GPS',
           body: 'The app knows the moment you step into Revolution Square. Automatically, to the metre. The city becomes a game with invisible rules, triggered by exactly where you stand.',
+          impact: 'Delivers the right message in the right place, making every interaction relevant and useful.',
           tagline: 'Your campaigns land precisely when the user is near your brand.',
         },
         {
           title: 'Digital Twins',
           body: 'We reconstruct buildings, districts or objects digitally at a 1:1 scale. The Uranus district — demolished in the 1980s — exists today as a visitable AR digital twin we built for the Romanian Senate.',
+          impact: 'Preserves lost heritage and lets cities test decisions before a single brick is laid.',
           tagline: 'The category with the highest success rate for European funding.',
         },
         {
           title: 'Urban Gamification',
           body: 'Video-game mechanics applied to real space. Visit a monument, unlock a badge. Complete a mission, climb the leaderboard. The city becomes an RPG.',
+          impact: 'Motivates people to explore, learn and take part in city life through play.',
           tagline: '40–60% higher engagement than traditional communication.',
         },
       ],
