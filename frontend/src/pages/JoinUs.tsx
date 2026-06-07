@@ -142,14 +142,14 @@ export function JoinUs() {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-32 md:pt-36">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-48 md:pt-56">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h1
-              className="mb-6 font-extrabold text-white max-w-3xl mx-auto"
+              className="mb-6 font-extrabold text-white mx-auto"
               style={{
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: '-0.03em',
@@ -158,7 +158,8 @@ export function JoinUs() {
                 textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
               }}
             >
-              {j.hero.headline}
+              <span className="block">{j.hero.headlineLine1}</span>
+              <span className="block whitespace-nowrap">{j.hero.headlineLine2}</span>
             </h1>
 
             <p
@@ -252,7 +253,7 @@ export function JoinUs() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
             {[
               { title: j.community.card1Title, desc: j.community.card1Desc, glyph: '</>', color: '#2D6EFF' },
-              { title: j.community.card2Title, desc: j.community.card2Desc, glyph: '◎', color: '#7B3FE4' },
+              { title: j.community.card2Title, desc: j.community.card2Desc, glyph: '⬡', color: '#7B3FE4' },
               { title: j.community.card3Title, desc: j.community.card3Desc, glyph: '★', color: '#0EA5E9' },
             ].map((card, i) => (
               <motion.div
