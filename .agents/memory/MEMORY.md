@@ -1,1 +1,2 @@
 - [Font convention](font-convention.md) — Inter everywhere except 3 specific Playfair Display Italic accent elements; all section titles/headers must be Inter.
+- [Hero 3D concept](hero-3d-concept.md) — hero must be a LITERAL park (alley, robots, kiosks, projection mapping, treasure hunt, cultural corner); user rejects abstract grids/HUD.

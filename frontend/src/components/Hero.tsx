@@ -1,4 +1,4 @@
-import { CityScape3D } from './CityScape3D';
+import { ParkScene3D } from './ParkScene3D';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function Hero() {
@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <CityScape3D />
+        <ParkScene3D />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
