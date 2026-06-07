@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const statusColors: Record<string, string> = {
@@ -14,9 +15,18 @@ const statusColors: Record<string, string> = {
   'Căutăm Sponsori': '#0EA5E9',
 };
 
+const projectImages = [
+  '/project-academy.png',
+  '/3.jpeg',
+  '/1.jpeg',
+  '/2.jpeg',
+  '/vision-bucharest.png',
+];
+
 export function ProjectsCommunity() {
   const { t } = useLanguage();
   const pc = t.projectsCommunity;
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section id="community" className="py-24 md:py-36 px-6 relative overflow-hidden">
@@ -49,20 +59,56 @@ export function ProjectsCommunity() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08, ease: 'easeOut' }}
-                className="group relative rounded-xl p-6 transition-all duration-300"
+                className="group relative rounded-xl overflow-hidden transition-all duration-300"
                 style={{
-                  background: 'rgba(8,8,16,0.6)',
                   border: '1px solid rgba(232,232,240,0.07)',
                 }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
+                {/* Background image — fades in on hover */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+                  style={{ opacity: hoveredIndex === i ? 1 : 0 }}
+                >
+                  <img
+                    src={projectImages[i]}
+                    alt=""
+                    className="w-full h-full object-cover object-center"
+                    style={{ filter: 'brightness(0.35) saturate(1.1)' }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        'linear-gradient(90deg, rgba(8,8,16,0.85) 0%, rgba(8,8,16,0.55) 60%, rgba(8,8,16,0.4) 100%)',
+                    }}
+                  />
+                </div>
+
+                {/* Dark base bg (when not hovered) */}
+                <div
+                  className="absolute inset-0 rounded-xl transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: 'rgba(8,8,16,0.6)',
+                    opacity: hoveredIndex === i ? 0 : 1,
+                  }}
+                />
+
+                {/* Hover border glow */}
                 <div
                   className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ border: '1px solid rgba(45,110,255,0.2)' }}
+                  style={{ border: '1px solid rgba(45,110,255,0.3)' }}
                 />
-                <div className="flex items-start gap-4">
+
+                {/* Card content */}
+                <div className="relative z-10 p-6 flex items-start gap-4">
                   <span
-                    className="text-3xl font-bold flex-shrink-0 leading-none mt-0.5"
-                    style={{ color: 'rgba(45,110,255,0.25)', fontFamily: "'Inter', sans-serif" }}
+                    className="text-3xl font-bold flex-shrink-0 leading-none mt-0.5 transition-colors duration-300"
+                    style={{
+                      color: hoveredIndex === i ? 'rgba(45,110,255,0.6)' : 'rgba(45,110,255,0.25)',
+                      fontFamily: "'Inter', sans-serif",
+                    }}
                   >
                     {project.num}
                   </span>
@@ -80,7 +126,9 @@ export function ProjectsCommunity() {
                         {project.status}
                       </span>
                     </div>
-                    <p className="text-[#E8E8F0]/50 text-sm leading-relaxed">{project.desc}</p>
+                    <p className="text-[#E8E8F0]/50 text-sm leading-relaxed group-hover:text-[#E8E8F0]/70 transition-colors duration-300">
+                      {project.desc}
+                    </p>
                   </div>
                 </div>
               </motion.div>
