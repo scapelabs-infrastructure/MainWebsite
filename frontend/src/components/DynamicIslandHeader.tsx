@@ -78,27 +78,21 @@ export function DynamicIslandHeader() {
             >
               {t.header.workWithUs}
             </a>
-          </div>
 
-          <div className="hidden md:flex items-center gap-3">
+            <span style={{ width: '1px', height: '16px', background: 'rgba(232,232,240,0.1)', display: 'inline-block', flexShrink: 0 }} />
+
             <button
               onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
-              className="px-3 py-1.5 rounded-full text-xs font-mono transition-all"
-              style={{
-                border: '1px solid rgba(232,232,240,0.12)',
-                color: 'rgba(232,232,240,0.4)',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.color = '#E8E8F0';
-                (e.currentTarget as HTMLButtonElement).style.borderColor = '#2D6EFF';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.color = 'rgba(232,232,240,0.4)';
-                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(232,232,240,0.12)';
-              }}
+              className="text-xs font-mono tracking-widest transition-colors"
+              style={{ color: 'rgba(232,232,240,0.3)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(232,232,240,0.7)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,232,240,0.3)')}
             >
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="/join"
               className="px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -111,8 +105,8 @@ export function DynamicIslandHeader() {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setLang(lang === 'ro' ? 'en' : 'ro')}
-              className="px-2 py-1 rounded-full text-xs font-mono transition-all"
-              style={{ border: '1px solid rgba(232,232,240,0.12)', color: 'rgba(232,232,240,0.4)' }}
+              className="text-xs font-mono tracking-widest transition-colors"
+              style={{ color: 'rgba(232,232,240,0.3)' }}
             >
               {lang === 'ro' ? 'EN' : 'RO'}
             </button>

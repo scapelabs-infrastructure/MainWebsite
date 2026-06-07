@@ -161,12 +161,12 @@ export function TechArsenal() {
           <p className="text-[#E8E8F0]/55 text-sm md:text-base max-w-2xl mb-4">
             {ta.sponsorPivot}
           </p>
-          <button
-            onClick={() => setSponsorOpen(true)}
+          <a
+            href="/work-with-us"
             className="text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
           >
             {ta.sponsorLink}
-          </button>
+          </a>
         </motion.div>
       </div>
 
