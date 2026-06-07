@@ -29,7 +29,7 @@ export function FinalCTA() {
           <div className="relative">
             <p
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E8E8F0] mb-4 leading-tight"
-              style={{ fontFamily: "'DM Serif Display', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {cta.leftTitle}
             </p>
@@ -63,7 +63,7 @@ export function FinalCTA() {
           <div className="relative">
             <p
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E8E8F0] mb-4 leading-tight"
-              style={{ fontFamily: "'DM Serif Display', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {cta.rightTitle}
             </p>

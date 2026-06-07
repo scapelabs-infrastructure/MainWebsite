@@ -62,7 +62,7 @@ export default function App() {
   return (
     <div
       className="relative overflow-x-hidden"
-      style={{ background: '#080810', color: '#E8E8F0', fontFamily: "'DM Sans', sans-serif" }}
+      style={{ background: '#080810', color: '#E8E8F0', fontFamily: "'Inter', sans-serif" }}
     >
       <FilmGrain />
       <DynamicIslandHeader />

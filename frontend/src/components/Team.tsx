@@ -35,7 +35,7 @@ export function Team() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-16"
-          style={{ fontFamily: "'DM Serif Display', serif" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {tb.title}
         </motion.h2>

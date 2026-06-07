@@ -45,7 +45,7 @@ export function Manifesto() {
 
               <p
                 className="text-[#E8E8F0]/80 text-lg md:text-xl leading-relaxed mb-4"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {m.body}
               </p>
@@ -56,7 +56,7 @@ export function Manifesto() {
 
               <p
                 className="text-[#E8E8F0]/40 text-sm italic"
-                style={{ fontFamily: "'DM Serif Display', serif" }}
+                style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {m.founderNote}
               </p>

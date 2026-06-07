@@ -1,4 +1,4 @@
-import { CityGrid3D } from './CityGrid3D';
+import { CityScape3D } from './CityScape3D';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function Hero() {
@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <CityGrid3D />
+        <CityScape3D />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
@@ -26,20 +26,20 @@ export function Hero() {
         <h1 className="leading-tight mb-8">
           <span
             className="block text-4xl md:text-6xl lg:text-7xl text-[#E8E8F0]/80 italic"
-            style={{ fontFamily: "'DM Serif Display', serif" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             {t.hero.line1}
           </span>
           <span
             className="block text-5xl md:text-7xl lg:text-8xl font-bold text-[#E8E8F0] tracking-tight"
-            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: '-0.03em' }}
+            style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '-0.03em' }}
           >
             {t.hero.line2}
           </span>
           <span
             className="block text-4xl md:text-6xl lg:text-7xl italic"
             style={{
-              fontFamily: "'DM Serif Display', serif",
+              fontFamily: "'Playfair Display', serif",
               background: 'linear-gradient(90deg, #2D6EFF, #7B3FE4)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -49,7 +49,10 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="text-[#E8E8F0]/60 text-base md:text-lg max-w-[560px] mx-auto leading-relaxed">
+        <p
+          className="text-[#E8E8F0]/60 text-base md:text-lg max-w-[560px] mx-auto leading-relaxed"
+          style={{ fontFamily: "'Inter', sans-serif" }}
+        >
           {t.hero.subtitle}
         </p>
       </div>
@@ -58,12 +61,14 @@ export function Hero() {
         <button
           onClick={() => scrollToSection('partners')}
           className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#2D6EFF] transition-colors tracking-wide"
+          style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {t.hero.cta1}
         </button>
         <button
           onClick={() => scrollToSection('community')}
           className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#7B3FE4] transition-colors tracking-wide"
+          style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {t.hero.cta2}
         </button>

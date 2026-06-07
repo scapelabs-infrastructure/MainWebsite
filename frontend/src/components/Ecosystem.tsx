@@ -53,7 +53,7 @@ export function Ecosystem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-16 text-center"
-          style={{ fontFamily: "'DM Serif Display', serif" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {eco.title}
         </motion.h2>
@@ -140,7 +140,7 @@ export function Ecosystem() {
                       dominantBaseline="middle"
                       fill={isActive ? '#E8E8F0' : 'rgba(232,232,240,0.5)'}
                       fontSize={isCenter ? 7 : 6}
-                      fontFamily="'DM Sans', sans-serif"
+                      fontFamily="'Inter', sans-serif"
                       fontWeight={isCenter ? '600' : '400'}
                       style={{ transition: 'fill 0.3s', pointerEvents: 'none', userSelect: 'none' }}
                     >
@@ -179,7 +179,7 @@ export function Ecosystem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
           className="mt-10 text-center text-xl md:text-2xl font-bold text-[#E8E8F0]"
-          style={{ fontFamily: "'DM Serif Display', serif" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {eco.bottomLine}
         </motion.p>
