@@ -47,7 +47,7 @@ export function Hero() {
         </h1>
 
         <p
-          className="text-[#C4C9DA] text-base md:text-lg max-w-[620px] mx-auto leading-relaxed"
+          className="text-[#C4C9DA] text-base md:text-lg max-w-[620px] mx-auto leading-relaxed mb-10"
           style={{
             fontFamily: "'Inter', sans-serif",
             textShadow: '0 1px 16px rgba(0,0,0,0.6)',
@@ -55,23 +55,40 @@ export function Hero() {
         >
           {t.hero.subtitle}
         </p>
-      </div>
 
-      <div className="absolute bottom-10 right-8 md:right-12 z-20 flex flex-col gap-3 items-end">
-        <a
-          href="/work-with-us"
-          className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#2D6EFF] transition-colors tracking-wide"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          {t.hero.cta1}
-        </a>
-        <button
-          onClick={() => scrollToSection('community')}
-          className="text-sm font-medium text-[#E8E8F0]/70 hover:text-[#7B3FE4] transition-colors tracking-wide"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          {t.hero.cta2}
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/work-with-us"
+            className="px-7 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90 whitespace-nowrap"
+            style={{
+              background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)',
+              boxShadow: '0 0 24px rgba(45,110,255,0.35)',
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            {t.hero.cta1}
+          </a>
+          <button
+            onClick={() => scrollToSection('community-hub')}
+            className="px-7 py-3 rounded-full text-sm font-semibold transition-colors whitespace-nowrap"
+            style={{
+              border: '1px solid rgba(232,232,240,0.2)',
+              color: 'rgba(232,232,240,0.8)',
+              background: 'rgba(232,232,240,0.04)',
+              fontFamily: "'Inter', sans-serif",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(232,232,240,0.45)';
+              e.currentTarget.style.color = '#E8E8F0';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(232,232,240,0.2)';
+              e.currentTarget.style.color = 'rgba(232,232,240,0.8)';
+            }}
+          >
+            {t.hero.cta2}
+          </button>
+        </div>
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
