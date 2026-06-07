@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
+import { DynamicIslandHeader } from '../components/DynamicIslandHeader';
+import { Footer } from '../components/Footer';
+import { FilmGrain } from '../components/FilmGrain';
+import { NeonScene3D } from '../components/NeonScene3D';
 
 const WA_LINK = 'https://chat.whatsapp.com/GLOwIzmGZl21VmQsYqnsgN';
 const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*';
@@ -47,12 +51,12 @@ function OidBadge({ label, value, note }: { label: string; value: string; note: 
       className="inline-flex flex-col gap-1.5 rounded-2xl px-7 py-5 mt-8"
       style={{
         background: 'rgba(45,110,255,0.07)',
-        border: '1px solid rgba(45,110,255,0.22)',
+        border: '1px solid rgba(45,110,255,0.25)',
       }}
     >
-      <span className="text-xs font-mono text-[#2D6EFF]/50 uppercase tracking-widest">{label}</span>
+      <span className="text-xs font-mono text-[#2D6EFF]/60 uppercase tracking-widest">{label}</span>
       <span className="text-xl md:text-2xl font-bold font-mono text-[#2D6EFF] tracking-wider">{displayed}</span>
-      <span className="text-xs text-[#E8E8F0]/30 mt-0.5">{note}</span>
+      <span className="text-xs text-[#E8E8F0]/40 mt-0.5">{note}</span>
     </div>
   );
 }
@@ -108,91 +112,108 @@ export function JoinUs() {
     }
   };
 
-  const inputStyle = {
-    background: 'rgba(232,232,240,0.04)',
-    border: '1px solid rgba(232,232,240,0.1)',
+  const inputStyle: React.CSSProperties = {
+    background: 'rgba(232,232,240,0.05)',
+    border: '1px solid rgba(232,232,240,0.12)',
     color: '#E8E8F0',
   };
 
   return (
     <div
-      className="relative min-h-screen overflow-x-hidden"
+      className="relative overflow-x-hidden"
       style={{ background: '#080810', color: '#E8E8F0', fontFamily: "'Inter', sans-serif" }}
     >
-      {/* Back nav */}
-      <div className="fixed top-6 left-6 z-50">
-        <a
-          href="/"
-          className="text-xs font-mono text-[#E8E8F0]/25 hover:text-[#E8E8F0]/55 transition-colors"
-        >
-          ← scapelabs.ro
-        </a>
-      </div>
+      <FilmGrain />
+      <DynamicIslandHeader />
 
       {/* ── HERO ── */}
-      <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center relative overflow-hidden">
+      <section className="relative h-screen flex items-start justify-center overflow-hidden">
+        {/* Three.js scene — same as homepage */}
+        <div className="absolute inset-0">
+          <NeonScene3D />
+        </div>
+
+        {/* Darkening scrim — same radial as homepage hero */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-[5] w-[min(100vw,1200px)] h-[90vh] pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(45,110,255,0.08) 0%, transparent 70%)',
+              'radial-gradient(closest-side, rgba(6,6,15,0.93) 0%, rgba(6,6,15,0.82) 32%, rgba(6,6,15,0.5) 58%, rgba(6,6,15,0.18) 78%, transparent 100%)',
           }}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 36 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ease: 'easeOut' }}
-          className="max-w-4xl mx-auto"
-        >
-          <span className="text-xs font-mono text-[#2D6EFF]/50 uppercase tracking-[0.3em] mb-6 block">
-            ScapeLabs
-          </span>
-          <h1
-            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-[#E8E8F0] tracking-tight leading-[1.06] mb-8"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-32 md:pt-36">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            {j.hero.headline}
-          </h1>
-          <p className="text-[#E8E8F0]/50 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-14">
-            {j.hero.sub}
-          </p>
+            <h1
+              className="mb-6 font-extrabold text-white max-w-3xl mx-auto"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                letterSpacing: '-0.03em',
+                lineHeight: 1.08,
+                fontSize: 'clamp(2rem, 4.5vw, 4.2rem)',
+                textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
+              }}
+            >
+              {j.hero.headline}
+            </h1>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => scrollTo('section-community')}
-              className="px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2.5"
-              style={{
-                background: 'rgba(45,110,255,0.1)',
-                border: '1px solid rgba(45,110,255,0.32)',
-                color: '#E8E8F0',
-              }}
+            <p
+              className="text-[#C4C9DA] text-base md:text-lg max-w-[600px] mx-auto leading-relaxed mb-12"
+              style={{ textShadow: '0 1px 16px rgba(0,0,0,0.6)' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6EFF] animate-pulse inline-block" />
-              {j.hero.pillCommunity}
-            </button>
-            <button
-              onClick={() => scrollTo('section-academy')}
-              className="px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2.5"
-              style={{
-                background: 'linear-gradient(135deg, rgba(45,110,255,0.15), rgba(123,63,228,0.18))',
-                border: '1px solid rgba(123,63,228,0.38)',
-                color: '#E8E8F0',
-              }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#7B3FE4] animate-pulse inline-block" />
-              {j.hero.pillAcademy}
-            </button>
+              {j.hero.sub}
+            </p>
+
+            {/* Pill navigation — visually distinct */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              {/* Community pill — open/friendly, outlined blue */}
+              <button
+                onClick={() => scrollTo('section-community')}
+                className="group flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.04]"
+                style={{
+                  background: 'rgba(45,110,255,0.14)',
+                  border: '1px solid rgba(45,110,255,0.5)',
+                  color: '#93C5FD',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <span className="w-2 h-2 rounded-full bg-[#2D6EFF] animate-pulse flex-shrink-0" />
+                {j.hero.pillCommunity}
+                <span className="text-[#2D6EFF]/50 font-mono text-xs">↓</span>
+              </button>
+
+              {/* Academy pill — exclusive, gradient filled */}
+              <button
+                onClick={() => scrollTo('section-academy')}
+                className="flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-bold transition-all duration-300 hover:scale-[1.04] text-white"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(123,63,228,0.75) 0%, rgba(45,110,255,0.55) 100%)',
+                  border: '1px solid rgba(123,63,228,0.6)',
+                  backdropFilter: 'blur(8px)',
+                  textShadow: '0 1px 8px rgba(0,0,0,0.5)',
+                }}
+              >
+                <span className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
+                {j.hero.pillAcademy}
+                <span className="text-white/50 font-mono text-xs">↓</span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+          <div className="w-5 h-9 border border-[#E8E8F0]/20 rounded-full flex justify-center pt-1.5">
+            <div
+              className="w-1 h-2.5 rounded-full"
+              style={{ background: 'linear-gradient(180deg, #2D6EFF, #7B3FE4)' }}
+            />
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#E8E8F0]/15 mx-auto" />
-        </motion.div>
+        </div>
       </section>
 
       {/* ── COMMUNITY ── */}
@@ -201,7 +222,7 @@ export function JoinUs() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 55% 60% at 15% 50%, rgba(45,110,255,0.05) 0%, transparent 70%)',
+              'radial-gradient(ellipse 55% 60% at 15% 50%, rgba(45,110,255,0.06) 0%, transparent 70%)',
           }}
         />
         <div className="max-w-6xl mx-auto">
@@ -211,25 +232,28 @@ export function JoinUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
           >
-            <span className="text-xs font-mono text-[#2D6EFF]/45 uppercase tracking-[0.25em] mb-5 block">
+            <span className="text-sm font-mono text-[#2D6EFF]/60 uppercase tracking-[0.25em] mb-5 block">
               01 — Community
             </span>
             <h2
-              className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-8 max-w-3xl leading-tight"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="font-bold text-[#E8E8F0] tracking-tight mb-8 max-w-3xl leading-tight"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: 'clamp(2rem, 4vw, 3.75rem)',
+              }}
             >
               {j.community.title}
             </h2>
-            <p className="text-[#E8E8F0]/55 text-base md:text-lg leading-relaxed max-w-2xl mb-14">
+            <p className="text-[#E8E8F0]/65 text-base md:text-lg leading-relaxed max-w-2xl mb-14">
               {j.community.body}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
             {[
-              { title: j.community.card1Title, desc: j.community.card1Desc, glyph: '⟨/⟩' },
-              { title: j.community.card2Title, desc: j.community.card2Desc, glyph: '◎' },
-              { title: j.community.card3Title, desc: j.community.card3Desc, glyph: '★' },
+              { title: j.community.card1Title, desc: j.community.card1Desc, glyph: '</>', color: '#2D6EFF' },
+              { title: j.community.card2Title, desc: j.community.card2Desc, glyph: '◎', color: '#7B3FE4' },
+              { title: j.community.card3Title, desc: j.community.card3Desc, glyph: '★', color: '#0EA5E9' },
             ].map((card, i) => (
               <motion.div
                 key={i}
@@ -237,15 +261,20 @@ export function JoinUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="rounded-xl p-6"
+                className="rounded-xl p-7"
                 style={{
-                  background: 'rgba(8,8,16,0.7)',
-                  border: '1px solid rgba(232,232,240,0.07)',
+                  background: 'rgba(232,232,240,0.04)',
+                  border: `1px solid ${card.color}22`,
                 }}
               >
-                <span className="text-lg text-[#2D6EFF]/35 mb-4 block font-mono">{card.glyph}</span>
-                <p className="text-[#E8E8F0] font-semibold text-sm mb-2">{card.title}</p>
-                <p className="text-[#E8E8F0]/45 text-sm leading-relaxed">{card.desc}</p>
+                <span
+                  className="text-3xl mb-5 block font-bold"
+                  style={{ color: card.color, opacity: 0.75 }}
+                >
+                  {card.glyph}
+                </span>
+                <p className="text-[#E8E8F0] font-semibold text-base mb-2">{card.title}</p>
+                <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -276,7 +305,7 @@ export function JoinUs() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 55% 60% at 85% 50%, rgba(123,63,228,0.06) 0%, transparent 70%)',
+              'radial-gradient(ellipse 55% 60% at 85% 50%, rgba(123,63,228,0.07) 0%, transparent 70%)',
           }}
         />
         <div className="max-w-6xl mx-auto">
@@ -287,16 +316,19 @@ export function JoinUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
             >
-              <span className="text-xs font-mono text-[#7B3FE4]/45 uppercase tracking-[0.25em] mb-5 block">
+              <span className="text-sm font-mono text-[#7B3FE4]/65 uppercase tracking-[0.25em] mb-5 block">
                 02 — EU Strategy
               </span>
               <h2
-                className="text-4xl md:text-5xl font-bold text-[#E8E8F0] tracking-tight mb-6 leading-tight"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                className="font-bold text-[#E8E8F0] tracking-tight mb-6 leading-tight"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 'clamp(1.8rem, 3.5vw, 3.2rem)',
+                }}
               >
                 {j.eu.title}
               </h2>
-              <p className="text-[#E8E8F0]/55 text-base leading-relaxed mb-2">
+              <p className="text-[#E8E8F0]/65 text-base leading-relaxed mb-2">
                 {j.eu.body}
               </p>
               <OidBadge label={j.eu.oidLabel} value={j.eu.oidValue} note={j.eu.oidNote} />
@@ -322,14 +354,14 @@ export function JoinUs() {
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
                   className="flex gap-4 items-start rounded-xl p-5"
                   style={{
-                    background: 'rgba(8,8,16,0.6)',
-                    border: '1px solid rgba(123,63,228,0.1)',
+                    background: 'rgba(232,232,240,0.04)',
+                    border: '1px solid rgba(123,63,228,0.15)',
                   }}
                 >
                   <span className="text-2xl flex-shrink-0">{item.flag}</span>
                   <div>
                     <p className="text-[#E8E8F0] font-semibold text-sm mb-1">{item.label}</p>
-                    <p className="text-[#E8E8F0]/45 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -344,7 +376,7 @@ export function JoinUs() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 70% 55% at 50% 55%, rgba(123,63,228,0.07) 0%, transparent 70%)',
+              'radial-gradient(ellipse 70% 55% at 50% 55%, rgba(123,63,228,0.08) 0%, transparent 70%)',
           }}
         />
         <div className="max-w-6xl mx-auto">
@@ -355,22 +387,25 @@ export function JoinUs() {
             transition={{ duration: 0.55 }}
             className="mb-16"
           >
-            <span className="text-xs font-mono text-[#7B3FE4]/45 uppercase tracking-[0.25em] mb-5 block">
+            <span className="text-sm font-mono text-[#7B3FE4]/65 uppercase tracking-[0.25em] mb-5 block">
               03 — Academy
             </span>
             <h2
-              className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="font-bold text-[#E8E8F0] tracking-tight"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: 'clamp(2rem, 4vw, 3.75rem)',
+              }}
             >
               {j.academy.title}
             </h2>
             <p
               className="text-xl md:text-2xl mt-2 mb-8"
-              style={{ color: 'rgba(123,63,228,0.65)', fontStyle: 'italic', fontFamily: "'Inter', sans-serif" }}
+              style={{ color: 'rgba(123,63,228,0.75)', fontStyle: 'italic' }}
             >
               {j.academy.subtitle}
             </p>
-            <p className="text-[#E8E8F0]/55 text-base leading-relaxed max-w-2xl">
+            <p className="text-[#E8E8F0]/65 text-base leading-relaxed max-w-2xl">
               {j.academy.body}
             </p>
           </motion.div>
@@ -390,19 +425,19 @@ export function JoinUs() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="rounded-2xl p-7 flex flex-col gap-4"
                 style={{
-                  background: 'rgba(8,8,16,0.7)',
-                  border: `1px solid ${track.color}18`,
+                  background: 'rgba(232,232,240,0.04)',
+                  border: `1px solid ${track.color}20`,
                 }}
               >
                 <span
                   className="text-4xl font-bold font-mono leading-none"
-                  style={{ color: track.color, opacity: 0.18 }}
+                  style={{ color: track.color, opacity: 0.22 }}
                 >
                   {track.num}
                 </span>
                 <div>
                   <p className="text-[#E8E8F0] font-bold text-base mb-2">{track.title}</p>
-                  <p className="text-[#E8E8F0]/48 text-sm leading-relaxed">{track.desc}</p>
+                  <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{track.desc}</p>
                 </div>
                 <div
                   className="mt-auto h-0.5 w-10 rounded-full"
@@ -420,8 +455,8 @@ export function JoinUs() {
             transition={{ duration: 0.55 }}
             className="rounded-2xl p-8 md:p-10"
             style={{
-              background: 'rgba(8,8,16,0.85)',
-              border: '1px solid rgba(123,63,228,0.18)',
+              background: 'rgba(232,232,240,0.03)',
+              border: '1px solid rgba(123,63,228,0.2)',
             }}
           >
             <AnimatePresence mode="wait">
@@ -459,9 +494,8 @@ export function JoinUs() {
                   exit={{ opacity: 0 }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
-                    {/* Name */}
                     <div>
-                      <label className="block text-xs font-mono text-[#E8E8F0]/35 uppercase tracking-[0.2em] mb-2">
+                      <label className="block text-xs font-mono text-[#E8E8F0]/45 uppercase tracking-[0.2em] mb-2">
                         {j.academy.formName}
                       </label>
                       <input
@@ -470,13 +504,12 @@ export function JoinUs() {
                         onChange={e => setName(e.target.value)}
                         required
                         placeholder="—"
-                        className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
                         style={inputStyle}
                       />
                     </div>
-                    {/* Email */}
                     <div>
-                      <label className="block text-xs font-mono text-[#E8E8F0]/35 uppercase tracking-[0.2em] mb-2">
+                      <label className="block text-xs font-mono text-[#E8E8F0]/45 uppercase tracking-[0.2em] mb-2">
                         {j.academy.formEmail}
                       </label>
                       <input
@@ -485,13 +518,12 @@ export function JoinUs() {
                         onChange={e => setEmail(e.target.value)}
                         required
                         placeholder="—"
-                        className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
                         style={inputStyle}
                       />
                     </div>
-                    {/* Track */}
                     <div>
-                      <label className="block text-xs font-mono text-[#E8E8F0]/35 uppercase tracking-[0.2em] mb-2">
+                      <label className="block text-xs font-mono text-[#E8E8F0]/45 uppercase tracking-[0.2em] mb-2">
                         {j.academy.formTrack}
                       </label>
                       <select
@@ -534,9 +566,9 @@ export function JoinUs() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-xs transition-colors"
-                      style={{ color: 'rgba(37,211,102,0.55)' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = 'rgba(37,211,102,0.85)')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(37,211,102,0.55)')}
+                      style={{ color: 'rgba(37,211,102,0.6)' }}
+                      onMouseEnter={e => (e.currentTarget.style.color = 'rgba(37,211,102,0.9)')}
+                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(37,211,102,0.6)')}
                     >
                       <WaIcon size={13} />
                       {j.academy.orJoinCommunity}
@@ -557,14 +589,14 @@ export function JoinUs() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-xs font-mono text-[#E8E8F0]/20 uppercase tracking-[0.25em] mb-8"
+            className="text-sm font-mono text-[#E8E8F0]/40 uppercase tracking-[0.25em] mb-8"
           >
             04 — {j.vibe.title}
           </motion.p>
           <div
             className="grid grid-cols-1 md:grid-cols-3"
             style={{
-              border: '1px solid rgba(232,232,240,0.06)',
+              border: '1px solid rgba(232,232,240,0.08)',
               borderRadius: '16px',
               overflow: 'hidden',
             }}
@@ -582,8 +614,8 @@ export function JoinUs() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="p-8"
                 style={{
-                  background: '#080810',
-                  borderRight: i < 2 ? '1px solid rgba(232,232,240,0.06)' : undefined,
+                  background: 'rgba(232,232,240,0.03)',
+                  borderRight: i < 2 ? '1px solid rgba(232,232,240,0.07)' : undefined,
                 }}
               >
                 <div
@@ -591,7 +623,7 @@ export function JoinUs() {
                   style={{ background: stat.accent }}
                 />
                 <p className="text-[#E8E8F0] font-bold text-base mb-2">{stat.title}</p>
-                <p className="text-[#E8E8F0]/42 text-sm leading-relaxed">{stat.desc}</p>
+                <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{stat.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -603,9 +635,8 @@ export function JoinUs() {
         <div className="max-w-6xl mx-auto">
           <div
             className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(232,232,240,0.07)' }}
+            style={{ border: '1px solid rgba(232,232,240,0.08)' }}
           >
-            {/* Community */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -613,12 +644,12 @@ export function JoinUs() {
               transition={{ duration: 0.45 }}
               className="p-10 md:p-12 flex flex-col justify-between gap-8"
               style={{
-                background: 'rgba(45,110,255,0.04)',
+                background: 'rgba(45,110,255,0.05)',
                 borderRight: '1px solid rgba(232,232,240,0.07)',
               }}
             >
               <div>
-                <span className="text-xs font-mono text-[#2D6EFF]/45 uppercase tracking-[0.2em] mb-4 block">
+                <span className="text-sm font-mono text-[#2D6EFF]/60 uppercase tracking-[0.2em] mb-4 block">
                   Community
                 </span>
                 <p className="text-[#E8E8F0] text-xl md:text-2xl font-semibold leading-snug">
@@ -637,17 +668,16 @@ export function JoinUs() {
               </a>
             </motion.div>
 
-            {/* Academy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.1 }}
               className="p-10 md:p-12 flex flex-col justify-between gap-8"
-              style={{ background: 'rgba(123,63,228,0.04)' }}
+              style={{ background: 'rgba(123,63,228,0.05)' }}
             >
               <div>
-                <span className="text-xs font-mono text-[#7B3FE4]/45 uppercase tracking-[0.2em] mb-4 block">
+                <span className="text-sm font-mono text-[#7B3FE4]/65 uppercase tracking-[0.2em] mb-4 block">
                   Academy
                 </span>
                 <p className="text-[#E8E8F0] text-xl md:text-2xl font-semibold leading-snug">
@@ -666,11 +696,7 @@ export function JoinUs() {
         </div>
       </section>
 
-      <div className="pb-12 px-6 text-center">
-        <p className="text-[#E8E8F0]/12 text-xs font-mono">
-          © Asociația ScapeLabs · București, România
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }

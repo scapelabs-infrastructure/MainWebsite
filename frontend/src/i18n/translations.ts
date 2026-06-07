@@ -400,7 +400,7 @@ export const translations = {
     joinUs: {
       hero: {
         headline: 'Vrei să construiești viitorul. Acesta e locul de start.',
-        sub: 'ScapeLabs este un laborator R&D AI-native la intersecția dintre spatial computing, AI aplicat și design urban. Construim tech real, călătorim în Europa și conectăm cele mai bune minți tinere din București.',
+        sub: 'ScapeLabs este un laborator R&D AI-native la intersecția dintre spatial computing, AI aplicat și design urban. Construim tech real, călătorim în Europa și conectăm cele mai bune minți tinere din UE.',
         pillCommunity: 'Comunitatea',
         pillAcademy: 'Academy',
       },
@@ -865,7 +865,7 @@ export const translations = {
     joinUs: {
       hero: {
         headline: 'You want to build the future. This is where you start.',
-        sub: 'ScapeLabs is an AI-native R&D lab operating at the intersection of spatial computing, applied AI and urban design. We build real tech, we travel Europe, and we connect the best young minds in Bucharest.',
+        sub: 'ScapeLabs is an AI-native R&D lab operating at the intersection of spatial computing, applied AI and urban design. We build real tech, we travel Europe, and we connect the best young minds in EU.',
         pillCommunity: 'The Community',
         pillAcademy: 'The Academy',
       },
