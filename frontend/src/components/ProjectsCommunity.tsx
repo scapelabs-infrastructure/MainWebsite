@@ -81,7 +81,6 @@ export function ProjectsCommunity() {
                       </span>
                     </div>
                     <p className="text-[#E8E8F0]/50 text-sm leading-relaxed">{project.desc}</p>
-                    <span className="mt-2 inline-block text-xs text-[#E8E8F0]/25 font-mono">{project.type}</span>
                   </div>
                 </div>
               </motion.div>
