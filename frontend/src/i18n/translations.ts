@@ -531,7 +531,7 @@ export const translations = {
         card4Desc: 'Reconstituiri 3D de precizie pentru arhitectură, patrimoniu și real estate.',
       },
       specialists: {
-        title: 'Tu construiești lucruri.',
+        title: 'Și tu construiești lucruri?',
         subtitle: 'Hai să vorbim.',
         body: 'ScapeLabs colaborează cu specialiști independenți — dezvoltatori Spatial Computing, ingineri AI, artiști 3D, designeri UX, sound designeri, cinematografi — tu știi ce ești. Dacă ai un skill care se potrivește unui proiect live, vrem să fii în rețea. Fără angajament permanent.',
         namePh: 'Nume',
@@ -1114,7 +1114,7 @@ export const translations = {
         card4Desc: 'Precision 3D reconstructions for architecture, heritage and real estate.',
       },
       specialists: {
-        title: 'You build things too.',
+        title: 'You build things too?',
         subtitle: "Let's talk.",
         body: 'ScapeLabs collaborates with independent specialists — Spatial Computing developers, AI engineers, 3D artists, UX designers, sound designers, cinematographers — you name it. If you have a skill that fits a live project, we want you in the network. No permanent commitment.',
         namePh: 'Name',
