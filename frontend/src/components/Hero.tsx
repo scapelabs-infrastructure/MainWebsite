@@ -42,8 +42,8 @@ export function Hero() {
             textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
           }}
         >
-          <span className="block">{t.hero.headlineLine1}</span>
-          <span className="block md:whitespace-nowrap">{t.hero.headlineLine2}</span>
+          <span className="block text-[30px]">{t.hero.headlineLine1}</span>
+          <span className="block md:whitespace-nowrap text-[30px]">{t.hero.headlineLine2}</span>
         </h1>
 
         <p
