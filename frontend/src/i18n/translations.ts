@@ -14,12 +14,12 @@ export const translations = {
     hero: {
       headlineLine1: 'TRANSFORMĂM ORAȘELE',
       headlineLine2: 'ÎN INTERFEȚE INTERACTIVE.',
-      subtitle: 'Nu suntem doar un ONG. Suntem laboratorul de R&D care dezvoltă aplicații educaționale, jocuri urbane și tehnologii imersive pentru spațiile publice.',
+      subtitle: 'Nu suntem doar un ONG. Suntem academia care formează specialiști, laboratorul care construiește AR și AI, și partenerul care transformă responsabilitatea socială în impact documentat.',
       cta1: 'Colaborează cu noi',
       cta2: 'Intră în comunitate',
     },
     manifest: {
-      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Dezvoltăm straturi AR peste orașe, implementăm ghizi AI în muzee și construim aplicațiile care transformă un manual într-o experiență 3D. Laboratorul nostru operează la intersecția spatial computing-ului, AI aplicat și designului urban.',
+      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Prin Academy, formăm specialiști în spatial computing și AI aplicat. Prin Lab, construim straturi AR peste orașe, ghizi AI în muzee și aplicații care transformă manualul în experiență 3D. Prin parteneriate CSR, ajutăm brandurile să investească în impact real, nu în imagine.',
       bodyBold: 'Fondat la București. Construit pentru Europa.',
       founderNote: '— Laris Marcu, Fondator & Director Tehnic',
     },
@@ -597,12 +597,12 @@ export const translations = {
     hero: {
       headlineLine1: 'WE TRANSFORM CITIES',
       headlineLine2: 'INTO INTERACTIVE INTERFACES.',
-      subtitle: 'We are not just an NGO. We are the R&D lab developing educational apps, urban games and immersive technologies for public spaces.',
+      subtitle: 'We are not just an NGO. We are the academy training the next generation, the lab building AR and AI, and the partner that turns social responsibility into documented impact.',
       cta1: 'Work With Us',
       cta2: 'Join the Community',
     },
     manifest: {
-      body: 'ScapeLabs converts public space into living infrastructure. We engineer AR layers over cities, deploy AI guides inside museums, and build the apps that turn a school textbook into a 3D experience. Our lab operates at the intersection of spatial computing, applied AI and urban design.',
+      body: 'ScapeLabs converts public space into living infrastructure. Through Academy, we train specialists in spatial computing and applied AI. Through the Lab, we engineer AR layers over cities, AI guides inside museums, and apps that turn textbooks into 3D experiences. Through CSR partnerships, we help brands invest in real impact — not just image.',
       bodyBold: 'Founded in Bucharest. Built for Europe.',
       founderNote: '— Laris Marcu, Founder & Technical Director',
     },
