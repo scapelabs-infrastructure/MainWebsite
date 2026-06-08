@@ -4,6 +4,9 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
   '/gallery-cyber-arena.jpg',
+  '/gallery-robot-park.png',
+  '/gallery-ar-museum.png',
+  '/gallery-interactive-museum.png',
   '/gallery-phone-mockup.png',
   '/gallery-video-mapping.png',
   '/gallery-classroom.png',

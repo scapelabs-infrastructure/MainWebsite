@@ -54,3 +54,21 @@ id = "cxbvii1ApRR5zkSN8eDe5"
 uri = "file://frontend/public/gallery-amphitheater.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "A_fj_tvNDv-oda3WyGZT7"
+uri = "file://frontend/public/gallery-robot-park.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "JwkbtqM1gcWm1loo5BbWu"
+uri = "file://frontend/public/gallery-ar-museum.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "1L39OF8hXZUIrv4Lf6sGV"
+uri = "file://frontend/public/gallery-interactive-museum.png"
+type = "image"
+title = "generated_image"
