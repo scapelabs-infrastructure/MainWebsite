@@ -23,6 +23,42 @@ export function WorkWithUs() {
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
 
+  const [spName, setSpName] = useState('');
+  const [spSkill, setSpSkill] = useState('');
+  const [spPortfolio, setSpPortfolio] = useState('');
+  const [spCvName, setSpCvName] = useState('');
+  const [spSubmitting, setSpSubmitting] = useState(false);
+  const [spSubmitted, setSpSubmitted] = useState(false);
+  const [spFormError, setSpFormError] = useState('');
+
+  const handleSpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!spName || !spSkill) return;
+    setSpSubmitting(true);
+    setSpFormError('');
+    try {
+      const res = await fetch('/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'team',
+          department: 'SPECIALISTS',
+          contactName: spName,
+          email: spPortfolio || 'N/A',
+          phone: 'N/A',
+          message: `[Specialist] ${spSkill}${spCvName ? ` | CV: ${spCvName}` : ''}`,
+          language: lang,
+        }),
+      });
+      if (!res.ok) throw new Error('failed');
+      setSpSubmitted(true);
+    } catch {
+      setSpFormError(w.specialists.formError);
+    } finally {
+      setSpSubmitting(false);
+    }
+  };
+
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
@@ -435,6 +471,181 @@ export function WorkWithUs() {
         </div>
       </section>
 
+      {/* ── SPECIALISTS & COLLABORATORS ── */}
+      <section id="section-specialists" className="py-28 md:py-40 px-6 relative">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 55% 50% at 20% 50%, rgba(45,110,255,0.06) 0%, transparent 70%)' }}
+        />
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-14"
+          >
+            <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: 'rgba(45,110,255,0.7)' }}>
+              04 — Specialists
+            </p>
+            <h2
+              className="font-bold text-[#E8E8F0] tracking-tight leading-tight mb-2"
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+            >
+              {w.specialists.title}
+            </h2>
+            <p
+              className="text-xl italic mb-8"
+              style={{ color: 'rgba(45,110,255,0.65)' }}
+            >
+              {w.specialists.subtitle}
+            </p>
+            <p className="text-[#E8E8F0]/65 text-base leading-relaxed max-w-2xl">
+              {w.specialists.body}
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl p-8 md:p-10 mb-8"
+            style={{ background: 'rgba(45,110,255,0.05)', border: '1px solid rgba(45,110,255,0.18)' }}
+          >
+            <AnimatePresence mode="wait">
+              {spSubmitted ? (
+                <motion.div
+                  key="sp-success"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-center py-10"
+                >
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5"
+                    style={{ background: 'rgba(45,110,255,0.12)', border: '1px solid rgba(45,110,255,0.35)' }}
+                  >
+                    ✓
+                  </div>
+                  <p className="text-[#E8E8F0] font-semibold text-lg">{w.specialists.formSuccess}</p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="sp-form"
+                  onSubmit={handleSpSubmit}
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(45,110,255,0.6)' }}>
+                        {w.specialists.namePh}
+                      </label>
+                      <input
+                        type="text"
+                        value={spName}
+                        onChange={e => setSpName(e.target.value)}
+                        required
+                        placeholder="—"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(45,110,255,0.6)' }}>
+                        {w.specialists.skillPh}
+                      </label>
+                      <input
+                        type="text"
+                        value={spSkill}
+                        onChange={e => setSpSkill(e.target.value)}
+                        required
+                        placeholder="—"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(45,110,255,0.6)' }}>
+                        {w.specialists.portfolioPh}
+                      </label>
+                      <input
+                        type="text"
+                        value={spPortfolio}
+                        onChange={e => setSpPortfolio(e.target.value)}
+                        placeholder="—"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    <label
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm cursor-pointer transition-colors hover:border-[#2D6EFF]/40"
+                      style={{ background: 'rgba(232,232,240,0.04)', border: '1px solid rgba(232,232,240,0.1)', color: 'rgba(232,232,240,0.5)' }}
+                    >
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        className="hidden"
+                        onChange={e => setSpCvName(e.target.files?.[0]?.name ?? '')}
+                      />
+                      <span style={{ color: '#2D6EFF' }}>{w.specialists.cvLabel}</span>
+                      {spCvName && <span className="truncate max-w-[140px]" style={{ color: 'rgba(232,232,240,0.7)' }}>{spCvName}</span>}
+                    </label>
+
+                    <button
+                      type="submit"
+                      disabled={spSubmitting}
+                      className="flex-shrink-0 px-6 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 disabled:opacity-50"
+                      style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
+                    >
+                      {spSubmitting ? '...' : w.specialists.submit}
+                    </button>
+                  </div>
+
+                  {spFormError && (
+                    <p className="text-red-400 text-sm mt-3">{spFormError}</p>
+                  )}
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* WhatsApp pill */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="flex items-center gap-4"
+          >
+            <div className="h-px flex-1 max-w-[60px]" style={{ background: 'rgba(232,232,240,0.1)' }} />
+            <p className="text-sm" style={{ color: 'rgba(232,232,240,0.4)' }}>
+              {w.specialists.alreadyDecided}
+            </p>
+            <a
+              href="https://chat.whatsapp.com/GAtJiZN895L8QxMhSz2snz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all hover:scale-[1.03]"
+              style={{
+                background: 'rgba(37,211,102,0.1)',
+                border: '1px solid rgba(37,211,102,0.25)',
+                color: '#25D366',
+              }}
+            >
+              <span style={{ fontSize: '0.85em' }}>●</span>
+              {w.specialists.whatsappLabel}
+              <span style={{ color: 'rgba(37,211,102,0.7)', fontSize: '0.9em' }}>→ {w.specialists.whatsappCta}</span>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── EVENTS PARTNERSHIPS ── */}
       <section className="py-28 md:py-40 px-6 relative">
         <div className="max-w-6xl mx-auto">
@@ -447,7 +658,7 @@ export function WorkWithUs() {
           >
             <div>
               <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-                04 — Events
+                05 — Events
               </p>
               <h2
                 className="font-bold text-[#E8E8F0] tracking-tight mb-6 leading-tight"
@@ -503,7 +714,7 @@ export function WorkWithUs() {
             className="mb-16"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-              05 — Tech Impact Day
+              06 — Tech Impact Day
             </p>
             <h2
               className="font-bold text-[#E8E8F0] tracking-tight"
@@ -564,7 +775,7 @@ export function WorkWithUs() {
             className="mb-12 text-center"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-              06 — Contact
+              07 — Contact
             </p>
             <h2
               className="font-bold text-[#E8E8F0] tracking-tight"
