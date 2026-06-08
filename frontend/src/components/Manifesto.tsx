@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
@@ -84,7 +85,7 @@ export function Manifesto() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-            className="relative h-80 lg:h-[480px] rounded-2xl overflow-hidden"
+            className="group relative h-80 lg:h-[480px] rounded-2xl overflow-hidden"
           >
             {galleryImages.map((src, i) => (
               <motion.img
@@ -96,6 +97,26 @@ export function Manifesto() {
                 transition={{ duration: 0.9, ease: 'easeInOut' }}
               />
             ))}
+
+            {/* Left arrow */}
+            <button
+              onClick={() => setActiveIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100"
+              style={{ background: 'rgba(8,8,16,0.6)', border: '1px solid rgba(232,232,240,0.15)', backdropFilter: 'blur(8px)' }}
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-4 h-4 text-[#E8E8F0]/70" />
+            </button>
+
+            {/* Right arrow */}
+            <button
+              onClick={() => setActiveIndex((prev) => (prev + 1) % galleryImages.length)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100"
+              style={{ background: 'rgba(8,8,16,0.6)', border: '1px solid rgba(232,232,240,0.15)', backdropFilter: 'blur(8px)' }}
+              aria-label="Next"
+            >
+              <ChevronRight className="w-4 h-4 text-[#E8E8F0]/70" />
+            </button>
 
             {/* Dot indicators */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-1.5">
