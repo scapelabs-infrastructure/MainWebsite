@@ -175,7 +175,7 @@ export function WorkWithUs() {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <button
-                onClick={() => scrollTo('section-services')}
+                onClick={() => scrollTo('section-studio')}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.04]"
                 style={{
                   background: GOLD_BG,
@@ -187,11 +187,11 @@ export function WorkWithUs() {
                 {w.hero.ctaSeeWork}
               </button>
               <button
-                onClick={() => scrollTo('section-contact')}
+                onClick={() => scrollTo('section-specialists')}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04]"
                 style={{
-                  background: `linear-gradient(135deg, ${GOLD}99, ${GOLD}55)`,
-                  border: `1px solid ${GOLD}55`,
+                  background: 'linear-gradient(135deg, #2D6EFF99, #2D6EFF55)',
+                  border: '1px solid rgba(45,110,255,0.4)',
                 }}
               >
                 <span style={{ lineHeight: 1 }}>→</span>
@@ -402,7 +402,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SCAPESTUDIO ── */}
-      <section className="py-28 md:py-40 px-6 relative">
+      <section id="section-studio" className="py-28 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 60% 50% at 85% 50%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -471,6 +471,124 @@ export function WorkWithUs() {
         </div>
       </section>
 
+      {/* ── EVENTS PARTNERSHIPS ── */}
+      <section className="py-28 md:py-40 px-6 relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14"
+          >
+            <div>
+              <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
+                04 — Events
+              </p>
+              <h2
+                className="font-bold text-[#E8E8F0] tracking-tight mb-6 leading-tight"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.8rem, 3.5vw, 3.2rem)' }}
+              >
+                {w.events.title}
+              </h2>
+              <p className="text-[#E8E8F0]/65 text-base leading-relaxed">
+                {w.events.body}
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {eventCards.map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-2xl p-8 flex flex-col gap-5"
+                style={{ background: 'rgba(232,232,240,0.04)', border: `1px solid ${GOLD_BORDER}` }}
+              >
+                <span
+                  className="text-4xl font-bold font-mono leading-none"
+                  style={{ color: GOLD, opacity: 0.15 }}
+                >
+                  {card.num}
+                </span>
+                <div>
+                  <p className="text-[#E8E8F0] font-bold text-base mb-2">{card.title}</p>
+                  <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{card.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TECH IMPACT DAY ── */}
+      <section className="py-28 md:py-40 px-6 relative">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: `radial-gradient(ellipse 70% 50% at 50% 60%, ${GOLD_BG} 0%, transparent 70%)` }}
+        />
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-16"
+          >
+            <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
+              05 — Tech Impact Day
+            </p>
+            <h2
+              className="font-bold text-[#E8E8F0] tracking-tight"
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+            >
+              {w.impactDay.title}
+            </h2>
+            <p className="text-xl mt-1 mb-8 italic" style={{ color: GOLD_DIM }}>
+              {w.impactDay.subtitle}
+            </p>
+            <p className="text-[#E8E8F0]/65 text-base leading-relaxed max-w-2xl">
+              {w.impactDay.body}
+            </p>
+          </motion.div>
+
+          {/* Horizontal timeline */}
+          <div className="relative">
+            {/* connecting line */}
+            <div
+              className="hidden md:block absolute top-6 left-0 right-0 h-px"
+              style={{ background: `linear-gradient(90deg, transparent, ${GOLD}40, ${GOLD}40, transparent)` }}
+            />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="flex flex-col gap-3 pt-0 md:pt-0"
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-3 h-3 rounded-full flex-shrink-0 relative z-10"
+                      style={{ background: GOLD, boxShadow: `0 0 12px ${GOLD}66` }}
+                    />
+                    <span className="text-lg font-bold font-mono" style={{ color: GOLD }}>
+                      {item.time}
+                    </span>
+                  </div>
+                  <p className="text-[#E8E8F0]/80 text-sm font-medium mt-2">{item.event}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SPECIALISTS & COLLABORATORS ── */}
       <section id="section-specialists" className="py-28 md:py-40 px-6 relative">
         <div
@@ -486,7 +604,7 @@ export function WorkWithUs() {
             className="mb-14"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: 'rgba(45,110,255,0.7)' }}>
-              04 — Specialists
+              06 — Specialists
             </p>
             <h2
               className="font-bold text-[#E8E8F0] tracking-tight leading-tight mb-2"
@@ -646,123 +764,6 @@ export function WorkWithUs() {
         </div>
       </section>
 
-      {/* ── EVENTS PARTNERSHIPS ── */}
-      <section className="py-28 md:py-40 px-6 relative">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14"
-          >
-            <div>
-              <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-                05 — Events
-              </p>
-              <h2
-                className="font-bold text-[#E8E8F0] tracking-tight mb-6 leading-tight"
-                style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.8rem, 3.5vw, 3.2rem)' }}
-              >
-                {w.events.title}
-              </h2>
-              <p className="text-[#E8E8F0]/65 text-base leading-relaxed">
-                {w.events.body}
-              </p>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {eventCards.map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="rounded-2xl p-8 flex flex-col gap-5"
-                style={{ background: 'rgba(232,232,240,0.04)', border: `1px solid ${GOLD_BORDER}` }}
-              >
-                <span
-                  className="text-4xl font-bold font-mono leading-none"
-                  style={{ color: GOLD, opacity: 0.15 }}
-                >
-                  {card.num}
-                </span>
-                <div>
-                  <p className="text-[#E8E8F0] font-bold text-base mb-2">{card.title}</p>
-                  <p className="text-[#E8E8F0]/60 text-sm leading-relaxed">{card.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TECH IMPACT DAY ── */}
-      <section className="py-28 md:py-40 px-6 relative">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: `radial-gradient(ellipse 70% 50% at 50% 60%, ${GOLD_BG} 0%, transparent 70%)` }}
-        />
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
-          >
-            <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-              06 — Tech Impact Day
-            </p>
-            <h2
-              className="font-bold text-[#E8E8F0] tracking-tight"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
-            >
-              {w.impactDay.title}
-            </h2>
-            <p className="text-xl mt-1 mb-8 italic" style={{ color: GOLD_DIM }}>
-              {w.impactDay.subtitle}
-            </p>
-            <p className="text-[#E8E8F0]/65 text-base leading-relaxed max-w-2xl">
-              {w.impactDay.body}
-            </p>
-          </motion.div>
-
-          {/* Horizontal timeline */}
-          <div className="relative">
-            {/* connecting line */}
-            <div
-              className="hidden md:block absolute top-6 left-0 right-0 h-px"
-              style={{ background: `linear-gradient(90deg, transparent, ${GOLD}40, ${GOLD}40, transparent)` }}
-            />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex flex-col gap-3 pt-0 md:pt-0"
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-3 h-3 rounded-full flex-shrink-0 relative z-10"
-                      style={{ background: GOLD, boxShadow: `0 0 12px ${GOLD}66` }}
-                    />
-                    <span className="text-lg font-bold font-mono" style={{ color: GOLD }}>
-                      {item.time}
-                    </span>
-                  </div>
-                  <p className="text-[#E8E8F0]/80 text-sm font-medium mt-2">{item.event}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── FINAL CTA FORM ── */}
       <section id="section-contact" className="py-24 md:py-36 px-6">

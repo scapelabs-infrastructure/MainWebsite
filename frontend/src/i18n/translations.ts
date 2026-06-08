@@ -472,8 +472,8 @@ export const translations = {
         headlineLine1: 'Campania dvs. rulează o săptămână.',
         headlineLine2: 'A noastră rulează un deceniu.',
         sub: 'ScapeLabs construiește experiențe AR, sisteme AI și instalații de spatial computing pe care oamenii le țin minte, le distribuie și la care revin. Nu vindem spațiu media. Construim infrastructură de impact.',
-        ctaSeeWork: 'Vezi proiectele noastre',
-        ctaContact: 'Începe o conversație',
+        ctaSeeWork: 'ScapeStudio',
+        ctaContact: 'Intru ca Specialist',
       },
       csr: {
         title: 'De ce companiile inteligente finanțează ScapeLabs',
@@ -1055,8 +1055,8 @@ export const translations = {
         headlineLine1: 'Your campaign runs for a week.',
         headlineLine2: 'Ours runs for a decade.',
         sub: 'ScapeLabs builds AR experiences, AI systems and spatial computing installations that people remember, share and return to. We don\'t sell media space. We engineer impact infrastructure.',
-        ctaSeeWork: 'See our work',
-        ctaContact: 'Start a conversation',
+        ctaSeeWork: 'ScapeStudio',
+        ctaContact: 'Join as a Specialist',
       },
       csr: {
         title: 'Why smart companies fund ScapeLabs',
