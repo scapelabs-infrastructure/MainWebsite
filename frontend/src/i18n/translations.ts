@@ -14,7 +14,7 @@ export const translations = {
     hero: {
       headlineLine1: 'TRANSFORMĂM ORAȘELE',
       headlineLine2: 'ÎN INTERFEȚE INTERACTIVE.',
-      subtitle: 'Nu suntem doar un ONG. Suntem academia care formează specialiști, laboratorul care transformă idei în experiențe pe care le simți, și partenerul care transformă responsabilitatea socială în impact documentat.',
+      subtitle: 'Nu suntem doar un ONG. Suntem academia care formează specialiști, laboratorul de spatial computing care suprapune digital peste lumea fizică, și partenerul care transformă responsabilitatea socială în impact documentat.',
       cta1: 'Colaborează cu noi',
       cta2: 'Intră în comunitate',
     },
@@ -597,7 +597,7 @@ export const translations = {
     hero: {
       headlineLine1: 'WE TRANSFORM CITIES',
       headlineLine2: 'INTO INTERACTIVE INTERFACES.',
-      subtitle: 'We are not just an NGO. We are the academy training the next generation, the lab turning ideas into experiences people actually feel, and the partner that turns social responsibility into documented impact.',
+      subtitle: 'We are not just an NGO. We are the academy training the next generation, the spatial computing lab that layers the digital world over the physical one, and the partner that turns social responsibility into documented impact.',
       cta1: 'Work With Us',
       cta2: 'Join the Community',
     },
