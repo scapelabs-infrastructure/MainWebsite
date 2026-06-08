@@ -20,6 +20,11 @@ export function TechArsenal() {
 
   return (
     <section id="tech-arsenal" className="py-24 md:py-36 px-6 relative overflow-hidden">
+      {/* Top fade from previous section */}
+      <div
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to bottom, #080810, transparent)' }}
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
