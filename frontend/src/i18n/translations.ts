@@ -14,12 +14,12 @@ export const translations = {
     hero: {
       headlineLine1: 'TRANSFORMĂM ORAȘELE',
       headlineLine2: 'ÎN INTERFEȚE INTERACTIVE.',
-      subtitle: 'Nu suntem doar un ONG. Suntem academia care formează specialiști, laboratorul care construiește AR și AI, și partenerul care transformă responsabilitatea socială în impact documentat.',
+      subtitle: 'Nu suntem doar un ONG. Suntem academia care formează specialiști, laboratorul care transformă idei în experiențe pe care le simți, și partenerul care transformă responsabilitatea socială în impact documentat.',
       cta1: 'Colaborează cu noi',
       cta2: 'Intră în comunitate',
     },
     manifest: {
-      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Prin Academy, formăm specialiști în spatial computing și AI aplicat. Prin Lab, construim straturi AR peste orașe, ghizi AI în muzee și aplicații care transformă manualul în experiență 3D. Prin parteneriate CSR, ajutăm brandurile să investească în impact real, nu în imagine.',
+      body: 'ScapeLabs transformă spațiul public în infrastructură vie. Prin Academy, pregătim specialiști care știu cum funcționează lumea digitală de mâine. Prin Lab, construim experiențe vizibile prin camera telefonului, asistenți inteligenți care vorbesc și predau în muzee, și aplicații care transformă manualul într-un tur 3D. Prin parteneriate CSR, ajutăm brandurile să investească în impact real, nu în imagine.',
       bodyBold: 'Fondat la București. Construit pentru Europa.',
       founderNote: '— Laris Marcu, Fondator & Director Tehnic',
     },
@@ -403,7 +403,7 @@ export const translations = {
       hero: {
         headlineLine1: 'Vrei să construiești viitorul.',
         headlineLine2: 'Acesta e locul de start.',
-        sub: 'ScapeLabs este un laborator R&D AI-native la intersecția dintre spatial computing, AI aplicat și design urban. Construim tech real, călătorim în Europa și conectăm cele mai bune minți tinere din UE.',
+        sub: 'ScapeLabs este un laborator de cercetare & inovație la intersecția dintre tehnologie imersivă (experiențe digitale în spații fizice), inteligență artificială și design urban. Construim lucruri reale, călătorim în Europa și conectăm cele mai bune minți tinere din UE.',
         pillCommunity: 'Comunitatea',
         pillAcademy: 'Academy',
       },
@@ -432,9 +432,9 @@ export const translations = {
       academy: {
         title: 'ScapeLabs Academy',
         subtitle: 'Learn by shipping.',
-        body: 'Ești gata să intri în tranșee? Academia este singura cale de acces către Core Team-ul ScapeLabs. Nu predăm cursuri teoretice. Studenții care intră în Academy sunt implicați direct în dezvoltarea MVP-urilor active (Pawsitive, Calea Victoriei, Caravana) sub ghidajul unui Senior Spatial Computing Engineer. Ieși cu un portofoliu real, nu cu o diplomă pdf. Și da, semnăm convențiile de practică obligatorie pentru facultate.',
+        body: 'Ești gata să intri în tranșee? Academia este singura cale de acces către Core Team-ul ScapeLabs. Nu predăm cursuri teoretice. Studenții din Academy lucrează direct la produsele noastre active (Pawsitive, Calea Victoriei, Caravana) sub ghidajul unui senior cu experiență internațională în experiențe digitale 3D. Ieși cu un portofoliu real, nu cu o diplomă pdf. Și da, semnăm convențiile de practică obligatorie pentru facultate.',
         track1Title: 'Tech Track',
-        track1Desc: 'AR, Unity3D, AI pipelines, WebAR. Sari de la tutoriale la produse reale.',
+        track1Desc: 'Realitate augmentată (AR), motoare de jocuri 3D, fluxuri AI și aplicații web interactive. Sari de la tutoriale la produse reale.',
         track2Title: 'Creative Track',
         track2Desc: 'UI/UX, concept art, copywriting, game design. Definești cum arată viitorul.',
         track3Title: 'Growth Track',
@@ -458,7 +458,7 @@ export const translations = {
         stat2: 'Portofoliu real',
         stat2Desc: 'Lucrezi pe proiecte cu parteneri instituționali (ASPA, Primării), nu pe teme de laborator.',
         stat3: 'Tooluri premium',
-        stat3Desc: 'Acces la stack-ul complet: AI tools, licențe ONG, hardware lab.',
+        stat3Desc: 'Acces la toate uneltele: software AI, licențe ONG, echipamente fizice din lab.',
       },
       finalCta: {
         leftTitle: 'Vrei doar să cunoști oameni cool și să afli oportunități?',
@@ -471,7 +471,7 @@ export const translations = {
       hero: {
         headlineLine1: 'Campania dvs. rulează o săptămână.',
         headlineLine2: 'A noastră rulează un deceniu.',
-        sub: 'ScapeLabs construiește experiențe AR, sisteme AI și instalații de spatial computing pe care oamenii le țin minte, le distribuie și la care revin. Nu vindem spațiu media. Construim infrastructură de impact.',
+        sub: 'ScapeLabs construiește experiențe digitale pe care oamenii le simt în lumea reală — vizibile prin camera telefonului, activate în spații fizice, reținute mult după ce campania s-a încheiat. Nu vindem spațiu media. Construim impact care rămâne.',
         ctaSeeWork: 'Proiecte Comerciale',
         ctaContact: 'Intru ca Specialist',
       },
@@ -519,7 +519,7 @@ export const translations = {
       studio: {
         title: 'ScapeStudio',
         subtitle: 'Brațul comercial al lab-ului.',
-        body: 'ScapeStudio este divizia comercială prin care livrăm proiecte tech pentru clienți privați. Același team, același stack, același standard de execuție — fără overhead de agenție. Lucrezi direct cu engineerii și designerii care au construit pentru Senatul României și Guvernul Saudit.',
+        body: 'ScapeStudio este divizia comercială prin care livrăm proiecte tech pentru clienți privați. Aceeași echipă, aceleași unelte, același standard de execuție — fără supracosturi de agenție. Lucrezi direct cu engineerii și designerii care au construit pentru Senatul României și Guvernul Saudit.',
         note: 'Lucrăm cu un număr limitat de clienți comerciali per trimestru pentru a menține calitatea execuției.',
         card1Title: 'AR Campaigns',
         card1Desc: 'Experiențe augmentate pentru lansări de produs, activări de brand și spații comerciale.',
@@ -533,7 +533,7 @@ export const translations = {
       specialists: {
         title: 'Și tu construiești lucruri?',
         subtitle: 'Hai să vorbim.',
-        body: 'ScapeLabs colaborează cu specialiști independenți — dezvoltatori Spatial Computing, ingineri AI, artiști 3D, designeri UX, sound designeri, cinematografi — tu știi ce ești. Dacă ai un skill care se potrivește unui proiect live, vrem să fii în rețea. Fără angajament permanent.',
+        body: 'ScapeLabs colaborează cu specialiști independenți — developeri de experiențe digitale 3D, ingineri AI, artiști 3D, designeri de interfețe, sound designeri, cinematografi — tu știi ce ești. Dacă ai o abilitate care se potrivește unui proiect activ, vrem să fii în rețea. Fără angajament permanent.',
         namePh: 'Nume',
         skillPh: 'Skill / Specializare',
         portfolioPh: 'Portfolio sau link LinkedIn',
@@ -547,7 +547,7 @@ export const translations = {
       },
       events: {
         title: 'Evenimentul dvs., cu tech interactiv.',
-        body: 'Aducem tech-ul în evenimentul dvs. — video mapping pe fațadă, instalații interactive în sală, AI concierge pentru participanți, urban game activat în perimetrul locației. De la conferințe corporate la festivaluri publice.',
+        body: 'Aducem tehnologia în evenimentul dvs. — proiecții video pe clădire, instalații interactive în sală, asistent inteligent pentru participanți, joc urban activat în perimetrul locației. De la conferințe corporate la festivaluri publice.',
         card1Title: 'Activation',
         card1Desc: 'O instalație sau experiență AR punctuală la evenimentul dvs.',
         card2Title: 'Full Production',
@@ -558,7 +558,7 @@ export const translations = {
       impactDay: {
         title: 'Tech Impact Day',
         subtitle: 'Aduceți lab-ul la compania dvs.',
-        body: 'Un format de o zi în care aducem lab-ul ScapeLabs direct în sediul dvs. Echipa dvs. testează AR, interacționează cu AI agents, vede un digital twin construit live și participă la un workshop de prototipare rapidă. Nu e un team building. E o recalibrare a felului în care compania dvs. gândește despre tehnologie.',
+        body: 'Un format de o zi în care aducem lab-ul ScapeLabs direct în sediul dvs. Echipa dvs. testează realitate augmentată (straturi digitale vizibile prin telefon), interacționează cu asistenți AI autonomi, vede o replică 3D a unui spațiu real construită live și participă la un workshop de prototipare rapidă. Nu e un team building. E o recalibrare a felului în care compania dvs. gândește despre tehnologie.',
         time1: '09:00',
         event1: 'Intro & Demo',
         time2: '11:00',
@@ -597,12 +597,12 @@ export const translations = {
     hero: {
       headlineLine1: 'WE TRANSFORM CITIES',
       headlineLine2: 'INTO INTERACTIVE INTERFACES.',
-      subtitle: 'We are not just an NGO. We are the academy training the next generation, the lab building AR and AI, and the partner that turns social responsibility into documented impact.',
+      subtitle: 'We are not just an NGO. We are the academy training the next generation, the lab turning ideas into experiences people actually feel, and the partner that turns social responsibility into documented impact.',
       cta1: 'Work With Us',
       cta2: 'Join the Community',
     },
     manifest: {
-      body: 'ScapeLabs converts public space into living infrastructure. Through Academy, we train specialists in spatial computing and applied AI. Through the Lab, we engineer AR layers over cities, AI guides inside museums, and apps that turn textbooks into 3D experiences. Through CSR partnerships, we help brands invest in real impact — not just image.',
+      body: 'ScapeLabs converts public space into living infrastructure. Through Academy, we train the specialists building tomorrow\'s world. Through the Lab, we create experiences visible through your phone camera, intelligent guides that talk and teach inside museums, and apps that turn a textbook into a 3D walk-through. Through CSR partnerships, we help brands invest in real impact — not just image.',
       bodyBold: 'Founded in Bucharest. Built for Europe.',
       founderNote: '— Laris Marcu, Founder & Technical Director',
     },
@@ -986,7 +986,7 @@ export const translations = {
       hero: {
         headlineLine1: 'You want to build the future.',
         headlineLine2: 'This is where you start.',
-        sub: 'ScapeLabs is an AI-native R&D lab operating at the intersection of spatial computing, applied AI and urban design. We build real tech, we travel Europe, and we connect the best young minds in EU.',
+        sub: 'ScapeLabs is a research & innovation lab at the intersection of immersive technology (digital experiences in physical spaces), artificial intelligence and urban design. We build real things, we travel Europe, and we connect the best young minds in the EU.',
         pillCommunity: 'The Community',
         pillAcademy: 'The Academy',
       },
@@ -1015,9 +1015,9 @@ export const translations = {
       academy: {
         title: 'ScapeLabs Academy',
         subtitle: 'Learn by shipping.',
-        body: "Ready to go into the trenches? The Academy is the only path to the ScapeLabs Core Team. We don't teach theoretical courses. Students who enter the Academy are thrown directly into the development of active MVPs (Pawsitive, Calea Victoriei, Caravana) under the guidance of a Senior Spatial Computing Engineer. You leave with a real portfolio, not a PDF certificate. And yes, we sign the mandatory university internship agreements.",
+        body: "Ready to go into the trenches? The Academy is the only path to the ScapeLabs Core Team. We don't teach theory. Academy students work directly on our live products (Pawsitive, Calea Victoriei, Caravana) under the guidance of a senior engineer with international experience in 3D digital experiences. You leave with a real portfolio, not a PDF certificate. And yes, we sign the mandatory university internship agreements.",
         track1Title: 'Tech Track',
-        track1Desc: 'AR, Unity3D, AI pipelines, WebAR. Jump from tutorials to real products.',
+        track1Desc: 'Augmented reality (AR), 3D game engines, AI workflows and interactive web apps. Jump from tutorials to real products.',
         track2Title: 'Creative Track',
         track2Desc: 'UI/UX, concept art, copywriting, game design. Define what the future looks like.',
         track3Title: 'Growth Track',
@@ -1041,7 +1041,7 @@ export const translations = {
         stat2: 'Real portfolio',
         stat2Desc: 'Work on projects with institutional partners (ASPA, City Hall), not lab assignments.',
         stat3: 'Premium tools',
-        stat3Desc: 'Full stack access: AI tools, NGO licences, hardware lab.',
+        stat3Desc: 'Access to everything: AI software, NGO licences, physical lab equipment.',
       },
       finalCta: {
         leftTitle: 'Just want to meet cool people and find opportunities?',
@@ -1054,7 +1054,7 @@ export const translations = {
       hero: {
         headlineLine1: 'Your campaign runs for a week.',
         headlineLine2: 'Ours runs for a decade.',
-        sub: 'ScapeLabs builds AR experiences, AI systems and spatial computing installations that people remember, share and return to. We don\'t sell media space. We engineer impact infrastructure.',
+        sub: 'ScapeLabs builds digital experiences people feel in the real world — visible through phone cameras, activated in physical spaces, remembered long after the campaign ends. We don\'t sell media space. We engineer impact that lasts.',
         ctaSeeWork: 'Commercial Projects',
         ctaContact: 'Join as a Specialist',
       },
@@ -1102,7 +1102,7 @@ export const translations = {
       studio: {
         title: 'ScapeStudio',
         subtitle: 'The commercial arm of the lab.',
-        body: 'ScapeStudio is the commercial division through which we deliver tech projects for private clients. Same team, same stack, same execution standard — no agency overhead. You work directly with the engineers and designers who built for the Romanian Senate and the Saudi Government.',
+        body: 'ScapeStudio is the commercial division through which we deliver tech projects for private clients. Same team, same tools, same execution standard — no agency overhead. You work directly with the engineers and designers who built for the Romanian Senate and the Saudi Government.',
         note: 'We work with a limited number of commercial clients per quarter to maintain execution quality.',
         card1Title: 'AR Campaigns',
         card1Desc: 'Augmented experiences for product launches, brand activations and commercial spaces.',
@@ -1116,7 +1116,7 @@ export const translations = {
       specialists: {
         title: 'You build things too?',
         subtitle: "Let's talk.",
-        body: 'ScapeLabs collaborates with independent specialists — Spatial Computing developers, AI engineers, 3D artists, UX designers, sound designers, cinematographers — you name it. If you have a skill that fits a live project, we want you in the network. No permanent commitment.',
+        body: 'ScapeLabs collaborates with independent specialists — 3D experience developers, AI engineers, 3D artists, interface designers, sound designers, cinematographers — you name it. If you have a skill that fits an active project, we want you in the network. No permanent commitment.',
         namePh: 'Name',
         skillPh: 'Skill / Specialization',
         portfolioPh: 'Portfolio or LinkedIn link',
@@ -1130,7 +1130,7 @@ export const translations = {
       },
       events: {
         title: 'Your event, engineered.',
-        body: 'We bring tech to your event — video mapping on the facade, interactive installations inside, AI concierge for attendees, urban game activated in the venue perimeter. From corporate conferences to public festivals.',
+        body: 'We bring technology to your event — video projections on the building facade, interactive installations inside, an AI assistant for attendees, and an urban game activated across the venue. From corporate conferences to public festivals.',
         card1Title: 'Activation',
         card1Desc: 'A single AR installation or experience at your event.',
         card2Title: 'Full Production',
@@ -1141,7 +1141,7 @@ export const translations = {
       impactDay: {
         title: 'Tech Impact Day',
         subtitle: 'Bring the lab to your company.',
-        body: 'A one-day format where we bring the ScapeLabs lab directly to your headquarters. Your team tests AR, interacts with AI agents, watches a digital twin built live and participates in a rapid prototyping workshop. This is not a team building exercise. It\'s a recalibration of how your company thinks about technology.',
+        body: 'A one-day format where we bring the ScapeLabs lab directly to your headquarters. Your team tries augmented reality (digital layers visible through a phone), interacts with AI assistants, watches a live 3D replica of a real space being built, and takes part in a rapid-fire prototyping workshop. This is not a team building exercise. It\'s a recalibration of how your company thinks about technology.',
         time1: '09:00',
         event1: 'Intro & Demo',
         time2: '11:00',
