@@ -28,7 +28,7 @@ export function Hero() {
           <img
             src="/ScapeLabs-Logo.png"
             alt="ScapeLabs"
-            className="h-28 md:h-36 lg:h-40 w-auto mx-auto"
+            className="h-36 md:h-44 lg:h-52 w-auto mx-auto"
           />
         </div>
 
