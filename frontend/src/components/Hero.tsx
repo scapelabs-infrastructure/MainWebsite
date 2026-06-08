@@ -9,7 +9,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-start justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center md:items-start justify-center overflow-hidden">
       <div className="absolute inset-0">
         <NeonScene3D />
       </div>
@@ -23,7 +23,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-28 md:pt-32">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-0 md:pt-32">
         <div className="mb-8 md:mb-10">
           <img
             src="/ScapeLabs-Logo.png"
@@ -43,7 +43,7 @@ export function Hero() {
           }}
         >
           <span className="block">{t.hero.headlineLine1}</span>
-          <span className="block whitespace-nowrap">{t.hero.headlineLine2}</span>
+          <span className="block md:whitespace-nowrap">{t.hero.headlineLine2}</span>
         </h1>
 
         <p

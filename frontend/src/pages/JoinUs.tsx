@@ -127,7 +127,7 @@ export function JoinUs() {
       <DynamicIslandHeader />
 
       {/* ── HERO ── */}
-      <section className="relative h-screen flex items-start justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center md:items-start justify-center overflow-hidden">
         {/* Three.js scene — same as homepage */}
         <div className="absolute inset-0">
           <NeonScene3D />
@@ -142,7 +142,7 @@ export function JoinUs() {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-28 md:pt-56">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-0 md:pt-56">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export function JoinUs() {
               }}
             >
               <span className="block">{j.hero.headlineLine1}</span>
-              <span className="block whitespace-nowrap">{j.hero.headlineLine2}</span>
+              <span className="block md:whitespace-nowrap">{j.hero.headlineLine2}</span>
             </h1>
 
             <p

@@ -15,7 +15,7 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="relative flex flex-col justify-center px-6 py-12 md:px-16 md:py-24"
-          style={{ background: 'rgba(45,110,255,0.06)', borderTop: '1px solid rgba(45,110,255,0.1)' }}
+          style={{ background: 'rgba(45,110,255,0.10)', borderTop: '1px solid rgba(45,110,255,0.18)' }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
@@ -43,13 +43,19 @@ export function FinalCTA() {
           </div>
         </motion.div>
 
+        {/* Mobile-only separator between the two panels */}
+        <div
+          className="lg:hidden h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(100,140,255,0.5) 30%, rgba(123,63,228,0.5) 70%, transparent)' }}
+        />
+
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
           className="relative flex flex-col justify-center px-6 py-12 md:px-16 md:py-24"
-          style={{ background: 'rgba(123,63,228,0.06)', borderTop: '1px solid rgba(123,63,228,0.1)' }}
+          style={{ background: 'rgba(123,63,228,0.10)', borderTop: '1px solid rgba(123,63,228,0.18)' }}
         >
           <div
             className="absolute inset-0 pointer-events-none"

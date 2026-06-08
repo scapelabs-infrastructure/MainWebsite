@@ -134,7 +134,7 @@ export function WorkWithUs() {
       <DynamicIslandHeader />
 
       {/* ── HERO ── */}
-      <section className="relative h-screen flex items-start justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center md:items-start justify-center overflow-hidden">
         <div className="absolute inset-0">
           <NeonScene3D />
         </div>
@@ -145,7 +145,7 @@ export function WorkWithUs() {
               'radial-gradient(closest-side, rgba(6,6,15,0.93) 0%, rgba(6,6,15,0.82) 32%, rgba(6,6,15,0.5) 58%, rgba(6,6,15,0.18) 78%, transparent 100%)',
           }}
         />
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-48 md:pt-56">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-0 md:pt-56">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -161,10 +161,10 @@ export function WorkWithUs() {
                 textShadow: '0 2px 24px rgba(0,0,0,0.95)',
               }}
             >
-              <span className="block whitespace-nowrap italic" style={{ color: 'rgba(232,232,240,0.7)', fontWeight: 400, fontSize: '0.9em' }}>
+              <span className="block md:whitespace-nowrap italic" style={{ color: 'rgba(232,232,240,0.7)', fontWeight: 400, fontSize: '0.9em' }}>
                 {w.hero.headlineLine1}
               </span>
-              <span className="block whitespace-nowrap">{w.hero.headlineLine2}</span>
+              <span className="block md:whitespace-nowrap">{w.hero.headlineLine2}</span>
             </h1>
 
             <p

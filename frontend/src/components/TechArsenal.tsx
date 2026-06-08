@@ -22,7 +22,7 @@ export function TechArsenal() {
     <section id="tech-arsenal" className="py-12 md:py-36 px-6 relative overflow-hidden">
       {/* Top fade from previous section */}
       <div
-        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-10"
+        className="absolute top-0 left-0 right-0 h-16 md:h-40 pointer-events-none z-10"
         style={{ background: 'linear-gradient(to bottom, #080810, transparent)' }}
       />
       <div
@@ -52,7 +52,10 @@ export function TechArsenal() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          className="flex md:grid overflow-x-auto md:overflow-visible snap-x md:snap-none snap-mandatory md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+        >
           {ta.cards.map((card, i) => {
             const Icon = cardIcons[i];
             return (
@@ -62,7 +65,7 @@ export function TechArsenal() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
-                className="group relative rounded-2xl p-7 md:p-8 flex flex-col gap-5 transition-all duration-300 hover:-translate-y-1"
+                className="group relative rounded-2xl p-6 md:p-8 flex flex-col gap-5 transition-all duration-300 hover:-translate-y-1 flex-shrink-0 w-[82vw] md:w-auto snap-center"
                 style={{
                   background: 'rgba(10,10,20,0.75)',
                   backdropFilter: 'blur(12px)',
