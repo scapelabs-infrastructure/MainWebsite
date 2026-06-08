@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
-  '/project-mapping.png',
-  '/project-hunt.png',
-  '/project-robot.png',
-  '/vision-bucharest.png',
+  '/gallery-cyber-arena.jpg',
+  '/gallery-phone-mockup.png',
+  '/gallery-video-mapping.png',
+  '/gallery-classroom.png',
+  '/gallery-amphitheater.png',
 ];
 
 export function Manifesto() {
@@ -82,7 +83,7 @@ export function Manifesto() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1, 1, 0] }}
                 transition={{
-                  duration: 16,
+                  duration: 20,
                   delay: i * 4,
                   repeat: Infinity,
                   times: [0, 0.05, 0.95, 1],
