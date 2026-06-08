@@ -183,7 +183,7 @@ export function WorkWithUs() {
                   color: GOLD,
                 }}
               >
-                <span style={{ lineHeight: 1 }}>→</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
                 {w.hero.ctaSeeWork}
               </button>
               <button
@@ -194,7 +194,7 @@ export function WorkWithUs() {
                   border: '1px solid rgba(45,110,255,0.4)',
                 }}
               >
-                <span style={{ lineHeight: 1 }}>→</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
                 {w.hero.ctaContact}
               </button>
             </div>
@@ -758,7 +758,7 @@ export function WorkWithUs() {
             >
               <span style={{ fontSize: '0.85em' }}>●</span>
               {w.specialists.whatsappLabel}
-              <span style={{ color: 'rgba(37,211,102,0.7)', fontSize: '0.9em' }}>→ {w.specialists.whatsappCta}</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1, color: 'rgba(37,211,102,0.7)', fontSize: '0.9em' }}>→ {w.specialists.whatsappCta}</span>
             </a>
           </motion.div>
         </div>

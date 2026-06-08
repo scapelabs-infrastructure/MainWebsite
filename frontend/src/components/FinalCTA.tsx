@@ -37,7 +37,7 @@ export function FinalCTA() {
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D6EFF] hover:text-white transition-colors group"
             >
               {cta.leftCta}
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              <span className="group-hover:translate-x-1 transition-transform" style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
             </a>
           </div>
         </motion.div>
@@ -71,7 +71,7 @@ export function FinalCTA() {
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#7B3FE4] hover:text-white transition-colors group"
             >
               {cta.rightCta}
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              <span className="group-hover:translate-x-1 transition-transform" style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
             </a>
           </div>
         </motion.div>

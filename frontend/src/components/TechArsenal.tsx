@@ -170,7 +170,7 @@ export function TechArsenal() {
             href="/work-with-us"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
           >
-            <span style={{ lineHeight: 1 }}>→</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
             {ta.sponsorLink}
           </a>
         </motion.div>
