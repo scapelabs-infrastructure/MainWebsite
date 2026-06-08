@@ -753,7 +753,7 @@ export const translations = {
       ],
     },
     finalCtaNew: {
-      leftTitle: 'You have the budget. Or the expertise. We have the technology.',
+      leftTitle: 'You have the budget, or the expertise. We have the technology.',
       leftBody: 'Whether you\'re a company looking for real CSR impact, or a specialist who wants to build with us — through AR, AI and EU-scale projects, this is where you belong.',
       leftCta: 'Work With Us',
       rightTitle: 'You have the drive. We have the projects.',
