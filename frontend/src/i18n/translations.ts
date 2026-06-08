@@ -472,7 +472,7 @@ export const translations = {
         headlineLine1: 'Campania dvs. rulează o săptămână.',
         headlineLine2: 'A noastră rulează un deceniu.',
         sub: 'ScapeLabs construiește experiențe AR, sisteme AI și instalații de spatial computing pe care oamenii le țin minte, le distribuie și la care revin. Nu vindem spațiu media. Construim infrastructură de impact.',
-        ctaSeeWork: 'ScapeStudio',
+        ctaSeeWork: 'Proiecte Comerciale',
         ctaContact: 'Intru ca Specialist',
       },
       csr: {
@@ -1055,7 +1055,7 @@ export const translations = {
         headlineLine1: 'Your campaign runs for a week.',
         headlineLine2: 'Ours runs for a decade.',
         sub: 'ScapeLabs builds AR experiences, AI systems and spatial computing installations that people remember, share and return to. We don\'t sell media space. We engineer impact infrastructure.',
-        ctaSeeWork: 'ScapeStudio',
+        ctaSeeWork: 'Commercial Projects',
         ctaContact: 'Join as a Specialist',
       },
       csr: {
