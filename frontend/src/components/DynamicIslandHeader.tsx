@@ -44,7 +44,7 @@ export function DynamicIslandHeader() {
             onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.25) drop-shadow(0 0 6px rgba(255,255,255,0.25))')}
             onMouseLeave={(e) => (e.currentTarget.style.filter = isHome ? 'brightness(1.25) drop-shadow(0 0 6px rgba(255,255,255,0.25))' : 'brightness(1)')}
           >
-            <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-10 md:h-12 w-auto" />
+            <img src="/ScapeLabs-Logo.png" alt="ScapeLabs" className="h-14 md:h-12 w-auto" />
           </a>
 
           <div className="hidden md:flex items-center gap-6">
