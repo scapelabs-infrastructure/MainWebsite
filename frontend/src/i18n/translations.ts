@@ -408,7 +408,7 @@ export const translations = {
         pillAcademy: 'Academy',
       },
       community: {
-        title: 'Reteaua tech & urbana',
+        title: 'Rețeaua tech & urbană',
         body: 'Nu trebuie să fii programator ca să faci parte din comunitate. Acesta este grupul unde studenții, vizionarii și creativii se conectează. Ești primul care testează aplicațiile noastre prin oraș, participi la seri de gaming digital (Cyber-Arena) și ai acces direct la resurse pe care nu le găsești la facultate.',
         card1Title: 'Cheat Codes',
         card1Desc: 'Prompt-uri AI și tips & tricks care îți salvează sesiunea — tooluri pe care școala nu ți le arată.',
