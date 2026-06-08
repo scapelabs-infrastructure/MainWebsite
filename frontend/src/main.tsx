@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { LanguageProvider } from "./i18n/LanguageProvider";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

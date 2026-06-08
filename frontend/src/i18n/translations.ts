@@ -432,7 +432,7 @@ export const translations = {
       academy: {
         title: 'ScapeLabs Academy',
         subtitle: 'Learn by shipping.',
-        body: 'Ești gata să intri în tranșee? Academia este singura cale de acces către Core Team-ul ScapeLabs. Nu predăm cursuri teoretice. Studenții din Academy lucrează direct la produsele noastre active (Pawsitive, Calea Victoriei, Caravana) sub ghidajul unui senior cu experiență internațională în experiențe digitale 3D. Ieși cu un portofoliu real, nu cu o diplomă pdf. Și da, semnăm convențiile de practică obligatorie pentru facultate.',
+        body: 'Academia ScapeLabs este 100% gratuită — fără nicio condiție financiară. Combinăm teorie aplicată cu lucru direct pe produsele noastre active (Pawsitive, Calea Victoriei, Caravana), sub ghidajul unui senior cu experiență internațională. Cursurile se desfășoară online, cu estimarea că din Q4 2026 vom deschide un spațiu fizic de predare. Contribuția la proiectele și departamentele ScapeLabs este voluntară — dar câștigul e concret: înveți skills pe care nu le găsești în curricula universitară, obții echivalarea practicii obligatorii și primești certificat de participare. Ieși cu un portofoliu real, nu cu o diplomă PDF.',
         track1Title: 'Tech Track',
         track1Desc: 'Realitate augmentată (AR), motoare de jocuri 3D, fluxuri AI și aplicații web interactive. Sari de la tutoriale la produse reale.',
         track2Title: 'Creative Track',
@@ -469,8 +469,8 @@ export const translations = {
     },
     workWithUs: {
       hero: {
-        headlineLine1: 'Campania dvs. rulează o săptămână.',
-        headlineLine2: 'A noastră rulează un deceniu.',
+        headlineLine1: 'Unele campanii rulează o săptămână.',
+        headlineLine2: 'Ale noastre rulează un deceniu.',
         sub: 'ScapeLabs construiește experiențe digitale pe care oamenii le simt în lumea reală — vizibile prin camera telefonului, activate în spații fizice, reținute mult după ce campania s-a încheiat. Nu vindem spațiu media. Construim impact care rămâne.',
         ctaSeeWork: 'Proiecte Comerciale',
         ctaContact: 'Intru ca Specialist',
@@ -1015,7 +1015,7 @@ export const translations = {
       academy: {
         title: 'ScapeLabs Academy',
         subtitle: 'Learn by shipping.',
-        body: "Ready to go into the trenches? The Academy is the only path to the ScapeLabs Core Team. We don't teach theory. Academy students work directly on our live products (Pawsitive, Calea Victoriei, Caravana) under the guidance of a senior engineer with international experience in 3D digital experiences. You leave with a real portfolio, not a PDF certificate. And yes, we sign the mandatory university internship agreements.",
+        body: "ScapeLabs Academy is completely free — no fees, no conditions. We combine applied theory with hands-on work on our live products (Pawsitive, Calea Victoriei, Caravana), guided by a senior engineer with international experience in 3D digital experiences. Classes are held online, with plans to open a physical training space starting Q4 2026. Contributing to ScapeLabs projects and departments is voluntary — but the return is real: you learn skills not found in any university curriculum, your mandatory internship is fully covered, and you receive a certificate of participation. You leave with a real portfolio, not a PDF.",
         track1Title: 'Tech Track',
         track1Desc: 'Augmented reality (AR), 3D game engines, AI workflows and interactive web apps. Jump from tutorials to real products.',
         track2Title: 'Creative Track',
@@ -1052,8 +1052,8 @@ export const translations = {
     },
     workWithUs: {
       hero: {
-        headlineLine1: 'Your campaign runs for a week.',
-        headlineLine2: 'Ours runs for a decade.',
+        headlineLine1: 'Some campaigns run for a week.',
+        headlineLine2: 'Ours run for a decade.',
         sub: 'ScapeLabs builds digital experiences people feel in the real world — visible through phone cameras, activated in physical spaces, remembered long after the campaign ends. We don\'t sell media space. We engineer impact that lasts.',
         ctaSeeWork: 'Commercial Projects',
         ctaContact: 'Join as a Specialist',

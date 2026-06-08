@@ -9,6 +9,8 @@ import { Team } from './components/Team';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { FilmGrain } from './components/FilmGrain';
+import { SEO } from './components/SEO';
+import { useLanguage } from './i18n/LanguageContext';
 
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
@@ -18,6 +20,7 @@ import { WorkWithUs } from './pages/WorkWithUs';
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     const handleLocationChange = () => setPath(window.location.pathname);
@@ -43,16 +46,6 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    document.title = 'Asociația ScapeLabs';
-    const favicon =
-      document.querySelector('link[rel="icon"]') || document.createElement('link');
-    (favicon as HTMLLinkElement).rel = 'icon';
-    (favicon as HTMLLinkElement).type = 'image/png';
-    (favicon as HTMLLinkElement).href =
-      'https://scapelabs.io/wp-content/uploads/2025/07/cropped-Favicon.png';
-    if (!document.querySelector('link[rel="icon"]')) {
-      document.head.appendChild(favicon);
-    }
     document.documentElement.style.scrollBehavior = 'smooth';
   }, [path]);
 
@@ -72,27 +65,92 @@ export default function App() {
     }
   }, [path]);
 
+  const isRo = lang === 'ro';
+  const baseUrl = 'https://scapelabs.ro';
+
   if (path === '/privacy-policy') return <PrivacyPolicy />;
   if (path === '/terms-of-service') return <TermsOfService />;
   if (path === '/onboarding') return <Onboarding />;
-  if (path === '/join') return <JoinUs />;
-  if (path === '/work-with-us') return <WorkWithUs />;
+
+  if (path === '/join') {
+    return (
+      <>
+        <SEO
+          lang={lang}
+          title={isRo ? 'Alătură-te ScapeLabs — Academy & Comunitate Gratuită' : 'Join ScapeLabs — Free Academy & Community'}
+          description={isRo
+            ? 'ScapeLabs Academy este 100% gratuită. Înveți spatial computing, AR, AI și design urban, lucrezi pe proiecte reale și obții echivalarea practicii universitare. Fondat la București.'
+            : 'ScapeLabs Academy is completely free. Learn spatial computing, AR, AI and urban design, work on real projects and get your university internship covered. Founded in Bucharest.'}
+          url={`${baseUrl}/join`}
+          altLang={isRo ? 'en' : 'ro'}
+          altUrl={`${baseUrl}/join`}
+        />
+        <JoinUs />
+      </>
+    );
+  }
+
+  if (path === '/work-with-us') {
+    return (
+      <>
+        <SEO
+          lang={lang}
+          title={isRo ? 'Colaborează cu ScapeLabs — CSR & Spatial Computing' : 'Work With ScapeLabs — CSR & Spatial Computing Partnerships'}
+          description={isRo
+            ? 'Parteneriate CSR cu impact documentat, experiențe AR pentru evenimente și spații publice, și ScapeStudio — divizia comercială. Construim digital ce rămâne.'
+            : 'CSR partnerships with documented impact, AR experiences for events and public spaces, and ScapeStudio — our commercial division. We build digital that lasts.'}
+          url={`${baseUrl}/work-with-us`}
+          altLang={isRo ? 'en' : 'ro'}
+          altUrl={`${baseUrl}/work-with-us`}
+        />
+        <WorkWithUs />
+      </>
+    );
+  }
 
   return (
-    <div
-      className="relative overflow-x-hidden"
-      style={{ background: '#080810', color: '#E8E8F0', fontFamily: "'Inter', sans-serif" }}
-    >
-      <FilmGrain />
-      <DynamicIslandHeader />
-      <Hero />
-      <Manifesto />
-      <TechArsenal />
-      <ProjectsCommunity />
-      <Community />
-      <Team />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <>
+      <SEO
+        lang={lang}
+        title={isRo ? 'Asociația ScapeLabs — Laborator de Spatial Computing' : 'ScapeLabs Organization — Spatial Computing Lab'}
+        description={isRo
+          ? 'Laboratorul de spatial computing care suprapune digital peste lumea fizică. Academy gratuită, experiențe AR și AI pentru spații publice, parteneriate CSR cu impact real. Fondat la București, construit pentru Europa.'
+          : 'The spatial computing lab that layers the digital world over the physical one. Free Academy, AR and AI experiences for public spaces, CSR partnerships with real impact. Founded in Bucharest, built for Europe.'}
+        url={baseUrl}
+        altLang={isRo ? 'en' : 'ro'}
+        altUrl={baseUrl}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Asociația ScapeLabs',
+          alternateName: 'ScapeLabs Organization',
+          url: baseUrl,
+          logo: `${baseUrl}/ScapeLabs-Logo.png`,
+          description: isRo
+            ? 'Laborator de spatial computing, Academy tech gratuită și parteneriate CSR cu impact documentat. Fondat la București.'
+            : 'Spatial computing lab, free tech Academy and CSR partnerships with documented impact. Founded in Bucharest.',
+          foundingDate: '2024',
+          foundingLocation: { '@type': 'Place', name: 'București, România' },
+          areaServed: 'EU',
+          knowsAbout: ['Spatial Computing', 'Augmented Reality', 'Artificial Intelligence', 'Urban Technology', 'Tech Education'],
+          sameAs: ['https://www.linkedin.com/company/scapelabs'],
+        }}
+      />
+      <div
+        className="relative overflow-x-hidden"
+        style={{ background: '#080810', color: '#E8E8F0', fontFamily: "'Inter', sans-serif" }}
+      >
+        <FilmGrain />
+        <DynamicIslandHeader />
+        <Hero />
+        <Manifesto />
+        <TechArsenal />
+        <ProjectsCommunity />
+        <Community />
+        <Team />
+        <FinalCTA />
+        <Footer />
+      </div>
+    </>
   );
 }
