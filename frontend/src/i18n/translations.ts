@@ -529,7 +529,7 @@ export const translations = {
         card2Desc: 'Video mapping și instalații interactive pentru evenimente și spații publice.',
         card3Title: 'Integrare AI',
         card3Desc: 'Asistenți vocali, agenți automatizați și sisteme generative pentru business.',
-        card4Title: 'Gemeni Digitali',
+        card4Title: 'Digital Twins',
         card4Desc: 'Reconstituiri 3D de precizie pentru arhitectură, patrimoniu și real estate.',
       },
       specialists: {
