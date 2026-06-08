@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const pillarIcons = ['◎', '◈', '◉', '✦', '◆'];
@@ -45,7 +46,7 @@ export function Community() {
                 className="inline-flex items-center gap-2 py-3 px-6 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #0EA5E9, #7B3FE4)' }}
               >
-                <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
+                <ArrowRight size={14} />
                 {c.cta}
               </a>
             </motion.div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { DynamicIslandHeader } from '../components/DynamicIslandHeader';
 import { Footer } from '../components/Footer';
@@ -183,7 +184,7 @@ export function WorkWithUs() {
                   color: GOLD,
                 }}
               >
-                <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
+                <ArrowRight size={14} />
                 {w.hero.ctaSeeWork}
               </button>
               <button
@@ -194,7 +195,7 @@ export function WorkWithUs() {
                   border: '1px solid rgba(45,110,255,0.4)',
                 }}
               >
-                <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
+                <ArrowRight size={14} />
                 {w.hero.ctaContact}
               </button>
             </div>
@@ -758,7 +759,7 @@ export function WorkWithUs() {
             >
               <span style={{ fontSize: '0.85em' }}>●</span>
               {w.specialists.whatsappLabel}
-              <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1, color: 'rgba(37,211,102,0.7)', fontSize: '0.9em' }}>→ {w.specialists.whatsappCta}</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'rgba(37,211,102,0.7)', fontSize: '0.9em' }}><ArrowRight size={11} /> {w.specialists.whatsappCta}</span>
             </a>
           </motion.div>
         </div>

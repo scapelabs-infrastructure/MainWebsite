@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2 } from 'lucide-react';
+import { Scan, Projector, BrainCircuit, Radar, Boxes, Gamepad2, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { PartnerModal } from './Partners';
@@ -170,7 +170,7 @@ export function TechArsenal() {
             href="/work-with-us"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
           >
-            <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
+            <ArrowRight size={14} />
             {ta.sponsorLink}
           </a>
         </motion.div>

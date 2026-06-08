@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const statusColors: Record<string, string> = {
@@ -195,7 +196,7 @@ export function ProjectsCommunity() {
                   className="inline-flex items-center gap-2 justify-center py-3 px-8 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
                 >
-                  <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1 }}>→</span>
+                  <ArrowRight size={14} />
                   {pc.cta1}
                 </a>
               </div>
