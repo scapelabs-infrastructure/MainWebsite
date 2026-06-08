@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -18,13 +18,24 @@ export function Manifesto() {
   const { t } = useLanguage();
   const m = t.manifest;
   const [activeIndex, setActiveIndex] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startAutoplay = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % galleryImages.length);
     }, 4000);
-    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [startAutoplay]);
+
+  const goTo = useCallback((index: number) => {
+    setActiveIndex((index + galleryImages.length) % galleryImages.length);
+    startAutoplay();
+  }, [startAutoplay]);
 
   return (
     <section id="manifesto" className="py-24 md:py-36 px-6 relative overflow-hidden">
@@ -100,7 +111,7 @@ export function Manifesto() {
 
             {/* Left arrow */}
             <button
-              onClick={() => setActiveIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
+              onClick={() => goTo(activeIndex - 1)}
               className="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100"
               style={{ background: 'rgba(8,8,16,0.6)', border: '1px solid rgba(232,232,240,0.15)', backdropFilter: 'blur(8px)' }}
               aria-label="Previous"
@@ -110,7 +121,7 @@ export function Manifesto() {
 
             {/* Right arrow */}
             <button
-              onClick={() => setActiveIndex((prev) => (prev + 1) % galleryImages.length)}
+              onClick={() => goTo(activeIndex + 1)}
               className="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100"
               style={{ background: 'rgba(8,8,16,0.6)', border: '1px solid rgba(232,232,240,0.15)', backdropFilter: 'blur(8px)' }}
               aria-label="Next"
@@ -123,7 +134,7 @@ export function Manifesto() {
               {galleryImages.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setActiveIndex(i)}
+                  onClick={() => goTo(i)}
                   className="w-1.5 h-1.5 rounded-full transition-all duration-300"
                   style={{
                     background: i === activeIndex ? 'rgba(232,232,240,0.8)' : 'rgba(232,232,240,0.2)',
