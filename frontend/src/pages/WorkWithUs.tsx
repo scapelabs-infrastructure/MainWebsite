@@ -214,7 +214,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── CSR SPONSORSHIP ── */}
-      <section className="py-14 md:py-40 px-6 relative">
+      <section className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 60% 50% at 15% 50%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -339,7 +339,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SERVICES TABLE ── */}
-      <section id="section-services" className="py-14 md:py-40 px-6 relative">
+      <section id="section-services" className="py-14 md:py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -403,7 +403,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SCAPESTUDIO ── */}
-      <section id="section-studio" className="py-14 md:py-40 px-6 relative">
+      <section id="section-studio" className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 60% 50% at 85% 50%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -473,7 +473,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── EVENTS PARTNERSHIPS ── */}
-      <section className="py-14 md:py-40 px-6 relative">
+      <section className="py-14 md:py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -526,7 +526,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── TECH IMPACT DAY ── */}
-      <section className="py-14 md:py-40 px-6 relative">
+      <section className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 70% 50% at 50% 60%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -591,7 +591,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── FINAL CTA FORM ── */}
-      <section id="section-contact" className="py-12 md:py-36 px-6">
+      <section id="section-contact" className="py-12 md:py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -742,7 +742,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SPECIALISTS & COLLABORATORS ── */}
-      <section id="section-specialists" className="py-14 md:py-40 px-6 relative">
+      <section id="section-specialists" className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 55% 50% at 20% 50%, rgba(45,110,255,0.06) 0%, transparent 70%)' }}

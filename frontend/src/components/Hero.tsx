@@ -23,7 +23,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-0 md:pt-32">
+      <div className="relative z-30 w-full max-w-4xl mx-auto px-6 text-center pt-0 md:pt-32">
         <div className="mb-8 md:mb-10">
           <img
             src="/ScapeLabs-Logo.png"

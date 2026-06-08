@@ -9,7 +9,7 @@ export function Community() {
   const c = t.community;
 
   return (
-    <section id="community-hub" className="py-12 md:py-36 px-6 relative overflow-hidden">
+    <section id="community-hub" className="py-12 md:py-20 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

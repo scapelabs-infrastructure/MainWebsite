@@ -223,7 +223,7 @@ export function JoinUs() {
       </section>
 
       {/* ── COMMUNITY ── */}
-      <section id="section-community" className="py-14 md:py-40 px-6 relative">
+      <section id="section-community" className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -306,7 +306,7 @@ export function JoinUs() {
       </section>
 
       {/* ── EU TICKET ── */}
-      <section id="section-eu" className="py-14 md:py-40 px-6 relative">
+      <section id="section-eu" className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -377,7 +377,7 @@ export function JoinUs() {
       </section>
 
       {/* ── ACADEMY ── */}
-      <section id="section-academy" className="py-14 md:py-40 px-6 relative">
+      <section id="section-academy" className="py-14 md:py-24 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -637,7 +637,7 @@ export function JoinUs() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-12 md:py-36 px-6">
+      <section className="py-12 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div
             className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden"
@@ -701,6 +701,17 @@ export function JoinUs() {
           </div>
         </div>
       </section>
+
+      {/* ── SPECIALIST CTA ── */}
+      <div className="py-6 px-6 text-center">
+        <p className="text-[#E8E8F0]/50 text-sm mb-2">{j.finalCta.specialistNote}</p>
+        <a
+          href="/work-with-us#section-specialists"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00F0FF] hover:text-white transition-colors"
+        >
+          {j.finalCta.specialistCta}
+        </a>
+      </div>
 
       <Footer />
     </div>
