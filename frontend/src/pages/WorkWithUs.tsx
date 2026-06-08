@@ -162,7 +162,12 @@ export function WorkWithUs() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        {/* Bottom fade into next section */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none z-20"
+          style={{ background: 'linear-gradient(to bottom, transparent, #080810)' }}
+        />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30">
           <div className="w-5 h-9 border border-[#E8E8F0]/20 rounded-full flex justify-center pt-1.5">
             <div className="w-1 h-2.5 rounded-full" style={{ background: `linear-gradient(180deg, ${GOLD}, #2D6EFF)` }} />
           </div>

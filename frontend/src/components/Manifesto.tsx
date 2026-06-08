@@ -104,6 +104,11 @@ export function Manifesto() {
           </motion.div>
         </div>
       </div>
+      {/* Bottom fade into next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, transparent, #080810)' }}
+      />
     </section>
   );
 }
