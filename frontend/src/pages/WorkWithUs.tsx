@@ -140,23 +140,25 @@ export function WorkWithUs() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <button
                 onClick={() => scrollTo('section-services')}
-                className="flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.04]"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.04]"
                 style={{
                   background: GOLD_BG,
                   border: `1px solid ${GOLD_BORDER}`,
                   color: GOLD,
                 }}
               >
+                <span style={{ lineHeight: 1 }}>→</span>
                 {w.hero.ctaSeeWork}
               </button>
               <button
                 onClick={() => scrollTo('section-contact')}
-                className="flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04]"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04]"
                 style={{
                   background: `linear-gradient(135deg, ${GOLD}99, ${GOLD}55)`,
                   border: `1px solid ${GOLD}55`,
                 }}
               >
+                <span style={{ lineHeight: 1 }}>→</span>
                 {w.hero.ctaContact}
               </button>
             </div>

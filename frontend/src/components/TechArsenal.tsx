@@ -168,8 +168,9 @@ export function TechArsenal() {
           </p>
           <a
             href="/work-with-us"
-            className="text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2D6EFF] hover:text-[#7B3FE4] transition-colors tracking-wide"
           >
+            <span style={{ lineHeight: 1 }}>→</span>
             {ta.sponsorLink}
           </a>
         </motion.div>

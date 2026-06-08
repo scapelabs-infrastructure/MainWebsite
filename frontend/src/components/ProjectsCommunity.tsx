@@ -192,9 +192,10 @@ export function ProjectsCommunity() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="/join#section-academy"
-                  className="inline-block text-center py-3 px-8 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="inline-flex items-center gap-2 justify-center py-3 px-8 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ background: 'linear-gradient(135deg, #2D6EFF, #7B3FE4)' }}
                 >
+                  <span style={{ lineHeight: 1 }}>→</span>
                   {pc.cta1}
                 </a>
               </div>

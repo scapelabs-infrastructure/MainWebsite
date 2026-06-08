@@ -28,7 +28,7 @@ export const translations = {
       subtitle: 'și de ce contează pentru brandul dvs.',
       impactLabel: 'Impact',
       sponsorPivot: 'Fiecare proiect pe care îl implementăm este un studiu de caz documentat cu impact măsurabil. Pentru sponsori, aceasta se traduce direct în vizibilitate CSR cu raportare de standard european.',
-      sponsorLink: '→ Vezi cum funcționează sponsorizarea',
+      sponsorLink: 'Vezi cum funcționează sponsorizarea',
       cards: [
         {
           title: 'Realitate Augmentată',
@@ -125,8 +125,8 @@ export const translations = {
         { title: 'Pipeline Elite', desc: 'Absolvenții de top din fiecare cohortă colaborează direct la implementările noastre active B2B și culturale.' },
       ],
       academyNote: 'Toate proiectele active sunt dezvoltate de specialiști seniori din industrie. Academy servește ca incubator exclusiv de talente.',
-      cta1: '→ Aplică la Academy',
-      cta2: '→ Explorează Academia',
+      cta1: 'Aplică la Academy',
+      cta2: 'Explorează Academia',
     },
     community: {
       title: 'Comunitatea ScapeLabs',
@@ -153,7 +153,7 @@ export const translations = {
           desc: 'Prin ESC putem găzdui voluntari internaționali din toată Europa sau finanța munca contribuitorilor noștri prin fonduri europene — o altă cale prin care implicarea se transformă în valoare reală.',
         },
       ],
-      cta: '→ Alătură-te Comunității',
+      cta: 'Alătură-te Comunității',
     },
     teamBoard: {
       title: 'Oamenii din spatele scenei',
@@ -172,10 +172,10 @@ export const translations = {
     finalCtaNew: {
       leftTitle: 'Ai bugetul. Noi avem tehnologia.',
       leftBody: 'Construiește o campanie CSR care ajunge cu adevărat la oameni — prin AR, AI și impact documentat la scară europeană.',
-      leftCta: '→ Lucrează cu noi',
+      leftCta: 'Lucrează cu noi',
       rightTitle: 'Ai ambiția. Noi avem proiectele.',
       rightBody: 'Alătură-te Academy sau echipei. Livrează produse reale. Construiește un portofoliu care sare peste anii de junior.',
-      rightCta: '→ Alătură-te Laboratorului',
+      rightCta: 'Alătură-te Laboratorului',
     },
     footerNew: {
       line1: 'Asociația ScapeLabs · București, România',
@@ -472,8 +472,8 @@ export const translations = {
         headlineLine1: 'Campania dvs. rulează o săptămână.',
         headlineLine2: 'A noastră rulează un deceniu.',
         sub: 'ScapeLabs construiește experiențe AR, sisteme AI și instalații de spatial computing pe care oamenii le țin minte, le distribuie și la care revin. Nu vindem spațiu media. Construim infrastructură de impact.',
-        ctaSeeWork: '→ Vezi proiectele noastre',
-        ctaContact: '→ Începe o conversație',
+        ctaSeeWork: 'Vezi proiectele noastre',
+        ctaContact: 'Începe o conversație',
       },
       csr: {
         title: 'De ce companiile inteligente finanțează ScapeLabs',
@@ -596,7 +596,7 @@ export const translations = {
       subtitle: 'and why they matter for your brand',
       impactLabel: 'Impact',
       sponsorPivot: 'Every project we deploy is a documented case study with measurable reach. For sponsors, this translates directly into CSR visibility with EU-grade reporting.',
-      sponsorLink: '→ See how sponsorship works',
+      sponsorLink: 'See how sponsorship works',
       cards: [
         {
           title: 'Augmented Reality',
@@ -693,8 +693,8 @@ export const translations = {
         { title: 'The Elite Pipeline', desc: 'Top-performing talents from each cohort collaborate directly on modules of our active B2B and cultural deployments.' },
       ],
       academyNote: 'All active client builds are architected and deployed by senior industry specialists. The Academy serves as our exclusive talent incubator.',
-      cta1: '→ Apply to the Academy',
-      cta2: '→ Explore the Academy',
+      cta1: 'Apply to the Academy',
+      cta2: 'Explore the Academy',
     },
     community: {
       title: 'The ScapeLabs Community',
@@ -721,7 +721,7 @@ export const translations = {
           desc: 'Through the ESC programme we can host international volunteers from across Europe or fund the work of our own contributors through European grants — another way engagement converts into real value.',
         },
       ],
-      cta: '→ Join the Community',
+      cta: 'Join the Community',
     },
     teamBoard: {
       title: 'The people behind the scenes',
@@ -740,10 +740,10 @@ export const translations = {
     finalCtaNew: {
       leftTitle: 'You have the budget. We have the technology.',
       leftBody: 'Build a CSR campaign that actually reaches people — through AR, AI and documented EU-scale impact.',
-      leftCta: '→ Work With Us',
+      leftCta: 'Work With Us',
       rightTitle: 'You have the drive. We have the projects.',
       rightBody: 'Join the Academy or the team. Ship real products. Build a portfolio that skips the junior years.',
-      rightCta: '→ Join the Lab',
+      rightCta: 'Join the Lab',
     },
     footerNew: {
       line1: 'ScapeLabs Association · Bucharest, Romania',
@@ -1040,8 +1040,8 @@ export const translations = {
         headlineLine1: 'Your campaign runs for a week.',
         headlineLine2: 'Ours runs for a decade.',
         sub: 'ScapeLabs builds AR experiences, AI systems and spatial computing installations that people remember, share and return to. We don\'t sell media space. We engineer impact infrastructure.',
-        ctaSeeWork: '→ See our work',
-        ctaContact: '→ Start a conversation',
+        ctaSeeWork: 'See our work',
+        ctaContact: 'Start a conversation',
       },
       csr: {
         title: 'Why smart companies fund ScapeLabs',
