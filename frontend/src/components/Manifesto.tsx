@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
@@ -12,6 +13,14 @@ const galleryImages = [
 export function Manifesto() {
   const { t } = useLanguage();
   const m = t.manifest;
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="manifesto" className="py-24 md:py-36 px-6 relative overflow-hidden">
@@ -80,26 +89,52 @@ export function Manifesto() {
                 src={src}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 1, 1, 0] }}
-                transition={{
-                  duration: 20,
-                  delay: i * 4,
-                  repeat: Infinity,
-                  times: [0, 0.05, 0.95, 1],
-                  ease: 'easeInOut',
-                }}
+                animate={{ opacity: i === activeIndex ? 1 : 0 }}
+                transition={{ duration: 0.9, ease: 'easeInOut' }}
               />
             ))}
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-1.5">
+              {galleryImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    background: i === activeIndex ? 'rgba(232,232,240,0.8)' : 'rgba(232,232,240,0.2)',
+                    transform: i === activeIndex ? 'scale(1.3)' : 'scale(1)',
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* CONCEPT label */}
+            <div className="absolute top-4 right-4 z-30 pointer-events-none">
+              <span
+                className="text-[9px] tracking-[0.25em] uppercase"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  color: 'rgba(232,232,240,0.28)',
+                  border: '1px solid rgba(232,232,240,0.12)',
+                  padding: '3px 7px',
+                  borderRadius: '3px',
+                  letterSpacing: '0.2em',
+                }}
+              >
+                CONCEPT
+              </span>
+            </div>
+
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none z-20"
               style={{
                 background:
                   'linear-gradient(180deg, transparent 60%, rgba(8,8,16,0.8) 100%)',
               }}
             />
             <div
-              className="absolute inset-0 pointer-events-none rounded-2xl"
+              className="absolute inset-0 pointer-events-none rounded-2xl z-20"
               style={{ border: '1px solid rgba(45,110,255,0.15)' }}
             />
           </motion.div>
