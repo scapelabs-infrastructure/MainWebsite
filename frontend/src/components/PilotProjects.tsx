@@ -20,14 +20,14 @@ export function PilotProjects() {
   }));
 
   return (
-    <section id="pilot-projects" className="py-24 md:py-32 px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
+    <section id="pilot-projects" className="py-12 md:py-32 px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <Rocket className="w-8 h-8 md:w-10 md:h-10 text-[#FF003C]" />

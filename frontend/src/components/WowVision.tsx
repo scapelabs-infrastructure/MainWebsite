@@ -13,7 +13,7 @@ export function WowVision() {
   const y = useTransform(scrollYProgress, [0, 1], ['20%', '-20%']);
   
   return (
-    <section ref={sectionRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#030303] px-6 py-32">
+    <section ref={sectionRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#030303] px-6 py-16 md:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-transparent to-[#030303]" />
       
       <motion.div 

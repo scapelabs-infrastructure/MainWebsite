@@ -16,7 +16,7 @@ export function BlackProjects() {
   }));
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
+    <section className="py-12 md:py-32 px-4 md:px-6 bg-gradient-to-b from-transparent via-[#030303] to-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -142,7 +142,7 @@ export function JoinUs() {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-48 md:pt-56">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-28 md:pt-56">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -223,7 +223,7 @@ export function JoinUs() {
       </section>
 
       {/* ── COMMUNITY ── */}
-      <section id="section-community" className="py-28 md:py-40 px-6 relative">
+      <section id="section-community" className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -306,7 +306,7 @@ export function JoinUs() {
       </section>
 
       {/* ── EU TICKET ── */}
-      <section id="section-eu" className="py-28 md:py-40 px-6 relative">
+      <section id="section-eu" className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -315,7 +315,7 @@ export function JoinUs() {
           }}
         />
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -377,7 +377,7 @@ export function JoinUs() {
       </section>
 
       {/* ── ACADEMY ── */}
-      <section id="section-academy" className="py-28 md:py-40 px-6 relative">
+      <section id="section-academy" className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -391,7 +391,7 @@ export function JoinUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="mb-16"
+            className="mb-8 md:mb-16"
           >
             <span className="text-sm font-mono text-[#7B3FE4]/65 uppercase tracking-[0.25em] mb-5 block">
               03 — Academy
@@ -459,7 +459,7 @@ export function JoinUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="rounded-2xl p-8 md:p-10"
+            className="rounded-2xl p-6 md:p-10"
             style={{
               background: 'rgba(232,232,240,0.03)',
               border: '1px solid rgba(123,63,228,0.2)',
@@ -588,7 +588,7 @@ export function JoinUs() {
       </section>
 
       {/* ── THE VIBE ── */}
-      <section id="section-vibe" className="py-20 px-6">
+      <section id="section-vibe" className="py-12 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.p
             initial={{ opacity: 0 }}
@@ -637,7 +637,7 @@ export function JoinUs() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-24 md:py-36 px-6">
+      <section className="py-12 md:py-36 px-6">
         <div className="max-w-6xl mx-auto">
           <div
             className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden"
@@ -648,7 +648,7 @@ export function JoinUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45 }}
-              className="p-10 md:p-12 flex flex-col justify-between gap-8"
+              className="p-6 md:p-12 flex flex-col justify-between gap-8"
               style={{
                 background: 'rgba(45,110,255,0.05)',
                 borderRight: '1px solid rgba(232,232,240,0.07)',
@@ -679,7 +679,7 @@ export function JoinUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.1 }}
-              className="p-10 md:p-12 flex flex-col justify-between gap-8"
+              className="p-6 md:p-12 flex flex-col justify-between gap-8"
               style={{ background: 'rgba(123,63,228,0.05)' }}
             >
               <div>

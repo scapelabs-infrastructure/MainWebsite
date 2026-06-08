@@ -16,14 +16,14 @@ export function Blueprint() {
   }));
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6">
+    <section className="py-12 md:py-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <div className="w-16 h-0.5 bg-[#00F0FF] mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">

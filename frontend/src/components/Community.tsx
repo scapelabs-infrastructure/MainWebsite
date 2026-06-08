@@ -9,7 +9,7 @@ export function Community() {
   const c = t.community;
 
   return (
-    <section id="community-hub" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="community-hub" className="py-12 md:py-36 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -20,7 +20,7 @@ export function Community() {
 
       <div className="max-w-7xl mx-auto">
         {/* Top two-column: title/intro left, 3 community pillars right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start mb-10">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 24 }}

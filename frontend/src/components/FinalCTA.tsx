@@ -14,7 +14,7 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="relative flex flex-col justify-center px-10 py-20 md:px-16 md:py-24"
+          className="relative flex flex-col justify-center px-6 py-12 md:px-16 md:py-24"
           style={{ background: 'rgba(45,110,255,0.06)', borderTop: '1px solid rgba(45,110,255,0.1)' }}
         >
           <div
@@ -48,7 +48,7 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-          className="relative flex flex-col justify-center px-10 py-20 md:px-16 md:py-24"
+          className="relative flex flex-col justify-center px-6 py-12 md:px-16 md:py-24"
           style={{ background: 'rgba(123,63,228,0.06)', borderTop: '1px solid rgba(123,63,228,0.1)' }}
         >
           <div

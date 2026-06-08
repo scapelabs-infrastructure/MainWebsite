@@ -65,7 +65,7 @@ export function LabVisions() {
   };
 
   return (
-    <section id="concepts" ref={sectionRef} className="relative py-32 px-6 overflow-hidden bg-[#030303]">
+    <section id="concepts" ref={sectionRef} className="relative py-16 md:py-32 px-6 overflow-hidden bg-[#030303]">
       <div className="absolute inset-0 opacity-30">
         <motion.div
           className="absolute inset-0"
@@ -90,7 +90,7 @@ export function LabVisions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <p className="text-[#888888] text-base md:text-xl max-w-3xl mx-auto">
             {t.labVisions.subtitle}

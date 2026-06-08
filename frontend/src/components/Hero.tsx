@@ -38,7 +38,7 @@ export function Hero() {
             fontFamily: "'Inter', sans-serif",
             letterSpacing: '-0.03em',
             lineHeight: 1.08,
-            fontSize: 'clamp(0.85rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(1.7rem, 5vw, 3.5rem)',
             textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.7)',
           }}
         >

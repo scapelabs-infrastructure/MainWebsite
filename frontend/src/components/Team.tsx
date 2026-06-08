@@ -19,7 +19,7 @@ export function Team() {
   const members = tb.members.map((m, i) => ({ ...m, image: memberImages[i] }));
 
   return (
-    <section id="team-section" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="team-section" className="py-12 md:py-36 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -34,13 +34,13 @@ export function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-4xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-16"
+          className="text-3xl md:text-6xl font-bold text-[#E8E8F0] tracking-tight mb-8 md:mb-16"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {tb.title}
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 mb-10 md:mb-20">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}

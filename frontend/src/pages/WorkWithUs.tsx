@@ -214,7 +214,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── CSR SPONSORSHIP ── */}
-      <section className="py-28 md:py-40 px-6 relative">
+      <section className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 60% 50% at 15% 50%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -229,7 +229,7 @@ export function WorkWithUs() {
           >
             01 — CSR
           </motion.p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -339,7 +339,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SERVICES TABLE ── */}
-      <section id="section-services" className="py-28 md:py-40 px-6 relative">
+      <section id="section-services" className="py-14 md:py-40 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -403,7 +403,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SCAPESTUDIO ── */}
-      <section id="section-studio" className="py-28 md:py-40 px-6 relative">
+      <section id="section-studio" className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 60% 50% at 85% 50%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -414,7 +414,7 @@ export function WorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-16"
+            className="mb-8 md:mb-16"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
               03 — Studio
@@ -473,14 +473,14 @@ export function WorkWithUs() {
       </section>
 
       {/* ── EVENTS PARTNERSHIPS ── */}
-      <section className="py-28 md:py-40 px-6 relative">
+      <section className="py-14 md:py-40 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start mb-10 md:mb-14"
           >
             <div>
               <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
@@ -526,7 +526,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── TECH IMPACT DAY ── */}
-      <section className="py-28 md:py-40 px-6 relative">
+      <section className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 70% 50% at 50% 60%, ${GOLD_BG} 0%, transparent 70%)` }}
@@ -537,7 +537,7 @@ export function WorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-16"
+            className="mb-8 md:mb-16"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
               05 — Tech Impact Day
@@ -591,7 +591,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── FINAL CTA FORM ── */}
-      <section id="section-contact" className="py-24 md:py-36 px-6">
+      <section id="section-contact" className="py-12 md:py-36 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -616,7 +616,7 @@ export function WorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl p-8 md:p-10"
+            className="rounded-2xl p-6 md:p-10"
             style={{ background: GOLD_BG, border: `1px solid ${GOLD_BORDER}` }}
           >
             <AnimatePresence mode="wait">
@@ -742,7 +742,7 @@ export function WorkWithUs() {
       </section>
 
       {/* ── SPECIALISTS & COLLABORATORS ── */}
-      <section id="section-specialists" className="py-28 md:py-40 px-6 relative">
+      <section id="section-specialists" className="py-14 md:py-40 px-6 relative">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 55% 50% at 20% 50%, rgba(45,110,255,0.06) 0%, transparent 70%)' }}
@@ -753,7 +753,7 @@ export function WorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-14"
+            className="mb-8 md:mb-14"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: 'rgba(45,110,255,0.7)' }}>
               07 — Specialists

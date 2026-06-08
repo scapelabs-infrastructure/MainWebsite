@@ -19,7 +19,7 @@ export function TechArsenal() {
   const [sponsorOpen, setSponsorOpen] = useState(false);
 
   return (
-    <section id="tech-arsenal" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="tech-arsenal" className="py-12 md:py-36 px-6 relative overflow-hidden">
       {/* Top fade from previous section */}
       <div
         className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-10"

@@ -38,7 +38,7 @@ export function Manifesto() {
   }, [startAutoplay]);
 
   return (
-    <section id="manifesto" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="manifesto" className="py-12 md:py-36 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -48,7 +48,7 @@ export function Manifesto() {
       />
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

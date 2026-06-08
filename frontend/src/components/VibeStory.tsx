@@ -14,7 +14,7 @@ export function VibeStory() {
   }));
 
   return (
-    <section id="vibe-section" className="py-24 md:py-32 px-6 relative overflow-hidden">
+    <section id="vibe-section" className="py-12 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00F0FF]/5 to-transparent pointer-events-none" />
       
       <div className="max-w-5xl mx-auto relative">
@@ -23,7 +23,7 @@ export function VibeStory() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
             {t.vibeStory.title} <span className="text-[#00F0FF]">{t.vibeStory.highlight}</span>
