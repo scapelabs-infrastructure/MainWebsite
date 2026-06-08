@@ -170,8 +170,8 @@ export const translations = {
       ],
     },
     finalCtaNew: {
-      leftTitle: 'Ai bugetul. Noi avem tehnologia.',
-      leftBody: 'Construiește o campanie CSR care ajunge cu adevărat la oameni — prin AR, AI și impact documentat la scară europeană.',
+      leftTitle: 'Ai bugetul. Sau expertiza. Noi avem tehnologia.',
+      leftBody: 'Fie că ești o companie care vrea impact CSR real, fie un specialist care vrea să construiască alături de noi — prin AR, AI și proiecte la scară europeană, locul tău e aici.',
       leftCta: 'Lucrează cu noi',
       rightTitle: 'Ai ambiția. Noi avem proiectele.',
       rightBody: 'Alătură-te Academy sau echipei. Livrează produse reale. Construiește un portofoliu care sare peste anii de junior.',
@@ -753,8 +753,8 @@ export const translations = {
       ],
     },
     finalCtaNew: {
-      leftTitle: 'You have the budget. We have the technology.',
-      leftBody: 'Build a CSR campaign that actually reaches people — through AR, AI and documented EU-scale impact.',
+      leftTitle: 'You have the budget. Or the expertise. We have the technology.',
+      leftBody: 'Whether you\'re a company looking for real CSR impact, or a specialist who wants to build with us — through AR, AI and EU-scale projects, this is where you belong.',
       leftCta: 'Work With Us',
       rightTitle: 'You have the drive. We have the projects.',
       rightBody: 'Join the Academy or the team. Ship real products. Build a portfolio that skips the junior years.',
