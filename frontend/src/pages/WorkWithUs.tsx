@@ -590,6 +590,157 @@ export function WorkWithUs() {
         </div>
       </section>
 
+      {/* ── FINAL CTA FORM ── */}
+      <section id="section-contact" className="py-24 md:py-36 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 text-center"
+          >
+            <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
+              06 — Contact
+            </p>
+            <h2
+              className="font-bold text-[#E8E8F0] tracking-tight"
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.8rem, 3.5vw, 3rem)' }}
+            >
+              {w.finalCta.title}
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl p-8 md:p-10"
+            style={{ background: GOLD_BG, border: `1px solid ${GOLD_BORDER}` }}
+          >
+            <AnimatePresence mode="wait">
+              {submitted ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-center py-10"
+                >
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5"
+                    style={{ background: `${GOLD}18`, border: `1px solid ${GOLD}44` }}
+                  >
+                    ✓
+                  </div>
+                  <p className="text-[#E8E8F0] font-semibold text-lg">{w.finalCta.formSuccess}</p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit}
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
+                        {w.finalCta.namePh}
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required
+                        placeholder="—"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
+                        {w.finalCta.companyPh}
+                      </label>
+                      <input
+                        type="text"
+                        value={company}
+                        onChange={e => setCompany(e.target.value)}
+                        required
+                        placeholder="—"
+                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
+                      {w.finalCta.interestLabel}
+                    </label>
+                    <select
+                      value={interest}
+                      onChange={e => setInterest(e.target.value)}
+                      required
+                      className="w-full px-4 py-3 rounded-lg text-sm outline-none cursor-pointer appearance-none"
+                      style={inputStyle}
+                    >
+                      <option value="" disabled style={{ background: '#080810' }}>
+                        {w.finalCta.interestDefault}
+                      </option>
+                      {w.finalCta.interests.map(opt => (
+                        <option key={opt} value={opt} style={{ background: '#080810' }}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="mb-6">
+                    <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
+                      {w.finalCta.messagePh}
+                    </label>
+                    <textarea
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      rows={3}
+                      placeholder="—"
+                      className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none"
+                      style={inputStyle}
+                    />
+                  </div>
+
+                  {formError && (
+                    <p className="text-red-400/80 text-xs mb-4 font-mono">{formError}</p>
+                  )}
+
+                  <div className="flex flex-wrap items-center gap-5">
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="px-8 py-3.5 rounded-xl text-sm font-bold text-[#080810] transition-all hover:opacity-90 hover:scale-[1.02] disabled:opacity-40"
+                      style={{ background: GOLD, letterSpacing: '0.05em' }}
+                    >
+                      {submitting ? '...' : w.finalCta.submit}
+                    </button>
+                    <span className="text-xs" style={{ color: 'rgba(232,232,240,0.35)' }}>
+                      {w.finalCta.orEmail}{' '}
+                      <a
+                        href="mailto:partnership@scapelabs.ro"
+                        className="hover:underline"
+                        style={{ color: GOLD_DIM }}
+                      >
+                        partnership@scapelabs.ro
+                      </a>
+                    </span>
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── SPECIALISTS & COLLABORATORS ── */}
       <section id="section-specialists" className="py-28 md:py-40 px-6 relative">
         <div
@@ -605,7 +756,7 @@ export function WorkWithUs() {
             className="mb-14"
           >
             <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: 'rgba(45,110,255,0.7)' }}>
-              06 — Specialists
+              07 — Specialists
             </p>
             <h2
               className="font-bold text-[#E8E8F0] tracking-tight leading-tight mb-2"
@@ -765,157 +916,6 @@ export function WorkWithUs() {
         </div>
       </section>
 
-
-      {/* ── FINAL CTA FORM ── */}
-      <section id="section-contact" className="py-24 md:py-36 px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-12 text-center"
-          >
-            <p className="text-sm font-mono uppercase tracking-[0.25em] mb-5" style={{ color: GOLD_DIM }}>
-              07 — Contact
-            </p>
-            <h2
-              className="font-bold text-[#E8E8F0] tracking-tight"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.8rem, 3.5vw, 3rem)' }}
-            >
-              {w.finalCta.title}
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl p-8 md:p-10"
-            style={{ background: GOLD_BG, border: `1px solid ${GOLD_BORDER}` }}
-          >
-            <AnimatePresence mode="wait">
-              {submitted ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-center py-10"
-                >
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5"
-                    style={{ background: `${GOLD}18`, border: `1px solid ${GOLD}44` }}
-                  >
-                    ✓
-                  </div>
-                  <p className="text-[#E8E8F0] font-semibold text-lg">{w.finalCta.formSuccess}</p>
-                </motion.div>
-              ) : (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
-                        {w.finalCta.namePh}
-                      </label>
-                      <input
-                        type="text"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        required
-                        placeholder="—"
-                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
-                        style={inputStyle}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
-                        {w.finalCta.companyPh}
-                      </label>
-                      <input
-                        type="text"
-                        value={company}
-                        onChange={e => setCompany(e.target.value)}
-                        required
-                        placeholder="—"
-                        className="w-full px-4 py-3 rounded-lg text-sm outline-none"
-                        style={inputStyle}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
-                      {w.finalCta.interestLabel}
-                    </label>
-                    <select
-                      value={interest}
-                      onChange={e => setInterest(e.target.value)}
-                      required
-                      className="w-full px-4 py-3 rounded-lg text-sm outline-none cursor-pointer appearance-none"
-                      style={inputStyle}
-                    >
-                      <option value="" disabled style={{ background: '#080810' }}>
-                        {w.finalCta.interestDefault}
-                      </option>
-                      {w.finalCta.interests.map(opt => (
-                        <option key={opt} value={opt} style={{ background: '#080810' }}>
-                          {opt}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="mb-6">
-                    <label className="block text-xs font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(212,168,67,0.55)' }}>
-                      {w.finalCta.messagePh}
-                    </label>
-                    <textarea
-                      value={message}
-                      onChange={e => setMessage(e.target.value)}
-                      rows={3}
-                      placeholder="—"
-                      className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none"
-                      style={inputStyle}
-                    />
-                  </div>
-
-                  {formError && (
-                    <p className="text-red-400/80 text-xs mb-4 font-mono">{formError}</p>
-                  )}
-
-                  <div className="flex flex-wrap items-center gap-5">
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="px-8 py-3.5 rounded-xl text-sm font-bold text-[#080810] transition-all hover:opacity-90 hover:scale-[1.02] disabled:opacity-40"
-                      style={{ background: GOLD, letterSpacing: '0.05em' }}
-                    >
-                      {submitting ? '...' : w.finalCta.submit}
-                    </button>
-                    <span className="text-xs" style={{ color: 'rgba(232,232,240,0.35)' }}>
-                      {w.finalCta.orEmail}{' '}
-                      <a
-                        href="mailto:partnership@scapelabs.ro"
-                        className="hover:underline"
-                        style={{ color: GOLD_DIM }}
-                      >
-                        partnership@scapelabs.ro
-                      </a>
-                    </span>
-                  </div>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
     </div>
