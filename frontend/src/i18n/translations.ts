@@ -157,7 +157,7 @@ export const translations = {
     },
     teamBoard: {
       title: 'Oamenii din spatele scenei',
-      introLeft: 'ScapeLabs a pornit cu un avantaj nedrept: un inginer senior de Spatial Computing ca fondator, scriind cod Unity3D de producție de la vârsta de 11 ani, cu experiență în arhitecturarea experiențelor imersive pentru muzee, Senat și publisheri de jocuri. Echipa de bază este formată din specialiști cu portofolii internaționale în experiențe imersive, archviz, game design, educație și marketing.',
+      introLeft: 'ScapeLabs a pornit cu un avantaj nedrept: un inginer senior de Spatial Computing ca fondator, scriind cod Unity3D de producție de la vârsta de 11 ani, cu experiență în arhitecturarea experiențelor imersive pentru muzee, Senat și publisheri de jocuri. Echipa de producție este formată din peste 20 de membri activi din departamente diverse — design, inginerie, marketing, educație și strategie. În plus, rulăm un sistem de agenți AI activi 24/7 care sprijină operațiunile fiecărui departament.',
       members: [
         { name: 'Laris Marcu', role: 'Fondator & Director Tehnic', advantage: 'Cod Unity3D de producție de la 11 ani. A livrat pentru Senatul României.' },
         { name: 'Alexandru Cinezan', role: 'Vicepreședinte & Lead PlayBooks', advantage: 'Conduce produsul educațional de la concept până la implementare.' },
@@ -725,7 +725,7 @@ export const translations = {
     },
     teamBoard: {
       title: 'The people behind the scenes',
-      introLeft: 'ScapeLabs started with an unfair advantage: a senior Spatial Computing engineer as founder, writing production Unity3D code since age 11, with experience architecting immersive experiences for museums, the Senate, and game publishers. The core team is made of specialists with international portfolios in immersive experiences, archviz, game design, education and marketing.',
+      introLeft: 'ScapeLabs started with an unfair advantage: a senior Spatial Computing engineer as founder, writing production Unity3D code since age 11, with experience architecting immersive experiences for museums, the Senate, and game publishers. The production team counts over 20 active members across diverse departments — design, engineering, marketing, education and strategy. On top of that, we run a system of AI agents operating 24/7 to support each department\'s operations.',
       members: [
         { name: 'Laris Marcu', role: 'Founder & Technical Director', advantage: 'Production Unity3D code since age 11. Delivered for the Romanian Senate.' },
         { name: 'Alexandru Cinezan', role: 'VP & Lead PlayBooks', advantage: 'Drives the educational product from concept to deployment.' },
