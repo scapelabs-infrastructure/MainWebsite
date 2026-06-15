@@ -5,7 +5,7 @@ export const translations = {
     header: {
       manifest: 'Manifest',
       projects: 'Proiecte',
-      tools: 'Tools',
+      tools: 'Tehnologii',
       team: 'Echipa',
       academy: 'Academy',
       joinTeam: 'Alătură-te',
